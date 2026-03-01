@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Spark ETL: Run Current File",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${file}",
+			"console": "integratedTerminal",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}",
+				"PYTHONUNBUFFERED": "1"
+			},
+			// Si on a une erreur ça permet de voir la ligne exacte dans le code sans aller au fin fond de la stack trace(pas besoin d'aller dans les logs)
+			"justMyCode": true
+		}
+	]
+}

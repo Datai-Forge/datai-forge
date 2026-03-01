@@ -1,0 +1,39 @@
+{
+	"name": "Datai Forge - PySpark Dev Env",
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"context": ".."
+	},
+
+	// On force l'utilisation du dossier /app défini dans le Dockerfile
+	"workspaceFolder": "/app",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
+
+	"customizations": {
+		"vscode": {
+			// Liste des extensions à installer automatiquement dans le conteneur
+			"extensions": [
+				// Essentiels Python & Data
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"njpwerner.autodocstring",
+				"mechatroner.rainbow-csv",
+
+				// Outils de développement généraux
+				"esbenp.prettier-vscode",
+				"davidanson.vscode-markdownlint",
+				"yzhang.markdown-all-in-one",
+
+				// Collaboration & Intégration
+				"docker.docker",
+				"donjayamanne.githistory",
+				"github.copilot-chat"
+			]
+		}
+	},
+
+	// Commande à exécuter après la création du conteneur.
+	// Utile pour des initialisations ou simplement un message de bienvenue.
+	"postCreateCommand": "echo 'Conteneur de développement prêt. Bienvenue !'"
+}

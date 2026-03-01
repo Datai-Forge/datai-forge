@@ -1,0 +1,29 @@
+# Ignorer les dossiers liés à Git
+.git
+.gitignore
+
+# Ignorer l'environnement virtuel Python local
+venv/
+
+# Ignorer les dossiers de données de sortie
+bronze/
+silver/
+gold/
+
+# Ignorer les fichiers de cache Python
+**pycache**/
+\*.pyc
+
+# Ignorer les fichiers système de macOS
+.DS_Store
+
+# Ignorer les fichiers de configuration d'IDE
+.vscode/
+.idea/
+
+# Ignorer les notebooks d'exploration
+notebooks/
+
+# Ignorer les fichiers liés à Docker eux-mêmes
+Dockerfile
+.dockerignore

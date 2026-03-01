@@ -1,0 +1,1216 @@
+__id,CODGEO_2025,annee,indicateur,unite_de_compte,nombre,taux_pour_mille,est_diffuse,insee_pop,insee_pop_millesime,insee_log,insee_log_millesime,complement_info_nombre,complement_info_taux
+404116,69001,2016,"Violences physiques intrafamiliales",Victime,0,0,diff,358,2016,163,2016,,
+404117,69001,2016,"Violences physiques hors cadre familial",Victime,0,0,diff,358,2016,163,2016,,
+404118,69001,2016,"Violences sexuelles",Victime,0,0,diff,358,2016,163,2016,,
+404119,69001,2016,"Vols avec armes",Infraction,0,0,diff,358,2016,163,2016,,
+404120,69001,2016,"Vols violents sans arme",Infraction,,,ndiff,358,2016,163,2016,1.5816327,0.3170966
+404121,69001,2016,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,358,2016,163,2016,2.3333333,2.0430305
+404122,69001,2016,"Cambriolages de logement",Infraction,,,ndiff,358,2016,163,2016,3.3925926,6.7806363
+404123,69001,2016,"Vols de véhicule",Véhicule,0,0,diff,358,2016,163,2016,,
+404124,69001,2016,"Vols dans les véhicules",Véhicule,,,ndiff,358,2016,163,2016,2.7746479,1.9128628
+404125,69001,2016,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,358,2016,163,2016,,
+404126,69001,2016,"Destructions et dégradations volontaires",Infraction,,,ndiff,358,2016,163,2016,2.9516129,3.3447872
+404127,69001,2016,"Usage de stupéfiants","Mis en cause",,,ndiff,358,2016,163,2016,3.6134969,1.7366793
+404128,69001,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,358,2016,163,2016,,
+404129,69001,2016,"Trafic de stupéfiants","Mis en cause",0,0,diff,358,2016,163,2016,,
+404130,69001,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,358,2016,163,2016,2.6644295,2.6519352
+404131,69002,2016,"Violences physiques intrafamiliales",Victime,0,0,diff,251,2016,198,2016,,
+404132,69002,2016,"Violences physiques hors cadre familial",Victime,0,0,diff,251,2016,198,2016,,
+404133,69002,2016,"Violences sexuelles",Victime,0,0,diff,251,2016,198,2016,,
+404134,69002,2016,"Vols avec armes",Infraction,0,0,diff,251,2016,198,2016,,
+404135,69002,2016,"Vols violents sans arme",Infraction,0,0,diff,251,2016,198,2016,,
+404136,69002,2016,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,251,2016,198,2016,,
+404137,69002,2016,"Cambriolages de logement",Infraction,,,ndiff,251,2016,198,2016,3.3925926,6.7806363
+404138,69002,2016,"Vols de véhicule",Véhicule,,,ndiff,251,2016,198,2016,1.8961039,1.3022982
+404139,69002,2016,"Vols dans les véhicules",Véhicule,,,ndiff,251,2016,198,2016,2.7746479,1.9128628
+404140,69002,2016,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,251,2016,198,2016,,
+404141,69002,2016,"Destructions et dégradations volontaires",Infraction,0,0,diff,251,2016,198,2016,,
+404142,69002,2016,"Usage de stupéfiants","Mis en cause",0,0,diff,251,2016,198,2016,,
+404143,69002,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,251,2016,198,2016,,
+404144,69002,2016,"Trafic de stupéfiants","Mis en cause",0,0,diff,251,2016,198,2016,,
+404145,69002,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,251,2016,198,2016,2.6644295,2.6519352
+404146,69003,2016,"Violences physiques intrafamiliales",Victime,,,ndiff,2833,2016,1129,2016,1.9282051,0.9329053
+404147,69003,2016,"Violences physiques hors cadre familial",Victime,7,2.4708789,diff,2833,2016,1129,2016,,
+404148,69003,2016,"Violences sexuelles",Victime,,,ndiff,2833,2016,1129,2016,1.5478723,0.5611791
+404149,69003,2016,"Vols avec armes",Infraction,0,0,diff,2833,2016,1129,2016,,
+404150,69003,2016,"Vols violents sans arme",Infraction,,,ndiff,2833,2016,1129,2016,1.5816327,0.3170966
+404151,69003,2016,"Vols sans violence contre des personnes","Victime entendue",17,6.000706,diff,2833,2016,1129,2016,,
+404152,69003,2016,"Cambriolages de logement",Infraction,7,6.200668,diff,2833,2016,1129,2016,,
+404153,69003,2016,"Vols de véhicule",Véhicule,,,ndiff,2833,2016,1129,2016,1.8961039,1.3022982
+404154,69003,2016,"Vols dans les véhicules",Véhicule,26,9.1775503,diff,2833,2016,1129,2016,,
+404155,69003,2016,"Vols d'accessoires sur véhicules",Véhicule,9,3.1768443,diff,2833,2016,1129,2016,,
+404156,69003,2016,"Destructions et dégradations volontaires",Infraction,33,11.6484292,diff,2833,2016,1129,2016,,
+404157,69003,2016,"Usage de stupéfiants","Mis en cause",,,ndiff,2833,2016,1129,2016,3.6134969,1.7366793
+404158,69003,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2833,2016,1129,2016,,
+404159,69003,2016,"Trafic de stupéfiants","Mis en cause",,,ndiff,2833,2016,1129,2016,1.5663717,0.2705876
+404160,69003,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,2833,2016,1129,2016,2.6644295,2.6519352
+404161,69004,2016,"Violences physiques intrafamiliales",Victime,,,ndiff,758,2016,293,2016,1.9282051,0.9329053
+404162,69004,2016,"Violences physiques hors cadre familial",Victime,0,0,diff,758,2016,293,2016,,
+404163,69004,2016,"Violences sexuelles",Victime,0,0,diff,758,2016,293,2016,,
+404164,69004,2016,"Vols avec armes",Infraction,0,0,diff,758,2016,293,2016,,
+404165,69004,2016,"Vols violents sans arme",Infraction,0,0,diff,758,2016,293,2016,,
+404166,69004,2016,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,758,2016,293,2016,2.3333333,2.0430305
+404167,69004,2016,"Cambriolages de logement",Infraction,,,ndiff,758,2016,293,2016,3.3925926,6.7806363
+404168,69004,2016,"Vols de véhicule",Véhicule,,,ndiff,758,2016,293,2016,1.8961039,1.3022982
+404169,69004,2016,"Vols dans les véhicules",Véhicule,0,0,diff,758,2016,293,2016,,
+404170,69004,2016,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,758,2016,293,2016,2.6530612,1.4314501
+404171,69004,2016,"Destructions et dégradations volontaires",Infraction,,,ndiff,758,2016,293,2016,2.9516129,3.3447872
+404172,69004,2016,"Usage de stupéfiants","Mis en cause",,,ndiff,758,2016,293,2016,3.6134969,1.7366793
+404173,69004,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,758,2016,293,2016,,
+404174,69004,2016,"Trafic de stupéfiants","Mis en cause",0,0,diff,758,2016,293,2016,,
+404175,69004,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,758,2016,293,2016,2.6644295,2.6519352
+404176,69005,2016,"Violences physiques intrafamiliales",Victime,,,ndiff,571,2016,220,2016,1.9282051,0.9329053
+404177,69005,2016,"Violences physiques hors cadre familial",Victime,,,ndiff,571,2016,220,2016,2.0592105,0.9977145
+404178,69005,2016,"Violences sexuelles",Victime,,,ndiff,571,2016,220,2016,1.5478723,0.5611791
+404179,69005,2016,"Vols avec armes",Infraction,0,0,diff,571,2016,220,2016,,
+404180,69005,2016,"Vols violents sans arme",Infraction,0,0,diff,571,2016,220,2016,,
+404181,69005,2016,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,571,2016,220,2016,2.3333333,2.0430305
+404182,69005,2016,"Cambriolages de logement",Infraction,,,ndiff,571,2016,220,2016,3.3925926,6.7806363
+404183,69005,2016,"Vols de véhicule",Véhicule,,,ndiff,571,2016,220,2016,1.8961039,1.3022982
+404184,69005,2016,"Vols dans les véhicules",Véhicule,,,ndiff,571,2016,220,2016,2.7746479,1.9128628
+404185,69005,2016,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,571,2016,220,2016,2.6530612,1.4314501
+404186,69005,2016,"Destructions et dégradations volontaires",Infraction,,,ndiff,571,2016,220,2016,2.9516129,3.3447872
+404187,69005,2016,"Usage de stupéfiants","Mis en cause",,,ndiff,571,2016,220,2016,3.6134969,1.7366793
+404188,69005,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,571,2016,220,2016,,
+404189,69005,2016,"Trafic de stupéfiants","Mis en cause",0,0,diff,571,2016,220,2016,,
+404190,69005,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,571,2016,220,2016,2.6644295,2.6519352
+404191,69006,2016,"Violences physiques intrafamiliales",Victime,14,2.7866242,diff,5024,2016,2724,2016,,
+404192,69006,2016,"Violences physiques hors cadre familial",Victime,17,3.383758,diff,5024,2016,2724,2016,,
+404193,69006,2016,"Violences sexuelles",Victime,7,1.3933121,diff,5024,2016,2724,2016,,
+404194,69006,2016,"Vols avec armes",Infraction,0,0,diff,5024,2016,2724,2016,,
+404195,69006,2016,"Vols violents sans arme",Infraction,,,ndiff,5024,2016,2724,2016,1.5816327,0.3170966
+404196,69006,2016,"Vols sans violence contre des personnes","Victime entendue",15,2.9856688,diff,5024,2016,2724,2016,,
+404197,69006,2016,"Cambriolages de logement",Infraction,,,ndiff,5024,2016,2724,2016,3.3925926,6.7806363
+404198,69006,2016,"Vols de véhicule",Véhicule,10,1.9904459,diff,5024,2016,2724,2016,,
+404199,69006,2016,"Vols dans les véhicules",Véhicule,6,1.1942675,diff,5024,2016,2724,2016,,
+404200,69006,2016,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,5024,2016,2724,2016,2.6530612,1.4314501
+404201,69006,2016,"Destructions et dégradations volontaires",Infraction,33,6.5684713,diff,5024,2016,2724,2016,,
+404202,69006,2016,"Usage de stupéfiants","Mis en cause",,,ndiff,5024,2016,2724,2016,3.6134969,1.7366793
+404203,69006,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,5024,2016,2724,2016,,
+404204,69006,2016,"Trafic de stupéfiants","Mis en cause",0,0,diff,5024,2016,2724,2016,,
+404205,69006,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,14,2.7866242,diff,5024,2016,2724,2016,,
+404206,69007,2016,"Violences physiques intrafamiliales",Victime,,,ndiff,2712,2016,1241,2016,1.9282051,0.9329053
+404207,69007,2016,"Violences physiques hors cadre familial",Victime,,,ndiff,2712,2016,1241,2016,2.0592105,0.9977145
+404208,69007,2016,"Violences sexuelles",Victime,,,ndiff,2712,2016,1241,2016,1.5478723,0.5611791
+404209,69007,2016,"Vols avec armes",Infraction,,,ndiff,2712,2016,1241,2016,0.8961039,0.1147268
+404210,69007,2016,"Vols violents sans arme",Infraction,,,ndiff,2712,2016,1241,2016,1.5816327,0.3170966
+404211,69007,2016,"Vols sans violence contre des personnes","Victime entendue",10,3.6873156,diff,2712,2016,1241,2016,,
+404212,69007,2016,"Cambriolages de logement",Infraction,6,4.8334163,diff,2712,2016,1241,2016,,
+404213,69007,2016,"Vols de véhicule",Véhicule,,,ndiff,2712,2016,1241,2016,1.8961039,1.3022982
+404214,69007,2016,"Vols dans les véhicules",Véhicule,11,4.0560472,diff,2712,2016,1241,2016,,
+404215,69007,2016,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2712,2016,1241,2016,2.6530612,1.4314501
+404216,69007,2016,"Destructions et dégradations volontaires",Infraction,8,2.9498525,diff,2712,2016,1241,2016,,
+404217,69007,2016,"Usage de stupéfiants","Mis en cause",,,ndiff,2712,2016,1241,2016,3.6134969,1.7366793
+404218,69007,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2712,2016,1241,2016,,
+404219,69007,2016,"Trafic de stupéfiants","Mis en cause",0,0,diff,2712,2016,1241,2016,,
+404220,69007,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,16,5.899705,diff,2712,2016,1241,2016,,
+404221,69008,2016,"Violences physiques intrafamiliales",Victime,,,ndiff,628,2016,286,2016,1.9282051,0.9329053
+404222,69008,2016,"Violences physiques hors cadre familial",Victime,0,0,diff,628,2016,286,2016,,
+404223,69008,2016,"Violences sexuelles",Victime,0,0,diff,628,2016,286,2016,,
+404224,69008,2016,"Vols avec armes",Infraction,0,0,diff,628,2016,286,2016,,
+404225,69008,2016,"Vols violents sans arme",Infraction,0,0,diff,628,2016,286,2016,,
+404226,69008,2016,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,628,2016,286,2016,2.3333333,2.0430305
+404227,69008,2016,"Cambriolages de logement",Infraction,,,ndiff,628,2016,286,2016,3.3925926,6.7806363
+404228,69008,2016,"Vols de véhicule",Véhicule,0,0,diff,628,2016,286,2016,,
+404229,69008,2016,"Vols dans les véhicules",Véhicule,0,0,diff,628,2016,286,2016,,
+404230,69008,2016,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,628,2016,286,2016,,
+404231,69008,2016,"Destructions et dégradations volontaires",Infraction,,,ndiff,628,2016,286,2016,2.9516129,3.3447872
+404232,69008,2016,"Usage de stupéfiants","Mis en cause",0,0,diff,628,2016,286,2016,,
+404233,69008,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,628,2016,286,2016,,
+404234,69008,2016,"Trafic de stupéfiants","Mis en cause",,,ndiff,628,2016,286,2016,1.5663717,0.2705876
+404235,69008,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,628,2016,286,2016,2.6644295,2.6519352
+404236,69009,2016,"Violences physiques intrafamiliales",Victime,13,1.8325345,diff,7094,2016,2915,2016,,
+404237,69009,2016,"Violences physiques hors cadre familial",Victime,15,2.1144629,diff,7094,2016,2915,2016,,
+404238,69009,2016,"Violences sexuelles",Victime,12,1.6915703,diff,7094,2016,2915,2016,,
+404239,69009,2016,"Vols avec armes",Infraction,,,ndiff,7094,2016,2915,2016,0.8961039,0.1147268
+404240,69009,2016,"Vols violents sans arme",Infraction,,,ndiff,7094,2016,2915,2016,1.5816327,0.3170966
+404241,69009,2016,"Vols sans violence contre des personnes","Victime entendue",50,7.0482098,diff,7094,2016,2915,2016,,
+404242,69009,2016,"Cambriolages de logement",Infraction,16,5.4888508,diff,7094,2016,2915,2016,,
+404243,69009,2016,"Vols de véhicule",Véhicule,14,1.9734987,diff,7094,2016,2915,2016,,
+404244,69009,2016,"Vols dans les véhicules",Véhicule,31,4.36989,diff,7094,2016,2915,2016,,
+404245,69009,2016,"Vols d'accessoires sur véhicules",Véhicule,22,3.1012123,diff,7094,2016,2915,2016,,
+404246,69009,2016,"Destructions et dégradations volontaires",Infraction,45,6.3433888,diff,7094,2016,2915,2016,,
+404247,69009,2016,"Usage de stupéfiants","Mis en cause",19,2.6783197,diff,7094,2016,2915,2016,,
+404248,69009,2016,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,7094,2016,2915,2016,,
+404249,69009,2016,"Trafic de stupéfiants","Mis en cause",,,ndiff,7094,2016,2915,2016,1.5663717,0.2705876
+404250,69009,2016,"Escroqueries et fraudes aux moyens de paiement",Victime,22,3.1012123,diff,7094,2016,2915,2016,,
+927916,69001,2017,"Violences physiques intrafamiliales",Victime,0,0,diff,369,2017,167,2017,,
+927917,69001,2017,"Violences physiques hors cadre familial",Victime,0,0,diff,369,2017,167,2017,,
+927918,69001,2017,"Violences sexuelles",Victime,0,0,diff,369,2017,167,2017,,
+927919,69001,2017,"Vols avec armes",Infraction,0,0,diff,369,2017,167,2017,,
+927920,69001,2017,"Vols violents sans arme",Infraction,,,ndiff,369,2017,167,2017,1.5612245,0.3110205
+927921,69001,2017,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,369,2017,167,2017,2.5144928,2.1894264
+927922,69001,2017,"Cambriolages de logement",Infraction,,,ndiff,369,2017,167,2017,2.6592593,5.27114
+927923,69001,2017,"Vols de véhicule",Véhicule,0,0,diff,369,2017,167,2017,,
+927924,69001,2017,"Vols dans les véhicules",Véhicule,,,ndiff,369,2017,167,2017,2.3239437,1.5936794
+927925,69001,2017,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,369,2017,167,2017,,
+927926,69001,2017,"Destructions et dégradations volontaires",Infraction,,,ndiff,369,2017,167,2017,3.1612903,3.5683401
+927927,69001,2017,"Usage de stupéfiants","Mis en cause",,,ndiff,369,2017,167,2017,2.6871166,1.2829864
+927928,69001,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,369,2017,167,2017,,
+927929,69001,2017,"Trafic de stupéfiants","Mis en cause",0,0,diff,369,2017,167,2017,,
+927930,69001,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,369,2017,167,2017,2.8187919,2.7938164
+927931,69002,2017,"Violences physiques intrafamiliales",Victime,0,0,diff,248,2017,195,2017,,
+927932,69002,2017,"Violences physiques hors cadre familial",Victime,0,0,diff,248,2017,195,2017,,
+927933,69002,2017,"Violences sexuelles",Victime,0,0,diff,248,2017,195,2017,,
+927934,69002,2017,"Vols avec armes",Infraction,0,0,diff,248,2017,195,2017,,
+927935,69002,2017,"Vols violents sans arme",Infraction,0,0,diff,248,2017,195,2017,,
+927936,69002,2017,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,248,2017,195,2017,,
+927937,69002,2017,"Cambriolages de logement",Infraction,,,ndiff,248,2017,195,2017,2.6592593,5.27114
+927938,69002,2017,"Vols de véhicule",Véhicule,,,ndiff,248,2017,195,2017,2.0714286,1.4157014
+927939,69002,2017,"Vols dans les véhicules",Véhicule,,,ndiff,248,2017,195,2017,2.3239437,1.5936794
+927940,69002,2017,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,248,2017,195,2017,,
+927941,69002,2017,"Destructions et dégradations volontaires",Infraction,0,0,diff,248,2017,195,2017,,
+927942,69002,2017,"Usage de stupéfiants","Mis en cause",0,0,diff,248,2017,195,2017,,
+927943,69002,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,248,2017,195,2017,,
+927944,69002,2017,"Trafic de stupéfiants","Mis en cause",0,0,diff,248,2017,195,2017,,
+927945,69002,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,248,2017,195,2017,2.8187919,2.7938164
+927946,69003,2017,"Violences physiques intrafamiliales",Victime,,,ndiff,2880,2017,1160,2017,2.0051282,0.9631965
+927947,69003,2017,"Violences physiques hors cadre familial",Victime,7,2.4305556,diff,2880,2017,1160,2017,,
+927948,69003,2017,"Violences sexuelles",Victime,,,ndiff,2880,2017,1160,2017,1.6861702,0.6081453
+927949,69003,2017,"Vols avec armes",Infraction,0,0,diff,2880,2017,1160,2017,,
+927950,69003,2017,"Vols violents sans arme",Infraction,,,ndiff,2880,2017,1160,2017,1.5612245,0.3110205
+927951,69003,2017,"Vols sans violence contre des personnes","Victime entendue",11,3.8194444,diff,2880,2017,1160,2017,,
+927952,69003,2017,"Cambriolages de logement",Infraction,7,6.0347774,diff,2880,2017,1160,2017,,
+927953,69003,2017,"Vols de véhicule",Véhicule,,,ndiff,2880,2017,1160,2017,2.0714286,1.4157014
+927954,69003,2017,"Vols dans les véhicules",Véhicule,8,2.7777778,diff,2880,2017,1160,2017,,
+927955,69003,2017,"Vols d'accessoires sur véhicules",Véhicule,5,1.7361111,diff,2880,2017,1160,2017,,
+927956,69003,2017,"Destructions et dégradations volontaires",Infraction,30,10.4166667,diff,2880,2017,1160,2017,,
+927957,69003,2017,"Usage de stupéfiants","Mis en cause",,,ndiff,2880,2017,1160,2017,2.6871166,1.2829864
+927958,69003,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2880,2017,1160,2017,,
+927959,69003,2017,"Trafic de stupéfiants","Mis en cause",,,ndiff,2880,2017,1160,2017,1.9823009,0.3395982
+927960,69003,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,2880,2017,1160,2017,2.8187919,2.7938164
+927961,69004,2017,"Violences physiques intrafamiliales",Victime,,,ndiff,763,2017,293,2017,2.0051282,0.9631965
+927962,69004,2017,"Violences physiques hors cadre familial",Victime,0,0,diff,763,2017,293,2017,,
+927963,69004,2017,"Violences sexuelles",Victime,0,0,diff,763,2017,293,2017,,
+927964,69004,2017,"Vols avec armes",Infraction,0,0,diff,763,2017,293,2017,,
+927965,69004,2017,"Vols violents sans arme",Infraction,0,0,diff,763,2017,293,2017,,
+927966,69004,2017,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,763,2017,293,2017,2.5144928,2.1894264
+927967,69004,2017,"Cambriolages de logement",Infraction,,,ndiff,763,2017,293,2017,2.6592593,5.27114
+927968,69004,2017,"Vols de véhicule",Véhicule,,,ndiff,763,2017,293,2017,2.0714286,1.4157014
+927969,69004,2017,"Vols dans les véhicules",Véhicule,0,0,diff,763,2017,293,2017,,
+927970,69004,2017,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,763,2017,293,2017,2.2721088,1.2184756
+927971,69004,2017,"Destructions et dégradations volontaires",Infraction,,,ndiff,763,2017,293,2017,3.1612903,3.5683401
+927972,69004,2017,"Usage de stupéfiants","Mis en cause",,,ndiff,763,2017,293,2017,2.6871166,1.2829864
+927973,69004,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,763,2017,293,2017,,
+927974,69004,2017,"Trafic de stupéfiants","Mis en cause",0,0,diff,763,2017,293,2017,,
+927975,69004,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,763,2017,293,2017,2.8187919,2.7938164
+927976,69005,2017,"Violences physiques intrafamiliales",Victime,,,ndiff,578,2017,222,2017,2.0051282,0.9631965
+927977,69005,2017,"Violences physiques hors cadre familial",Victime,,,ndiff,578,2017,222,2017,2.1973684,1.0588183
+927978,69005,2017,"Violences sexuelles",Victime,,,ndiff,578,2017,222,2017,1.6861702,0.6081453
+927979,69005,2017,"Vols avec armes",Infraction,0,0,diff,578,2017,222,2017,,
+927980,69005,2017,"Vols violents sans arme",Infraction,0,0,diff,578,2017,222,2017,,
+927981,69005,2017,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,578,2017,222,2017,2.5144928,2.1894264
+927982,69005,2017,"Cambriolages de logement",Infraction,,,ndiff,578,2017,222,2017,2.6592593,5.27114
+927983,69005,2017,"Vols de véhicule",Véhicule,,,ndiff,578,2017,222,2017,2.0714286,1.4157014
+927984,69005,2017,"Vols dans les véhicules",Véhicule,,,ndiff,578,2017,222,2017,2.3239437,1.5936794
+927985,69005,2017,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,578,2017,222,2017,2.2721088,1.2184756
+927986,69005,2017,"Destructions et dégradations volontaires",Infraction,,,ndiff,578,2017,222,2017,3.1612903,3.5683401
+927987,69005,2017,"Usage de stupéfiants","Mis en cause",,,ndiff,578,2017,222,2017,2.6871166,1.2829864
+927988,69005,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,578,2017,222,2017,,
+927989,69005,2017,"Trafic de stupéfiants","Mis en cause",0,0,diff,578,2017,222,2017,,
+927990,69005,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,578,2017,222,2017,2.8187919,2.7938164
+927991,69006,2017,"Violences physiques intrafamiliales",Victime,19,3.818328,diff,4976,2017,2690,2017,,
+927992,69006,2017,"Violences physiques hors cadre familial",Victime,29,5.8279743,diff,4976,2017,2690,2017,,
+927993,69006,2017,"Violences sexuelles",Victime,5,1.0048232,diff,4976,2017,2690,2017,,
+927994,69006,2017,"Vols avec armes",Infraction,0,0,diff,4976,2017,2690,2017,,
+927995,69006,2017,"Vols violents sans arme",Infraction,,,ndiff,4976,2017,2690,2017,1.5612245,0.3110205
+927996,69006,2017,"Vols sans violence contre des personnes","Victime entendue",19,3.818328,diff,4976,2017,2690,2017,,
+927997,69006,2017,"Cambriolages de logement",Infraction,,,ndiff,4976,2017,2690,2017,2.6592593,5.27114
+927998,69006,2017,"Vols de véhicule",Véhicule,8,1.607717,diff,4976,2017,2690,2017,,
+927999,69006,2017,"Vols dans les véhicules",Véhicule,13,2.6125402,diff,4976,2017,2690,2017,,
+928000,69006,2017,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,4976,2017,2690,2017,2.2721088,1.2184756
+928001,69006,2017,"Destructions et dégradations volontaires",Infraction,39,7.8376206,diff,4976,2017,2690,2017,,
+928002,69006,2017,"Usage de stupéfiants","Mis en cause",,,ndiff,4976,2017,2690,2017,2.6871166,1.2829864
+928003,69006,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,4976,2017,2690,2017,,
+928004,69006,2017,"Trafic de stupéfiants","Mis en cause",0,0,diff,4976,2017,2690,2017,,
+928005,69006,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,22,4.4212219,diff,4976,2017,2690,2017,,
+928006,69007,2017,"Violences physiques intrafamiliales",Victime,,,ndiff,2713,2017,1249,2017,2.0051282,0.9631965
+928007,69007,2017,"Violences physiques hors cadre familial",Victime,,,ndiff,2713,2017,1249,2017,2.1973684,1.0588183
+928008,69007,2017,"Violences sexuelles",Victime,,,ndiff,2713,2017,1249,2017,1.6861702,0.6081453
+928009,69007,2017,"Vols avec armes",Infraction,,,ndiff,2713,2017,1249,2017,1.1038961,0.140401
+928010,69007,2017,"Vols violents sans arme",Infraction,,,ndiff,2713,2017,1249,2017,1.5612245,0.3110205
+928011,69007,2017,"Vols sans violence contre des personnes","Victime entendue",8,2.9487652,diff,2713,2017,1249,2017,,
+928012,69007,2017,"Cambriolages de logement",Infraction,11,8.8070456,diff,2713,2017,1249,2017,,
+928013,69007,2017,"Vols de véhicule",Véhicule,,,ndiff,2713,2017,1249,2017,2.0714286,1.4157014
+928014,69007,2017,"Vols dans les véhicules",Véhicule,9,3.3173609,diff,2713,2017,1249,2017,,
+928015,69007,2017,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2713,2017,1249,2017,2.2721088,1.2184756
+928016,69007,2017,"Destructions et dégradations volontaires",Infraction,16,5.8975304,diff,2713,2017,1249,2017,,
+928017,69007,2017,"Usage de stupéfiants","Mis en cause",,,ndiff,2713,2017,1249,2017,2.6871166,1.2829864
+928018,69007,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2713,2017,1249,2017,,
+928019,69007,2017,"Trafic de stupéfiants","Mis en cause",0,0,diff,2713,2017,1249,2017,,
+928020,69007,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,12,4.4231478,diff,2713,2017,1249,2017,,
+928021,69008,2017,"Violences physiques intrafamiliales",Victime,,,ndiff,640,2017,289,2017,2.0051282,0.9631965
+928022,69008,2017,"Violences physiques hors cadre familial",Victime,0,0,diff,640,2017,289,2017,,
+928023,69008,2017,"Violences sexuelles",Victime,0,0,diff,640,2017,289,2017,,
+928024,69008,2017,"Vols avec armes",Infraction,0,0,diff,640,2017,289,2017,,
+928025,69008,2017,"Vols violents sans arme",Infraction,0,0,diff,640,2017,289,2017,,
+928026,69008,2017,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,640,2017,289,2017,2.5144928,2.1894264
+928027,69008,2017,"Cambriolages de logement",Infraction,,,ndiff,640,2017,289,2017,2.6592593,5.27114
+928028,69008,2017,"Vols de véhicule",Véhicule,0,0,diff,640,2017,289,2017,,
+928029,69008,2017,"Vols dans les véhicules",Véhicule,0,0,diff,640,2017,289,2017,,
+928030,69008,2017,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,640,2017,289,2017,,
+928031,69008,2017,"Destructions et dégradations volontaires",Infraction,,,ndiff,640,2017,289,2017,3.1612903,3.5683401
+928032,69008,2017,"Usage de stupéfiants","Mis en cause",0,0,diff,640,2017,289,2017,,
+928033,69008,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,640,2017,289,2017,,
+928034,69008,2017,"Trafic de stupéfiants","Mis en cause",,,ndiff,640,2017,289,2017,1.9823009,0.3395982
+928035,69008,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,640,2017,289,2017,2.8187919,2.7938164
+928036,69009,2017,"Violences physiques intrafamiliales",Victime,11,1.5324603,diff,7178,2017,2951,2017,,
+928037,69009,2017,"Violences physiques hors cadre familial",Victime,8,1.1145166,diff,7178,2017,2951,2017,,
+928038,69009,2017,"Violences sexuelles",Victime,13,1.8110894,diff,7178,2017,2951,2017,,
+928039,69009,2017,"Vols avec armes",Infraction,,,ndiff,7178,2017,2951,2017,1.1038961,0.140401
+928040,69009,2017,"Vols violents sans arme",Infraction,,,ndiff,7178,2017,2951,2017,1.5612245,0.3110205
+928041,69009,2017,"Vols sans violence contre des personnes","Victime entendue",46,6.4084703,diff,7178,2017,2951,2017,,
+928042,69009,2017,"Cambriolages de logement",Infraction,51,17.2846595,diff,7178,2017,2951,2017,,
+928043,69009,2017,"Vols de véhicule",Véhicule,19,2.6469769,diff,7178,2017,2951,2017,,
+928044,69009,2017,"Vols dans les véhicules",Véhicule,36,5.0153246,diff,7178,2017,2951,2017,,
+928045,69009,2017,"Vols d'accessoires sur véhicules",Véhicule,16,2.2290332,diff,7178,2017,2951,2017,,
+928046,69009,2017,"Destructions et dégradations volontaires",Infraction,51,7.1050432,diff,7178,2017,2951,2017,,
+928047,69009,2017,"Usage de stupéfiants","Mis en cause",36,5.0153246,diff,7178,2017,2951,2017,,
+928048,69009,2017,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,7178,2017,2951,2017,,
+928049,69009,2017,"Trafic de stupéfiants","Mis en cause",,,ndiff,7178,2017,2951,2017,1.9823009,0.3395982
+928050,69009,2017,"Escroqueries et fraudes aux moyens de paiement",Victime,36,5.0153246,diff,7178,2017,2951,2017,,
+1451716,69001,2018,"Violences physiques intrafamiliales",Victime,0,0,diff,379,2018,170,2018,,
+1451717,69001,2018,"Violences physiques hors cadre familial",Victime,0,0,diff,379,2018,170,2018,,
+1451718,69001,2018,"Violences sexuelles",Victime,0,0,diff,379,2018,170,2018,,
+1451719,69001,2018,"Vols avec armes",Infraction,0,0,diff,379,2018,170,2018,,
+1451720,69001,2018,"Vols violents sans arme",Infraction,,,ndiff,379,2018,170,2018,1.2857143,0.2534482
+1451721,69001,2018,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,379,2018,170,2018,2.1884058,1.8951874
+1451722,69001,2018,"Cambriolages de logement",Infraction,,,ndiff,379,2018,170,2018,2.4296296,4.7677824
+1451723,69001,2018,"Vols de véhicule",Véhicule,0,0,diff,379,2018,170,2018,,
+1451724,69001,2018,"Vols dans les véhicules",Véhicule,,,ndiff,379,2018,170,2018,2.2605634,1.5405584
+1451725,69001,2018,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,379,2018,170,2018,,
+1451726,69001,2018,"Destructions et dégradations volontaires",Infraction,,,ndiff,379,2018,170,2018,3.266129,3.6720039
+1451727,69001,2018,"Usage de stupéfiants","Mis en cause",,,ndiff,379,2018,170,2018,2.0552147,0.9720485
+1451728,69001,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,379,2018,170,2018,,
+1451729,69001,2018,"Trafic de stupéfiants","Mis en cause",0,0,diff,379,2018,170,2018,,
+1451730,69001,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,379,2018,170,2018,3.2080537,3.1639705
+1451731,69002,2018,"Violences physiques intrafamiliales",Victime,0,0,diff,246,2018,193,2018,,
+1451732,69002,2018,"Violences physiques hors cadre familial",Victime,0,0,diff,246,2018,193,2018,,
+1451733,69002,2018,"Violences sexuelles",Victime,0,0,diff,246,2018,193,2018,,
+1451734,69002,2018,"Vols avec armes",Infraction,0,0,diff,246,2018,193,2018,,
+1451735,69002,2018,"Vols violents sans arme",Infraction,0,0,diff,246,2018,193,2018,,
+1451736,69002,2018,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,246,2018,193,2018,,
+1451737,69002,2018,"Cambriolages de logement",Infraction,,,ndiff,246,2018,193,2018,2.4296296,4.7677824
+1451738,69002,2018,"Vols de véhicule",Véhicule,,,ndiff,246,2018,193,2018,1.7857143,1.2136833
+1451739,69002,2018,"Vols dans les véhicules",Véhicule,,,ndiff,246,2018,193,2018,2.2605634,1.5405584
+1451740,69002,2018,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,246,2018,193,2018,,
+1451741,69002,2018,"Destructions et dégradations volontaires",Infraction,0,0,diff,246,2018,193,2018,,
+1451742,69002,2018,"Usage de stupéfiants","Mis en cause",0,0,diff,246,2018,193,2018,,
+1451743,69002,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,246,2018,193,2018,,
+1451744,69002,2018,"Trafic de stupéfiants","Mis en cause",0,0,diff,246,2018,193,2018,,
+1451745,69002,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,246,2018,193,2018,3.2080537,3.1639705
+1451746,69003,2018,"Violences physiques intrafamiliales",Victime,,,ndiff,2911,2018,1191,2018,2.7948718,1.3300404
+1451747,69003,2018,"Violences physiques hors cadre familial",Victime,5,1.7176228,diff,2911,2018,1191,2018,,
+1451748,69003,2018,"Violences sexuelles",Victime,,,ndiff,2911,2018,1191,2018,2.0744681,0.741373
+1451749,69003,2018,"Vols avec armes",Infraction,0,0,diff,2911,2018,1191,2018,,
+1451750,69003,2018,"Vols violents sans arme",Infraction,,,ndiff,2911,2018,1191,2018,1.2857143,0.2534482
+1451751,69003,2018,"Vols sans violence contre des personnes","Victime entendue",13,4.4658193,diff,2911,2018,1191,2018,,
+1451752,69003,2018,"Cambriolages de logement",Infraction,14,11.7547712,diff,2911,2018,1191,2018,,
+1451753,69003,2018,"Vols de véhicule",Véhicule,,,ndiff,2911,2018,1191,2018,1.7857143,1.2136833
+1451754,69003,2018,"Vols dans les véhicules",Véhicule,8,2.7481965,diff,2911,2018,1191,2018,,
+1451755,69003,2018,"Vols d'accessoires sur véhicules",Véhicule,11,3.7787702,diff,2911,2018,1191,2018,,
+1451756,69003,2018,"Destructions et dégradations volontaires",Infraction,23,7.9010649,diff,2911,2018,1191,2018,,
+1451757,69003,2018,"Usage de stupéfiants","Mis en cause",,,ndiff,2911,2018,1191,2018,2.0552147,0.9720485
+1451758,69003,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2911,2018,1191,2018,,
+1451759,69003,2018,"Trafic de stupéfiants","Mis en cause",,,ndiff,2911,2018,1191,2018,1.380531,0.2345332
+1451760,69003,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,2911,2018,1191,2018,3.2080537,3.1639705
+1451761,69004,2018,"Violences physiques intrafamiliales",Victime,,,ndiff,768,2018,294,2018,2.7948718,1.3300404
+1451762,69004,2018,"Violences physiques hors cadre familial",Victime,0,0,diff,768,2018,294,2018,,
+1451763,69004,2018,"Violences sexuelles",Victime,0,0,diff,768,2018,294,2018,,
+1451764,69004,2018,"Vols avec armes",Infraction,0,0,diff,768,2018,294,2018,,
+1451765,69004,2018,"Vols violents sans arme",Infraction,0,0,diff,768,2018,294,2018,,
+1451766,69004,2018,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,768,2018,294,2018,2.1884058,1.8951874
+1451767,69004,2018,"Cambriolages de logement",Infraction,,,ndiff,768,2018,294,2018,2.4296296,4.7677824
+1451768,69004,2018,"Vols de véhicule",Véhicule,,,ndiff,768,2018,294,2018,1.7857143,1.2136833
+1451769,69004,2018,"Vols dans les véhicules",Véhicule,0,0,diff,768,2018,294,2018,,
+1451770,69004,2018,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,768,2018,294,2018,2.0884354,1.1126333
+1451771,69004,2018,"Destructions et dégradations volontaires",Infraction,,,ndiff,768,2018,294,2018,3.266129,3.6720039
+1451772,69004,2018,"Usage de stupéfiants","Mis en cause",,,ndiff,768,2018,294,2018,2.0552147,0.9720485
+1451773,69004,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,768,2018,294,2018,,
+1451774,69004,2018,"Trafic de stupéfiants","Mis en cause",0,0,diff,768,2018,294,2018,,
+1451775,69004,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,768,2018,294,2018,3.2080537,3.1639705
+1451776,69005,2018,"Violences physiques intrafamiliales",Victime,,,ndiff,586,2018,224,2018,2.7948718,1.3300404
+1451777,69005,2018,"Violences physiques hors cadre familial",Victime,,,ndiff,586,2018,224,2018,2.1973684,1.0506118
+1451778,69005,2018,"Violences sexuelles",Victime,,,ndiff,586,2018,224,2018,2.0744681,0.741373
+1451779,69005,2018,"Vols avec armes",Infraction,0,0,diff,586,2018,224,2018,,
+1451780,69005,2018,"Vols violents sans arme",Infraction,0,0,diff,586,2018,224,2018,,
+1451781,69005,2018,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,586,2018,224,2018,2.1884058,1.8951874
+1451782,69005,2018,"Cambriolages de logement",Infraction,,,ndiff,586,2018,224,2018,2.4296296,4.7677824
+1451783,69005,2018,"Vols de véhicule",Véhicule,,,ndiff,586,2018,224,2018,1.7857143,1.2136833
+1451784,69005,2018,"Vols dans les véhicules",Véhicule,,,ndiff,586,2018,224,2018,2.2605634,1.5405584
+1451785,69005,2018,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,586,2018,224,2018,2.0884354,1.1126333
+1451786,69005,2018,"Destructions et dégradations volontaires",Infraction,,,ndiff,586,2018,224,2018,3.266129,3.6720039
+1451787,69005,2018,"Usage de stupéfiants","Mis en cause",,,ndiff,586,2018,224,2018,2.0552147,0.9720485
+1451788,69005,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,586,2018,224,2018,,
+1451789,69005,2018,"Trafic de stupéfiants","Mis en cause",0,0,diff,586,2018,224,2018,,
+1451790,69005,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,586,2018,224,2018,3.2080537,3.1639705
+1451791,69006,2018,"Violences physiques intrafamiliales",Victime,10,2.0288091,diff,4929,2018,2657,2018,,
+1451792,69006,2018,"Violences physiques hors cadre familial",Victime,9,1.8259282,diff,4929,2018,2657,2018,,
+1451793,69006,2018,"Violences sexuelles",Victime,16,3.2460945,diff,4929,2018,2657,2018,,
+1451794,69006,2018,"Vols avec armes",Infraction,0,0,diff,4929,2018,2657,2018,,
+1451795,69006,2018,"Vols violents sans arme",Infraction,,,ndiff,4929,2018,2657,2018,1.2857143,0.2534482
+1451796,69006,2018,"Vols sans violence contre des personnes","Victime entendue",17,3.4489755,diff,4929,2018,2657,2018,,
+1451797,69006,2018,"Cambriolages de logement",Infraction,,,ndiff,4929,2018,2657,2018,2.4296296,4.7677824
+1451798,69006,2018,"Vols de véhicule",Véhicule,12,2.4345709,diff,4929,2018,2657,2018,,
+1451799,69006,2018,"Vols dans les véhicules",Véhicule,10,2.0288091,diff,4929,2018,2657,2018,,
+1451800,69006,2018,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,4929,2018,2657,2018,2.0884354,1.1126333
+1451801,69006,2018,"Destructions et dégradations volontaires",Infraction,48,9.7382836,diff,4929,2018,2657,2018,,
+1451802,69006,2018,"Usage de stupéfiants","Mis en cause",,,ndiff,4929,2018,2657,2018,2.0552147,0.9720485
+1451803,69006,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,4929,2018,2657,2018,,
+1451804,69006,2018,"Trafic de stupéfiants","Mis en cause",0,0,diff,4929,2018,2657,2018,,
+1451805,69006,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,19,3.8547373,diff,4929,2018,2657,2018,,
+1451806,69007,2018,"Violences physiques intrafamiliales",Victime,,,ndiff,2715,2018,1256,2018,2.7948718,1.3300404
+1451807,69007,2018,"Violences physiques hors cadre familial",Victime,,,ndiff,2715,2018,1256,2018,2.1973684,1.0506118
+1451808,69007,2018,"Violences sexuelles",Victime,,,ndiff,2715,2018,1256,2018,2.0744681,0.741373
+1451809,69007,2018,"Vols avec armes",Infraction,,,ndiff,2715,2018,1256,2018,1,0.1259699
+1451810,69007,2018,"Vols violents sans arme",Infraction,,,ndiff,2715,2018,1256,2018,1.2857143,0.2534482
+1451811,69007,2018,"Vols sans violence contre des personnes","Victime entendue",12,4.4198895,diff,2715,2018,1256,2018,,
+1451812,69007,2018,"Cambriolages de logement",Infraction,19,15.1315866,diff,2715,2018,1256,2018,,
+1451813,69007,2018,"Vols de véhicule",Véhicule,,,ndiff,2715,2018,1256,2018,1.7857143,1.2136833
+1451814,69007,2018,"Vols dans les véhicules",Véhicule,9,3.3149171,diff,2715,2018,1256,2018,,
+1451815,69007,2018,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2715,2018,1256,2018,2.0884354,1.1126333
+1451816,69007,2018,"Destructions et dégradations volontaires",Infraction,13,4.7882136,diff,2715,2018,1256,2018,,
+1451817,69007,2018,"Usage de stupéfiants","Mis en cause",,,ndiff,2715,2018,1256,2018,2.0552147,0.9720485
+1451818,69007,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2715,2018,1256,2018,,
+1451819,69007,2018,"Trafic de stupéfiants","Mis en cause",0,0,diff,2715,2018,1256,2018,,
+1451820,69007,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,15,5.5248619,diff,2715,2018,1256,2018,,
+1451821,69008,2018,"Violences physiques intrafamiliales",Victime,,,ndiff,653,2018,292,2018,2.7948718,1.3300404
+1451822,69008,2018,"Violences physiques hors cadre familial",Victime,0,0,diff,653,2018,292,2018,,
+1451823,69008,2018,"Violences sexuelles",Victime,0,0,diff,653,2018,292,2018,,
+1451824,69008,2018,"Vols avec armes",Infraction,0,0,diff,653,2018,292,2018,,
+1451825,69008,2018,"Vols violents sans arme",Infraction,0,0,diff,653,2018,292,2018,,
+1451826,69008,2018,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,653,2018,292,2018,2.1884058,1.8951874
+1451827,69008,2018,"Cambriolages de logement",Infraction,,,ndiff,653,2018,292,2018,2.4296296,4.7677824
+1451828,69008,2018,"Vols de véhicule",Véhicule,0,0,diff,653,2018,292,2018,,
+1451829,69008,2018,"Vols dans les véhicules",Véhicule,0,0,diff,653,2018,292,2018,,
+1451830,69008,2018,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,653,2018,292,2018,,
+1451831,69008,2018,"Destructions et dégradations volontaires",Infraction,,,ndiff,653,2018,292,2018,3.266129,3.6720039
+1451832,69008,2018,"Usage de stupéfiants","Mis en cause",0,0,diff,653,2018,292,2018,,
+1451833,69008,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,653,2018,292,2018,,
+1451834,69008,2018,"Trafic de stupéfiants","Mis en cause",,,ndiff,653,2018,292,2018,1.380531,0.2345332
+1451835,69008,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,653,2018,292,2018,3.2080537,3.1639705
+1451836,69009,2018,"Violences physiques intrafamiliales",Victime,19,2.5527341,diff,7443,2018,3064,2018,,
+1451837,69009,2018,"Violences physiques hors cadre familial",Victime,17,2.2840253,diff,7443,2018,3064,2018,,
+1451838,69009,2018,"Violences sexuelles",Victime,9,1.2091898,diff,7443,2018,3064,2018,,
+1451839,69009,2018,"Vols avec armes",Infraction,,,ndiff,7443,2018,3064,2018,1,0.1259699
+1451840,69009,2018,"Vols violents sans arme",Infraction,,,ndiff,7443,2018,3064,2018,1.2857143,0.2534482
+1451841,69009,2018,"Vols sans violence contre des personnes","Victime entendue",49,6.5833669,diff,7443,2018,3064,2018,,
+1451842,69009,2018,"Cambriolages de logement",Infraction,34,11.0973109,diff,7443,2018,3064,2018,,
+1451843,69009,2018,"Vols de véhicule",Véhicule,21,2.821443,diff,7443,2018,3064,2018,,
+1451844,69009,2018,"Vols dans les véhicules",Véhicule,27,3.6275695,diff,7443,2018,3064,2018,,
+1451845,69009,2018,"Vols d'accessoires sur véhicules",Véhicule,12,1.6122531,diff,7443,2018,3064,2018,,
+1451846,69009,2018,"Destructions et dégradations volontaires",Infraction,51,6.8520758,diff,7443,2018,3064,2018,,
+1451847,69009,2018,"Usage de stupéfiants","Mis en cause",5,0.6717721,diff,7443,2018,3064,2018,,
+1451848,69009,2018,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,7443,2018,3064,2018,,
+1451849,69009,2018,"Trafic de stupéfiants","Mis en cause",,,ndiff,7443,2018,3064,2018,1.380531,0.2345332
+1451850,69009,2018,"Escroqueries et fraudes aux moyens de paiement",Victime,39,5.2398227,diff,7443,2018,3064,2018,,
+1975516,69001,2019,"Violences physiques intrafamiliales",Victime,,,ndiff,391,2019,176,2019,2.7631579,1.4341598
+1975517,69001,2019,"Violences physiques hors cadre familial",Victime,0,0,diff,391,2019,176,2019,,
+1975518,69001,2019,"Violences sexuelles",Victime,0,0,diff,391,2019,176,2019,,
+1975519,69001,2019,"Vols avec armes",Infraction,0,0,diff,391,2019,176,2019,,
+1975520,69001,2019,"Vols violents sans arme",Infraction,,,ndiff,391,2019,176,2019,1.2121212,0.2372939
+1975521,69001,2019,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,391,2019,176,2019,2.379562,2.0873752
+1975522,69001,2019,"Cambriolages de logement",Infraction,,,ndiff,391,2019,176,2019,2.6691729,5.3905365
+1975523,69001,2019,"Vols de véhicule",Véhicule,0,0,diff,391,2019,176,2019,,
+1975524,69001,2019,"Vols dans les véhicules",Véhicule,,,ndiff,391,2019,176,2019,2.7333333,1.7024614
+1975525,69001,2019,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,391,2019,176,2019,,
+1975526,69001,2019,"Destructions et dégradations volontaires",Infraction,,,ndiff,391,2019,176,2019,3.0082645,3.3806061
+1975527,69001,2019,"Usage de stupéfiants","Mis en cause",,,ndiff,391,2019,176,2019,2.0375,0.9346518
+1975528,69001,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,391,2019,176,2019,,
+1975529,69001,2019,"Trafic de stupéfiants","Mis en cause",0,0,diff,391,2019,176,2019,,
+1975530,69001,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,391,2019,176,2019,3.2042254,3.2569093
+1975531,69002,2019,"Violences physiques intrafamiliales",Victime,0,0,diff,245,2019,193,2019,,
+1975532,69002,2019,"Violences physiques hors cadre familial",Victime,0,0,diff,245,2019,193,2019,,
+1975533,69002,2019,"Violences sexuelles",Victime,0,0,diff,245,2019,193,2019,,
+1975534,69002,2019,"Vols avec armes",Infraction,0,0,diff,245,2019,193,2019,,
+1975535,69002,2019,"Vols violents sans arme",Infraction,0,0,diff,245,2019,193,2019,,
+1975536,69002,2019,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,245,2019,193,2019,,
+1975537,69002,2019,"Cambriolages de logement",Infraction,,,ndiff,245,2019,193,2019,2.6691729,5.3905365
+1975538,69002,2019,"Vols de véhicule",Véhicule,,,ndiff,245,2019,193,2019,1.8427673,1.1800004
+1975539,69002,2019,"Vols dans les véhicules",Véhicule,,,ndiff,245,2019,193,2019,2.7333333,1.7024614
+1975540,69002,2019,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,245,2019,193,2019,,
+1975541,69002,2019,"Destructions et dégradations volontaires",Infraction,0,0,diff,245,2019,193,2019,,
+1975542,69002,2019,"Usage de stupéfiants","Mis en cause",0,0,diff,245,2019,193,2019,,
+1975543,69002,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,245,2019,193,2019,,
+1975544,69002,2019,"Trafic de stupéfiants","Mis en cause",0,0,diff,245,2019,193,2019,,
+1975545,69002,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,245,2019,193,2019,3.2042254,3.2569093
+1975546,69003,2019,"Violences physiques intrafamiliales",Victime,,,ndiff,2947,2019,1206,2019,2.7631579,1.4341598
+1975547,69003,2019,"Violences physiques hors cadre familial",Victime,8,2.714625,diff,2947,2019,1206,2019,,
+1975548,69003,2019,"Violences sexuelles",Victime,,,ndiff,2947,2019,1206,2019,2.1884817,0.8266064
+1975549,69003,2019,"Vols avec armes",Infraction,,,ndiff,2947,2019,1206,2019,1.1688312,0.1436777
+1975550,69003,2019,"Vols violents sans arme",Infraction,,,ndiff,2947,2019,1206,2019,1.2121212,0.2372939
+1975551,69003,2019,"Vols sans violence contre des personnes","Victime entendue",13,4.4112657,diff,2947,2019,1206,2019,,
+1975552,69003,2019,"Cambriolages de logement",Infraction,13,10.7777862,diff,2947,2019,1206,2019,,
+1975553,69003,2019,"Vols de véhicule",Véhicule,,,ndiff,2947,2019,1206,2019,1.8427673,1.1800004
+1975554,69003,2019,"Vols dans les véhicules",Véhicule,,,ndiff,2947,2019,1206,2019,2.7333333,1.7024614
+1975555,69003,2019,"Vols d'accessoires sur véhicules",Véhicule,7,2.3752969,diff,2947,2019,1206,2019,,
+1975556,69003,2019,"Destructions et dégradations volontaires",Infraction,14,4.7505938,diff,2947,2019,1206,2019,,
+1975557,69003,2019,"Usage de stupéfiants","Mis en cause",,,ndiff,2947,2019,1206,2019,2.0375,0.9346518
+1975558,69003,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2947,2019,1206,2019,,
+1975559,69003,2019,"Trafic de stupéfiants","Mis en cause",,,ndiff,2947,2019,1206,2019,1.6203704,0.2975411
+1975560,69003,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,2947,2019,1206,2019,3.2042254,3.2569093
+1975561,69004,2019,"Violences physiques intrafamiliales",Victime,,,ndiff,768,2019,295,2019,2.7631579,1.4341598
+1975562,69004,2019,"Violences physiques hors cadre familial",Victime,0,0,diff,768,2019,295,2019,,
+1975563,69004,2019,"Violences sexuelles",Victime,0,0,diff,768,2019,295,2019,,
+1975564,69004,2019,"Vols avec armes",Infraction,0,0,diff,768,2019,295,2019,,
+1975565,69004,2019,"Vols violents sans arme",Infraction,0,0,diff,768,2019,295,2019,,
+1975566,69004,2019,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,768,2019,295,2019,2.379562,2.0873752
+1975567,69004,2019,"Cambriolages de logement",Infraction,,,ndiff,768,2019,295,2019,2.6691729,5.3905365
+1975568,69004,2019,"Vols de véhicule",Véhicule,,,ndiff,768,2019,295,2019,1.8427673,1.1800004
+1975569,69004,2019,"Vols dans les véhicules",Véhicule,0,0,diff,768,2019,295,2019,,
+1975570,69004,2019,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,768,2019,295,2019,1.9931973,1.0343452
+1975571,69004,2019,"Destructions et dégradations volontaires",Infraction,,,ndiff,768,2019,295,2019,3.0082645,3.3806061
+1975572,69004,2019,"Usage de stupéfiants","Mis en cause",,,ndiff,768,2019,295,2019,2.0375,0.9346518
+1975573,69004,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,768,2019,295,2019,,
+1975574,69004,2019,"Trafic de stupéfiants","Mis en cause",0,0,diff,768,2019,295,2019,,
+1975575,69004,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,768,2019,295,2019,3.2042254,3.2569093
+1975576,69005,2019,"Violences physiques intrafamiliales",Victime,,,ndiff,584,2019,224,2019,2.7631579,1.4341598
+1975577,69005,2019,"Violences physiques hors cadre familial",Victime,,,ndiff,584,2019,224,2019,2.4771242,1.2608537
+1975578,69005,2019,"Violences sexuelles",Victime,,,ndiff,584,2019,224,2019,2.1884817,0.8266064
+1975579,69005,2019,"Vols avec armes",Infraction,0,0,diff,584,2019,224,2019,,
+1975580,69005,2019,"Vols violents sans arme",Infraction,0,0,diff,584,2019,224,2019,,
+1975581,69005,2019,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,584,2019,224,2019,2.379562,2.0873752
+1975582,69005,2019,"Cambriolages de logement",Infraction,,,ndiff,584,2019,224,2019,2.6691729,5.3905365
+1975583,69005,2019,"Vols de véhicule",Véhicule,,,ndiff,584,2019,224,2019,1.8427673,1.1800004
+1975584,69005,2019,"Vols dans les véhicules",Véhicule,,,ndiff,584,2019,224,2019,2.7333333,1.7024614
+1975585,69005,2019,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,584,2019,224,2019,1.9931973,1.0343452
+1975586,69005,2019,"Destructions et dégradations volontaires",Infraction,,,ndiff,584,2019,224,2019,3.0082645,3.3806061
+1975587,69005,2019,"Usage de stupéfiants","Mis en cause",,,ndiff,584,2019,224,2019,2.0375,0.9346518
+1975588,69005,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,584,2019,224,2019,,
+1975589,69005,2019,"Trafic de stupéfiants","Mis en cause",0,0,diff,584,2019,224,2019,,
+1975590,69005,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,584,2019,224,2019,3.2042254,3.2569093
+1975591,69006,2019,"Violences physiques intrafamiliales",Victime,14,2.8461069,diff,4919,2019,2676,2019,,
+1975592,69006,2019,"Violences physiques hors cadre familial",Victime,14,2.8461069,diff,4919,2019,2676,2019,,
+1975593,69006,2019,"Violences sexuelles",Victime,,,ndiff,4919,2019,2676,2019,2.1884817,0.8266064
+1975594,69006,2019,"Vols avec armes",Infraction,0,0,diff,4919,2019,2676,2019,,
+1975595,69006,2019,"Vols violents sans arme",Infraction,,,ndiff,4919,2019,2676,2019,1.2121212,0.2372939
+1975596,69006,2019,"Vols sans violence contre des personnes","Victime entendue",11,2.2362269,diff,4919,2019,2676,2019,,
+1975597,69006,2019,"Cambriolages de logement",Infraction,,,ndiff,4919,2019,2676,2019,2.6691729,5.3905365
+1975598,69006,2019,"Vols de véhicule",Véhicule,7,1.4230535,diff,4919,2019,2676,2019,,
+1975599,69006,2019,"Vols dans les véhicules",Véhicule,11,2.2362269,diff,4919,2019,2676,2019,,
+1975600,69006,2019,"Vols d'accessoires sur véhicules",Véhicule,5,1.0164668,diff,4919,2019,2676,2019,,
+1975601,69006,2019,"Destructions et dégradations volontaires",Infraction,38,7.7251474,diff,4919,2019,2676,2019,,
+1975602,69006,2019,"Usage de stupéfiants","Mis en cause",,,ndiff,4919,2019,2676,2019,2.0375,0.9346518
+1975603,69006,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,4919,2019,2676,2019,,
+1975604,69006,2019,"Trafic de stupéfiants","Mis en cause",0,0,diff,4919,2019,2676,2019,,
+1975605,69006,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,18,3.6592803,diff,4919,2019,2676,2019,,
+1975606,69007,2019,"Violences physiques intrafamiliales",Victime,,,ndiff,2749,2019,1278,2019,2.7631579,1.4341598
+1975607,69007,2019,"Violences physiques hors cadre familial",Victime,,,ndiff,2749,2019,1278,2019,2.4771242,1.2608537
+1975608,69007,2019,"Violences sexuelles",Victime,,,ndiff,2749,2019,1278,2019,2.1884817,0.8266064
+1975609,69007,2019,"Vols avec armes",Infraction,0,0,diff,2749,2019,1278,2019,,
+1975610,69007,2019,"Vols violents sans arme",Infraction,,,ndiff,2749,2019,1278,2019,1.2121212,0.2372939
+1975611,69007,2019,"Vols sans violence contre des personnes","Victime entendue",8,2.9101491,diff,2749,2019,1278,2019,,
+1975612,69007,2019,"Cambriolages de logement",Infraction,10,7.8255196,diff,2749,2019,1278,2019,,
+1975613,69007,2019,"Vols de véhicule",Véhicule,,,ndiff,2749,2019,1278,2019,1.8427673,1.1800004
+1975614,69007,2019,"Vols dans les véhicules",Véhicule,9,3.2739178,diff,2749,2019,1278,2019,,
+1975615,69007,2019,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2749,2019,1278,2019,1.9931973,1.0343452
+1975616,69007,2019,"Destructions et dégradations volontaires",Infraction,19,6.9116042,diff,2749,2019,1278,2019,,
+1975617,69007,2019,"Usage de stupéfiants","Mis en cause",,,ndiff,2749,2019,1278,2019,2.0375,0.9346518
+1975618,69007,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,2749,2019,1278,2019,,
+1975619,69007,2019,"Trafic de stupéfiants","Mis en cause",,,ndiff,2749,2019,1278,2019,1.6203704,0.2975411
+1975620,69007,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,13,4.7289924,diff,2749,2019,1278,2019,,
+1975621,69008,2019,"Violences physiques intrafamiliales",Victime,,,ndiff,668,2019,298,2019,2.7631579,1.4341598
+1975622,69008,2019,"Violences physiques hors cadre familial",Victime,0,0,diff,668,2019,298,2019,,
+1975623,69008,2019,"Violences sexuelles",Victime,0,0,diff,668,2019,298,2019,,
+1975624,69008,2019,"Vols avec armes",Infraction,0,0,diff,668,2019,298,2019,,
+1975625,69008,2019,"Vols violents sans arme",Infraction,0,0,diff,668,2019,298,2019,,
+1975626,69008,2019,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,668,2019,298,2019,2.379562,2.0873752
+1975627,69008,2019,"Cambriolages de logement",Infraction,,,ndiff,668,2019,298,2019,2.6691729,5.3905365
+1975628,69008,2019,"Vols de véhicule",Véhicule,0,0,diff,668,2019,298,2019,,
+1975629,69008,2019,"Vols dans les véhicules",Véhicule,0,0,diff,668,2019,298,2019,,
+1975630,69008,2019,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,668,2019,298,2019,,
+1975631,69008,2019,"Destructions et dégradations volontaires",Infraction,,,ndiff,668,2019,298,2019,3.0082645,3.3806061
+1975632,69008,2019,"Usage de stupéfiants","Mis en cause",0,0,diff,668,2019,298,2019,,
+1975633,69008,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,668,2019,298,2019,,
+1975634,69008,2019,"Trafic de stupéfiants","Mis en cause",,,ndiff,668,2019,298,2019,1.6203704,0.2975411
+1975635,69008,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,668,2019,298,2019,3.2042254,3.2569093
+1975636,69009,2019,"Violences physiques intrafamiliales",Victime,14,1.8572566,diff,7538,2019,3104,2019,,
+1975637,69009,2019,"Violences physiques hors cadre familial",Victime,20,2.6532237,diff,7538,2019,3104,2019,,
+1975638,69009,2019,"Violences sexuelles",Victime,11,1.459273,diff,7538,2019,3104,2019,,
+1975639,69009,2019,"Vols avec armes",Infraction,,,ndiff,7538,2019,3104,2019,1.1688312,0.1436777
+1975640,69009,2019,"Vols violents sans arme",Infraction,,,ndiff,7538,2019,3104,2019,1.2121212,0.2372939
+1975641,69009,2019,"Vols sans violence contre des personnes","Victime entendue",56,7.4290263,diff,7538,2019,3104,2019,,
+1975642,69009,2019,"Cambriolages de logement",Infraction,34,10.95251,diff,7538,2019,3104,2019,,
+1975643,69009,2019,"Vols de véhicule",Véhicule,24,3.1838684,diff,7538,2019,3104,2019,,
+1975644,69009,2019,"Vols dans les véhicules",Véhicule,41,5.4391085,diff,7538,2019,3104,2019,,
+1975645,69009,2019,"Vols d'accessoires sur véhicules",Véhicule,11,1.459273,diff,7538,2019,3104,2019,,
+1975646,69009,2019,"Destructions et dégradations volontaires",Infraction,40,5.3064473,diff,7538,2019,3104,2019,,
+1975647,69009,2019,"Usage de stupéfiants","Mis en cause",15,1.9899178,diff,7538,2019,3104,2019,,
+1975648,69009,2019,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,7538,2019,3104,2019,,
+1975649,69009,2019,"Trafic de stupéfiants","Mis en cause",,,ndiff,7538,2019,3104,2019,1.6203704,0.2975411
+1975650,69009,2019,"Escroqueries et fraudes aux moyens de paiement",Victime,44,5.8370921,diff,7538,2019,3104,2019,,
+2499316,69001,2020,"Violences physiques intrafamiliales",Victime,,,ndiff,393,2020,178,2020,2.9444444,1.6853164
+2499317,69001,2020,"Violences physiques hors cadre familial",Victime,0,0,diff,393,2020,178,2020,,
+2499318,69001,2020,"Violences sexuelles",Victime,0,0,diff,393,2020,178,2020,,
+2499319,69001,2020,"Vols avec armes",Infraction,0,0,diff,393,2020,178,2020,,
+2499320,69001,2020,"Vols violents sans arme",Infraction,0,0,diff,393,2020,178,2020,,
+2499321,69001,2020,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,393,2020,178,2020,2,1.7141309
+2499322,69001,2020,"Cambriolages de logement",Infraction,,,ndiff,393,2020,178,2020,2.1136364,4.2710148
+2499323,69001,2020,"Vols de véhicule",Véhicule,0,0,diff,393,2020,178,2020,,
+2499324,69001,2020,"Vols dans les véhicules",Véhicule,,,ndiff,393,2020,178,2020,2.141791,1.3266523
+2499325,69001,2020,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,393,2020,178,2020,,
+2499326,69001,2020,"Destructions et dégradations volontaires",Infraction,,,ndiff,393,2020,178,2020,2.5511811,2.8387933
+2499327,69001,2020,"Usage de stupéfiants","Mis en cause",0,0,diff,393,2020,178,2020,,
+2499328,69001,2020,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,393,2020,178,2020,,
+2499329,69001,2020,"Trafic de stupéfiants","Mis en cause",0,0,diff,393,2020,178,2020,,
+2499330,69001,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,393,2020,178,2020,3.6666667,3.8760284
+2499331,69002,2020,"Violences physiques intrafamiliales",Victime,0,0,diff,244,2020,193,2020,,
+2499332,69002,2020,"Violences physiques hors cadre familial",Victime,0,0,diff,244,2020,193,2020,,
+2499333,69002,2020,"Violences sexuelles",Victime,0,0,diff,244,2020,193,2020,,
+2499334,69002,2020,"Vols avec armes",Infraction,0,0,diff,244,2020,193,2020,,
+2499335,69002,2020,"Vols violents sans arme",Infraction,0,0,diff,244,2020,193,2020,,
+2499336,69002,2020,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,244,2020,193,2020,,
+2499337,69002,2020,"Cambriolages de logement",Infraction,,,ndiff,244,2020,193,2020,2.1136364,4.2710148
+2499338,69002,2020,"Vols de véhicule",Véhicule,,,ndiff,244,2020,193,2020,1.5649351,0.9707721
+2499339,69002,2020,"Vols dans les véhicules",Véhicule,,,ndiff,244,2020,193,2020,2.141791,1.3266523
+2499340,69002,2020,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,244,2020,193,2020,,
+2499341,69002,2020,"Destructions et dégradations volontaires",Infraction,0,0,diff,244,2020,193,2020,,
+2499342,69002,2020,"Usage de stupéfiants","Mis en cause",0,0,diff,244,2020,193,2020,,
+2499343,69002,2020,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,244,2020,193,2020,,
+2499344,69002,2020,"Trafic de stupéfiants","Mis en cause",0,0,diff,244,2020,193,2020,,
+2499345,69002,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,244,2020,193,2020,3.6666667,3.8760284
+2499346,69003,2020,"Violences physiques intrafamiliales",Victime,,,ndiff,2982,2020,1221,2020,2.9444444,1.6853164
+2499347,69003,2020,"Violences physiques hors cadre familial",Victime,,,ndiff,2982,2020,1221,2020,2.1806452,1.1298302
+2499348,69003,2020,"Violences sexuelles",Victime,,,ndiff,2982,2020,1221,2020,2.1813472,0.8737413
+2499349,69003,2020,"Vols avec armes",Infraction,,,ndiff,2982,2020,1221,2020,1.0128205,0.1258286
+2499350,69003,2020,"Vols violents sans arme",Infraction,,,ndiff,2982,2020,1221,2020,1.0851064,0.2261245
+2499351,69003,2020,"Vols sans violence contre des personnes","Victime entendue",15,5.0301811,diff,2982,2020,1221,2020,,
+2499352,69003,2020,"Cambriolages de logement",Infraction,12,9.8280098,diff,2982,2020,1221,2020,,
+2499353,69003,2020,"Vols de véhicule",Véhicule,,,ndiff,2982,2020,1221,2020,1.5649351,0.9707721
+2499354,69003,2020,"Vols dans les véhicules",Véhicule,,,ndiff,2982,2020,1221,2020,2.141791,1.3266523
+2499355,69003,2020,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2982,2020,1221,2020,1.7610063,0.8105417
+2499356,69003,2020,"Destructions et dégradations volontaires",Infraction,15,5.0301811,diff,2982,2020,1221,2020,,
+2499357,69003,2020,"Usage de stupéfiants","Mis en cause",,,ndiff,2982,2020,1221,2020,1.8546512,0.7966138
+2499358,69003,2020,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,2982,2020,1221,2020,0.5454545,0.1603314
+2499359,69003,2020,"Trafic de stupéfiants","Mis en cause",,,ndiff,2982,2020,1221,2020,1.9327731,0.3787898
+2499360,69003,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,2982,2020,1221,2020,3.6666667,3.8760284
+2499361,69004,2020,"Violences physiques intrafamiliales",Victime,,,ndiff,766,2020,295,2020,2.9444444,1.6853164
+2499362,69004,2020,"Violences physiques hors cadre familial",Victime,0,0,diff,766,2020,295,2020,,
+2499363,69004,2020,"Violences sexuelles",Victime,,,ndiff,766,2020,295,2020,2.1813472,0.8737413
+2499364,69004,2020,"Vols avec armes",Infraction,0,0,diff,766,2020,295,2020,,
+2499365,69004,2020,"Vols violents sans arme",Infraction,0,0,diff,766,2020,295,2020,,
+2499366,69004,2020,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,766,2020,295,2020,2,1.7141309
+2499367,69004,2020,"Cambriolages de logement",Infraction,,,ndiff,766,2020,295,2020,2.1136364,4.2710148
+2499368,69004,2020,"Vols de véhicule",Véhicule,,,ndiff,766,2020,295,2020,1.5649351,0.9707721
+2499369,69004,2020,"Vols dans les véhicules",Véhicule,,,ndiff,766,2020,295,2020,2.141791,1.3266523
+2499370,69004,2020,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,766,2020,295,2020,1.7610063,0.8105417
+2499371,69004,2020,"Destructions et dégradations volontaires",Infraction,,,ndiff,766,2020,295,2020,2.5511811,2.8387933
+2499372,69004,2020,"Usage de stupéfiants","Mis en cause",,,ndiff,766,2020,295,2020,1.8546512,0.7966138
+2499373,69004,2020,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,766,2020,295,2020,0.5454545,0.1603314
+2499374,69004,2020,"Trafic de stupéfiants","Mis en cause",0,0,diff,766,2020,295,2020,,
+2499375,69004,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,766,2020,295,2020,3.6666667,3.8760284
+2499376,69005,2020,"Violences physiques intrafamiliales",Victime,,,ndiff,589,2020,227,2020,2.9444444,1.6853164
+2499377,69005,2020,"Violences physiques hors cadre familial",Victime,,,ndiff,589,2020,227,2020,2.1806452,1.1298302
+2499378,69005,2020,"Violences sexuelles",Victime,0,0,diff,589,2020,227,2020,,
+2499379,69005,2020,"Vols avec armes",Infraction,0,0,diff,589,2020,227,2020,,
+2499380,69005,2020,"Vols violents sans arme",Infraction,0,0,diff,589,2020,227,2020,,
+2499381,69005,2020,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,589,2020,227,2020,2,1.7141309
+2499382,69005,2020,"Cambriolages de logement",Infraction,,,ndiff,589,2020,227,2020,2.1136364,4.2710148
+2499383,69005,2020,"Vols de véhicule",Véhicule,,,ndiff,589,2020,227,2020,1.5649351,0.9707721
+2499384,69005,2020,"Vols dans les véhicules",Véhicule,,,ndiff,589,2020,227,2020,2.141791,1.3266523
+2499385,69005,2020,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,589,2020,227,2020,1.7610063,0.8105417
+2499386,69005,2020,"Destructions et dégradations volontaires",Infraction,,,ndiff,589,2020,227,2020,2.5511811,2.8387933
+2499387,69005,2020,"Usage de stupéfiants","Mis en cause",,,ndiff,589,2020,227,2020,1.8546512,0.7966138
+2499388,69005,2020,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,589,2020,227,2020,0.5454545,0.1603314
+2499389,69005,2020,"Trafic de stupéfiants","Mis en cause",0,0,diff,589,2020,227,2020,,
+2499390,69005,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,589,2020,227,2020,3.6666667,3.8760284
+2499391,69006,2020,"Violences physiques intrafamiliales",Victime,22,4.4843049,diff,4906,2020,2692,2020,,
+2499392,69006,2020,"Violences physiques hors cadre familial",Victime,8,1.6306563,diff,4906,2020,2692,2020,,
+2499393,69006,2020,"Violences sexuelles",Victime,,,ndiff,4906,2020,2692,2020,2.1813472,0.8737413
+2499394,69006,2020,"Vols avec armes",Infraction,,,ndiff,4906,2020,2692,2020,1.0128205,0.1258286
+2499395,69006,2020,"Vols violents sans arme",Infraction,,,ndiff,4906,2020,2692,2020,1.0851064,0.2261245
+2499396,69006,2020,"Vols sans violence contre des personnes","Victime entendue",14,2.8536486,diff,4906,2020,2692,2020,,
+2499397,69006,2020,"Cambriolages de logement",Infraction,,,ndiff,4906,2020,2692,2020,2.1136364,4.2710148
+2499398,69006,2020,"Vols de véhicule",Véhicule,5,1.0191602,diff,4906,2020,2692,2020,,
+2499399,69006,2020,"Vols dans les véhicules",Véhicule,9,1.8344884,diff,4906,2020,2692,2020,,
+2499400,69006,2020,"Vols d'accessoires sur véhicules",Véhicule,5,1.0191602,diff,4906,2020,2692,2020,,
+2499401,69006,2020,"Destructions et dégradations volontaires",Infraction,39,7.9494497,diff,4906,2020,2692,2020,,
+2499402,69006,2020,"Usage de stupéfiants","Mis en cause",,,ndiff,4906,2020,2692,2020,1.8546512,0.7966138
+2499403,69006,2020,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,4906,2020,2692,2020,0.5454545,0.1603314
+2499404,69006,2020,"Trafic de stupéfiants","Mis en cause",0,0,diff,4906,2020,2692,2020,,
+2499405,69006,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,22,4.4843049,diff,4906,2020,2692,2020,,
+2499406,69007,2020,"Violences physiques intrafamiliales",Victime,,,ndiff,2743,2020,1281,2020,2.9444444,1.6853164
+2499407,69007,2020,"Violences physiques hors cadre familial",Victime,,,ndiff,2743,2020,1281,2020,2.1806452,1.1298302
+2499408,69007,2020,"Violences sexuelles",Victime,,,ndiff,2743,2020,1281,2020,2.1813472,0.8737413
+2499409,69007,2020,"Vols avec armes",Infraction,0,0,diff,2743,2020,1281,2020,,
+2499410,69007,2020,"Vols violents sans arme",Infraction,,,ndiff,2743,2020,1281,2020,1.0851064,0.2261245
+2499411,69007,2020,"Vols sans violence contre des personnes","Victime entendue",5,1.8228217,diff,2743,2020,1281,2020,,
+2499412,69007,2020,"Cambriolages de logement",Infraction,7,5.465223,diff,2743,2020,1281,2020,,
+2499413,69007,2020,"Vols de véhicule",Véhicule,,,ndiff,2743,2020,1281,2020,1.5649351,0.9707721
+2499414,69007,2020,"Vols dans les véhicules",Véhicule,11,4.0102078,diff,2743,2020,1281,2020,,
+2499415,69007,2020,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2743,2020,1281,2020,1.7610063,0.8105417
+2499416,69007,2020,"Destructions et dégradations volontaires",Infraction,9,3.2810791,diff,2743,2020,1281,2020,,
+2499417,69007,2020,"Usage de stupéfiants","Mis en cause",0,0,diff,2743,2020,1281,2020,,
+2499418,69007,2020,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,2743,2020,1281,2020,0.5454545,0.1603314
+2499419,69007,2020,"Trafic de stupéfiants","Mis en cause",,,ndiff,2743,2020,1281,2020,1.9327731,0.3787898
+2499420,69007,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,15,5.4684652,diff,2743,2020,1281,2020,,
+2499421,69008,2020,"Violences physiques intrafamiliales",Victime,,,ndiff,675,2020,300,2020,2.9444444,1.6853164
+2499422,69008,2020,"Violences physiques hors cadre familial",Victime,0,0,diff,675,2020,300,2020,,
+2499423,69008,2020,"Violences sexuelles",Victime,,,ndiff,675,2020,300,2020,2.1813472,0.8737413
+2499424,69008,2020,"Vols avec armes",Infraction,0,0,diff,675,2020,300,2020,,
+2499425,69008,2020,"Vols violents sans arme",Infraction,0,0,diff,675,2020,300,2020,,
+2499426,69008,2020,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,675,2020,300,2020,2,1.7141309
+2499427,69008,2020,"Cambriolages de logement",Infraction,,,ndiff,675,2020,300,2020,2.1136364,4.2710148
+2499428,69008,2020,"Vols de véhicule",Véhicule,0,0,diff,675,2020,300,2020,,
+2499429,69008,2020,"Vols dans les véhicules",Véhicule,0,0,diff,675,2020,300,2020,,
+2499430,69008,2020,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,675,2020,300,2020,,
+2499431,69008,2020,"Destructions et dégradations volontaires",Infraction,,,ndiff,675,2020,300,2020,2.5511811,2.8387933
+2499432,69008,2020,"Usage de stupéfiants","Mis en cause",,,ndiff,675,2020,300,2020,1.8546512,0.7966138
+2499433,69008,2020,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,675,2020,300,2020,,
+2499434,69008,2020,"Trafic de stupéfiants","Mis en cause",,,ndiff,675,2020,300,2020,1.9327731,0.3787898
+2499435,69008,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,675,2020,300,2020,3.6666667,3.8760284
+2499436,69009,2020,"Violences physiques intrafamiliales",Victime,27,3.4820738,diff,7754,2020,3209,2020,,
+2499437,69009,2020,"Violences physiques hors cadre familial",Victime,12,1.5475883,diff,7754,2020,3209,2020,,
+2499438,69009,2020,"Violences sexuelles",Victime,7,0.9027599,diff,7754,2020,3209,2020,,
+2499439,69009,2020,"Vols avec armes",Infraction,,,ndiff,7754,2020,3209,2020,1.0128205,0.1258286
+2499440,69009,2020,"Vols violents sans arme",Infraction,,,ndiff,7754,2020,3209,2020,1.0851064,0.2261245
+2499441,69009,2020,"Vols sans violence contre des personnes","Victime entendue",42,5.4165592,diff,7754,2020,3209,2020,,
+2499442,69009,2020,"Cambriolages de logement",Infraction,24,7.4779068,diff,7754,2020,3209,2020,,
+2499443,69009,2020,"Vols de véhicule",Véhicule,14,1.8055197,diff,7754,2020,3209,2020,,
+2499444,69009,2020,"Vols dans les véhicules",Véhicule,32,4.1269022,diff,7754,2020,3209,2020,,
+2499445,69009,2020,"Vols d'accessoires sur véhicules",Véhicule,8,1.0317256,diff,7754,2020,3209,2020,,
+2499446,69009,2020,"Destructions et dégradations volontaires",Infraction,41,5.2875935,diff,7754,2020,3209,2020,,
+2499447,69009,2020,"Usage de stupéfiants","Mis en cause",19,2.4503482,diff,7754,2020,3209,2020,,
+2499448,69009,2020,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,7754,2020,3209,2020,0.5454545,0.1603314
+2499449,69009,2020,"Trafic de stupéfiants","Mis en cause",,,ndiff,7754,2020,3209,2020,1.9327731,0.3787898
+2499450,69009,2020,"Escroqueries et fraudes aux moyens de paiement",Victime,40,5.1586278,diff,7754,2020,3209,2020,,
+3023116,69001,2021,"Violences physiques intrafamiliales",Victime,,,ndiff,395,2021,180,2021,2.7344633,1.6599958
+3023117,69001,2021,"Violences physiques hors cadre familial",Victime,0,0,diff,395,2021,180,2021,,
+3023118,69001,2021,"Violences sexuelles",Victime,0,0,diff,395,2021,180,2021,,
+3023119,69001,2021,"Vols avec armes",Infraction,0,0,diff,395,2021,180,2021,,
+3023120,69001,2021,"Vols violents sans arme",Infraction,0,0,diff,395,2021,180,2021,,
+3023121,69001,2021,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,395,2021,180,2021,2.4028777,2.0730405
+3023122,69001,2021,"Cambriolages de logement",Infraction,0,0,diff,395,2021,180,2021,,
+3023123,69001,2021,"Vols de véhicule",Véhicule,0,0,diff,395,2021,180,2021,,
+3023124,69001,2021,"Vols dans les véhicules",Véhicule,,,ndiff,395,2021,180,2021,2.6818182,1.6728256
+3023125,69001,2021,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,395,2021,180,2021,,
+3023126,69001,2021,"Destructions et dégradations volontaires",Infraction,,,ndiff,395,2021,180,2021,3.1969697,3.4469802
+3023127,69001,2021,"Usage de stupéfiants","Mis en cause",0,0,diff,395,2021,180,2021,,
+3023128,69001,2021,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,395,2021,180,2021,,
+3023129,69001,2021,"Trafic de stupéfiants","Mis en cause",0,0,diff,395,2021,180,2021,,
+3023130,69001,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,395,2021,180,2021,4.1804511,4.6269327
+3023131,69002,2021,"Violences physiques intrafamiliales",Victime,0,0,diff,243,2021,193,2021,,
+3023132,69002,2021,"Violences physiques hors cadre familial",Victime,0,0,diff,243,2021,193,2021,,
+3023133,69002,2021,"Violences sexuelles",Victime,0,0,diff,243,2021,193,2021,,
+3023134,69002,2021,"Vols avec armes",Infraction,0,0,diff,243,2021,193,2021,,
+3023135,69002,2021,"Vols violents sans arme",Infraction,0,0,diff,243,2021,193,2021,,
+3023136,69002,2021,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,243,2021,193,2021,,
+3023137,69002,2021,"Cambriolages de logement",Infraction,0,0,diff,243,2021,193,2021,,
+3023138,69002,2021,"Vols de véhicule",Véhicule,,,ndiff,243,2021,193,2021,2.1523179,1.3269747
+3023139,69002,2021,"Vols dans les véhicules",Véhicule,0,0,diff,243,2021,193,2021,,
+3023140,69002,2021,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,243,2021,193,2021,,
+3023141,69002,2021,"Destructions et dégradations volontaires",Infraction,,,ndiff,243,2021,193,2021,3.1969697,3.4469802
+3023142,69002,2021,"Usage de stupéfiants","Mis en cause",0,0,diff,243,2021,193,2021,,
+3023143,69002,2021,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,243,2021,193,2021,,
+3023144,69002,2021,"Trafic de stupéfiants","Mis en cause",0,0,diff,243,2021,193,2021,,
+3023145,69002,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,243,2021,193,2021,4.1804511,4.6269327
+3023146,69003,2021,"Violences physiques intrafamiliales",Victime,,,ndiff,2991,2021,1231,2021,2.7344633,1.6599958
+3023147,69003,2021,"Violences physiques hors cadre familial",Victime,,,ndiff,2991,2021,1231,2021,2.8113208,1.448111
+3023148,69003,2021,"Violences sexuelles",Victime,,,ndiff,2991,2021,1231,2021,2.3316327,0.9771534
+3023149,69003,2021,"Vols avec armes",Infraction,,,ndiff,2991,2021,1231,2021,0.9305556,0.1021803
+3023150,69003,2021,"Vols violents sans arme",Infraction,,,ndiff,2991,2021,1231,2021,1.2954545,0.2640282
+3023151,69003,2021,"Vols sans violence contre des personnes","Victime entendue",23,7.6897359,diff,2991,2021,1231,2021,,
+3023152,69003,2021,"Cambriolages de logement",Infraction,,,ndiff,2991,2021,1231,2021,2.7596899,5.4772311
+3023153,69003,2021,"Vols de véhicule",Véhicule,8,2.6746907,diff,2991,2021,1231,2021,,
+3023154,69003,2021,"Vols dans les véhicules",Véhicule,,,ndiff,2991,2021,1231,2021,2.6818182,1.6728256
+3023155,69003,2021,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2991,2021,1231,2021,2.4121622,1.0621681
+3023156,69003,2021,"Destructions et dégradations volontaires",Infraction,18,6.0180542,diff,2991,2021,1231,2021,,
+3023157,69003,2021,"Usage de stupéfiants","Mis en cause",,,ndiff,2991,2021,1231,2021,2.8443114,1.1568634
+3023158,69003,2021,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,2991,2021,1231,2021,3.9469697,1.1494177
+3023159,69003,2021,"Trafic de stupéfiants","Mis en cause",,,ndiff,2991,2021,1231,2021,1.426087,0.2719703
+3023160,69003,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,14,4.6807088,diff,2991,2021,1231,2021,,
+3023161,69004,2021,"Violences physiques intrafamiliales",Victime,,,ndiff,766,2021,296,2021,2.7344633,1.6599958
+3023162,69004,2021,"Violences physiques hors cadre familial",Victime,,,ndiff,766,2021,296,2021,2.8113208,1.448111
+3023163,69004,2021,"Violences sexuelles",Victime,,,ndiff,766,2021,296,2021,2.3316327,0.9771534
+3023164,69004,2021,"Vols avec armes",Infraction,0,0,diff,766,2021,296,2021,,
+3023165,69004,2021,"Vols violents sans arme",Infraction,0,0,diff,766,2021,296,2021,,
+3023166,69004,2021,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,766,2021,296,2021,2.4028777,2.0730405
+3023167,69004,2021,"Cambriolages de logement",Infraction,,,ndiff,766,2021,296,2021,2.7596899,5.4772311
+3023168,69004,2021,"Vols de véhicule",Véhicule,,,ndiff,766,2021,296,2021,2.1523179,1.3269747
+3023169,69004,2021,"Vols dans les véhicules",Véhicule,,,ndiff,766,2021,296,2021,2.6818182,1.6728256
+3023170,69004,2021,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,766,2021,296,2021,2.4121622,1.0621681
+3023171,69004,2021,"Destructions et dégradations volontaires",Infraction,,,ndiff,766,2021,296,2021,3.1969697,3.4469802
+3023172,69004,2021,"Usage de stupéfiants","Mis en cause",,,ndiff,766,2021,296,2021,2.8443114,1.1568634
+3023173,69004,2021,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,766,2021,296,2021,3.9469697,1.1494177
+3023174,69004,2021,"Trafic de stupéfiants","Mis en cause",0,0,diff,766,2021,296,2021,,
+3023175,69004,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,766,2021,296,2021,4.1804511,4.6269327
+3023176,69005,2021,"Violences physiques intrafamiliales",Victime,,,ndiff,607,2021,235,2021,2.7344633,1.6599958
+3023177,69005,2021,"Violences physiques hors cadre familial",Victime,,,ndiff,607,2021,235,2021,2.8113208,1.448111
+3023178,69005,2021,"Violences sexuelles",Victime,,,ndiff,607,2021,235,2021,2.3316327,0.9771534
+3023179,69005,2021,"Vols avec armes",Infraction,0,0,diff,607,2021,235,2021,,
+3023180,69005,2021,"Vols violents sans arme",Infraction,0,0,diff,607,2021,235,2021,,
+3023181,69005,2021,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,607,2021,235,2021,2.4028777,2.0730405
+3023182,69005,2021,"Cambriolages de logement",Infraction,,,ndiff,607,2021,235,2021,2.7596899,5.4772311
+3023183,69005,2021,"Vols de véhicule",Véhicule,,,ndiff,607,2021,235,2021,2.1523179,1.3269747
+3023184,69005,2021,"Vols dans les véhicules",Véhicule,,,ndiff,607,2021,235,2021,2.6818182,1.6728256
+3023185,69005,2021,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,607,2021,235,2021,2.4121622,1.0621681
+3023186,69005,2021,"Destructions et dégradations volontaires",Infraction,,,ndiff,607,2021,235,2021,3.1969697,3.4469802
+3023187,69005,2021,"Usage de stupéfiants","Mis en cause",,,ndiff,607,2021,235,2021,2.8443114,1.1568634
+3023188,69005,2021,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,607,2021,235,2021,3.9469697,1.1494177
+3023189,69005,2021,"Trafic de stupéfiants","Mis en cause",0,0,diff,607,2021,235,2021,,
+3023190,69005,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,607,2021,235,2021,4.1804511,4.6269327
+3023191,69006,2021,"Violences physiques intrafamiliales",Victime,23,4.7520661,diff,4840,2021,2679,2021,,
+3023192,69006,2021,"Violences physiques hors cadre familial",Victime,19,3.9256198,diff,4840,2021,2679,2021,,
+3023193,69006,2021,"Violences sexuelles",Victime,,,ndiff,4840,2021,2679,2021,2.3316327,0.9771534
+3023194,69006,2021,"Vols avec armes",Infraction,,,ndiff,4840,2021,2679,2021,0.9305556,0.1021803
+3023195,69006,2021,"Vols violents sans arme",Infraction,0,0,diff,4840,2021,2679,2021,,
+3023196,69006,2021,"Vols sans violence contre des personnes","Victime entendue",20,4.1322314,diff,4840,2021,2679,2021,,
+3023197,69006,2021,"Cambriolages de logement",Infraction,10,3.733149,diff,4840,2021,2679,2021,,
+3023198,69006,2021,"Vols de véhicule",Véhicule,11,2.2727273,diff,4840,2021,2679,2021,,
+3023199,69006,2021,"Vols dans les véhicules",Véhicule,11,2.2727273,diff,4840,2021,2679,2021,,
+3023200,69006,2021,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,4840,2021,2679,2021,2.4121622,1.0621681
+3023201,69006,2021,"Destructions et dégradations volontaires",Infraction,37,7.6446281,diff,4840,2021,2679,2021,,
+3023202,69006,2021,"Usage de stupéfiants","Mis en cause",,,ndiff,4840,2021,2679,2021,2.8443114,1.1568634
+3023203,69006,2021,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,4840,2021,2679,2021,3.9469697,1.1494177
+3023204,69006,2021,"Trafic de stupéfiants","Mis en cause",0,0,diff,4840,2021,2679,2021,,
+3023205,69006,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,21,4.338843,diff,4840,2021,2679,2021,,
+3023206,69007,2021,"Violences physiques intrafamiliales",Victime,,,ndiff,2751,2021,1301,2021,2.7344633,1.6599958
+3023207,69007,2021,"Violences physiques hors cadre familial",Victime,,,ndiff,2751,2021,1301,2021,2.8113208,1.448111
+3023208,69007,2021,"Violences sexuelles",Victime,,,ndiff,2751,2021,1301,2021,2.3316327,0.9771534
+3023209,69007,2021,"Vols avec armes",Infraction,0,0,diff,2751,2021,1301,2021,,
+3023210,69007,2021,"Vols violents sans arme",Infraction,0,0,diff,2751,2021,1301,2021,,
+3023211,69007,2021,"Vols sans violence contre des personnes","Victime entendue",11,3.998546,diff,2751,2021,1301,2021,,
+3023212,69007,2021,"Cambriolages de logement",Infraction,13,9.9953837,diff,2751,2021,1301,2021,,
+3023213,69007,2021,"Vols de véhicule",Véhicule,,,ndiff,2751,2021,1301,2021,2.1523179,1.3269747
+3023214,69007,2021,"Vols dans les véhicules",Véhicule,7,2.5445293,diff,2751,2021,1301,2021,,
+3023215,69007,2021,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2751,2021,1301,2021,2.4121622,1.0621681
+3023216,69007,2021,"Destructions et dégradations volontaires",Infraction,12,4.3620502,diff,2751,2021,1301,2021,,
+3023217,69007,2021,"Usage de stupéfiants","Mis en cause",,,ndiff,2751,2021,1301,2021,2.8443114,1.1568634
+3023218,69007,2021,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,2751,2021,1301,2021,3.9469697,1.1494177
+3023219,69007,2021,"Trafic de stupéfiants","Mis en cause",,,ndiff,2751,2021,1301,2021,1.426087,0.2719703
+3023220,69007,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,23,8.3605961,diff,2751,2021,1301,2021,,
+3023221,69008,2021,"Violences physiques intrafamiliales",Victime,,,ndiff,677,2021,300,2021,2.7344633,1.6599958
+3023222,69008,2021,"Violences physiques hors cadre familial",Victime,0,0,diff,677,2021,300,2021,,
+3023223,69008,2021,"Violences sexuelles",Victime,,,ndiff,677,2021,300,2021,2.3316327,0.9771534
+3023224,69008,2021,"Vols avec armes",Infraction,0,0,diff,677,2021,300,2021,,
+3023225,69008,2021,"Vols violents sans arme",Infraction,0,0,diff,677,2021,300,2021,,
+3023226,69008,2021,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,677,2021,300,2021,2.4028777,2.0730405
+3023227,69008,2021,"Cambriolages de logement",Infraction,0,0,diff,677,2021,300,2021,,
+3023228,69008,2021,"Vols de véhicule",Véhicule,0,0,diff,677,2021,300,2021,,
+3023229,69008,2021,"Vols dans les véhicules",Véhicule,0,0,diff,677,2021,300,2021,,
+3023230,69008,2021,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,677,2021,300,2021,,
+3023231,69008,2021,"Destructions et dégradations volontaires",Infraction,,,ndiff,677,2021,300,2021,3.1969697,3.4469802
+3023232,69008,2021,"Usage de stupéfiants","Mis en cause",,,ndiff,677,2021,300,2021,2.8443114,1.1568634
+3023233,69008,2021,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,677,2021,300,2021,,
+3023234,69008,2021,"Trafic de stupéfiants","Mis en cause",0,0,diff,677,2021,300,2021,,
+3023235,69008,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,677,2021,300,2021,4.1804511,4.6269327
+3023236,69009,2021,"Violences physiques intrafamiliales",Victime,24,3.0200076,diff,7947,2021,3316,2021,,
+3023237,69009,2021,"Violences physiques hors cadre familial",Victime,24,3.0200076,diff,7947,2021,3316,2021,,
+3023238,69009,2021,"Violences sexuelles",Victime,6,0.7550019,diff,7947,2021,3316,2021,,
+3023239,69009,2021,"Vols avec armes",Infraction,,,ndiff,7947,2021,3316,2021,0.9305556,0.1021803
+3023240,69009,2021,"Vols violents sans arme",Infraction,,,ndiff,7947,2021,3316,2021,1.2954545,0.2640282
+3023241,69009,2021,"Vols sans violence contre des personnes","Victime entendue",51,6.417516,diff,7947,2021,3316,2021,,
+3023242,69009,2021,"Cambriolages de logement",Infraction,20,6.0315033,diff,7947,2021,3316,2021,,
+3023243,69009,2021,"Vols de véhicule",Véhicule,14,1.7616711,diff,7947,2021,3316,2021,,
+3023244,69009,2021,"Vols dans les véhicules",Véhicule,42,5.2850132,diff,7947,2021,3316,2021,,
+3023245,69009,2021,"Vols d'accessoires sur véhicules",Véhicule,16,2.0133384,diff,7947,2021,3316,2021,,
+3023246,69009,2021,"Destructions et dégradations volontaires",Infraction,63,7.9275198,diff,7947,2021,3316,2021,,
+3023247,69009,2021,"Usage de stupéfiants","Mis en cause",35,4.4041777,diff,7947,2021,3316,2021,,
+3023248,69009,2021,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,7947,2021,3316,2021,3.9469697,1.1494177
+3023249,69009,2021,"Trafic de stupéfiants","Mis en cause",,,ndiff,7947,2021,3316,2021,1.426087,0.2719703
+3023250,69009,2021,"Escroqueries et fraudes aux moyens de paiement",Victime,39,4.9075123,diff,7947,2021,3316,2021,,
+3546916,69001,2022,"Violences physiques intrafamiliales",Victime,,,ndiff,397,2022,180,2021,3.0404624,1.9820933
+3546917,69001,2022,"Violences physiques hors cadre familial",Victime,0,0,diff,397,2022,180,2021,,
+3546918,69001,2022,"Violences sexuelles",Victime,0,0,diff,397,2022,180,2021,,
+3546919,69001,2022,"Vols avec armes",Infraction,0,0,diff,397,2022,180,2021,,
+3546920,69001,2022,"Vols violents sans arme",Infraction,0,0,diff,397,2022,180,2021,,
+3546921,69001,2022,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,397,2022,180,2021,,
+3546922,69001,2022,"Cambriolages de logement",Infraction,0,0,diff,397,2022,180,2021,,
+3546923,69001,2022,"Vols de véhicule",Véhicule,0,0,diff,397,2022,180,2021,,
+3546924,69001,2022,"Vols dans les véhicules",Véhicule,0,0,diff,397,2022,180,2021,,
+3546925,69001,2022,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,397,2022,180,2021,2.7266667,1.1839424
+3546926,69001,2022,"Destructions et dégradations volontaires",Infraction,,,ndiff,397,2022,180,2021,3.3106061,3.5081804
+3546927,69001,2022,"Usage de stupéfiants","Mis en cause",0,0,diff,397,2022,180,2021,,
+3546928,69001,2022,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,397,2022,180,2021,,
+3546929,69001,2022,"Trafic de stupéfiants","Mis en cause",0,0,diff,397,2022,180,2021,,
+3546930,69001,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,397,2022,180,2021,4.2666667,5.0485131
+3546931,69002,2022,"Violences physiques intrafamiliales",Victime,,,ndiff,239,2022,193,2021,3.0404624,1.9820933
+3546932,69002,2022,"Violences physiques hors cadre familial",Victime,0,0,diff,239,2022,193,2021,,
+3546933,69002,2022,"Violences sexuelles",Victime,0,0,diff,239,2022,193,2021,,
+3546934,69002,2022,"Vols avec armes",Infraction,0,0,diff,239,2022,193,2021,,
+3546935,69002,2022,"Vols violents sans arme",Infraction,0,0,diff,239,2022,193,2021,,
+3546936,69002,2022,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,239,2022,193,2021,,
+3546937,69002,2022,"Cambriolages de logement",Infraction,0,0,diff,239,2022,193,2021,,
+3546938,69002,2022,"Vols de véhicule",Véhicule,0,0,diff,239,2022,193,2021,,
+3546939,69002,2022,"Vols dans les véhicules",Véhicule,0,0,diff,239,2022,193,2021,,
+3546940,69002,2022,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,239,2022,193,2021,,
+3546941,69002,2022,"Destructions et dégradations volontaires",Infraction,,,ndiff,239,2022,193,2021,3.3106061,3.5081804
+3546942,69002,2022,"Usage de stupéfiants","Mis en cause",0,0,diff,239,2022,193,2021,,
+3546943,69002,2022,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,239,2022,193,2021,,
+3546944,69002,2022,"Trafic de stupéfiants","Mis en cause",0,0,diff,239,2022,193,2021,,
+3546945,69002,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,239,2022,193,2021,4.2666667,5.0485131
+3546946,69003,2022,"Violences physiques intrafamiliales",Victime,8,2.655161,diff,3013,2022,1231,2021,,
+3546947,69003,2022,"Violences physiques hors cadre familial",Victime,,,ndiff,3013,2022,1231,2021,2.721519,1.4219906
+3546948,69003,2022,"Violences sexuelles",Victime,,,ndiff,3013,2022,1231,2021,2.4517766,1.0619796
+3546949,69003,2022,"Vols avec armes",Infraction,0,0,diff,3013,2022,1231,2021,,
+3546950,69003,2022,"Vols violents sans arme",Infraction,,,ndiff,3013,2022,1231,2021,1.7640449,0.3546356
+3546951,69003,2022,"Vols sans violence contre des personnes","Victime entendue",18,5.9741122,diff,3013,2022,1231,2021,,
+3546952,69003,2022,"Cambriolages de logement",Infraction,,,ndiff,3013,2022,1231,2021,2.6492537,5.1599952
+3546953,69003,2022,"Vols de véhicule",Véhicule,6,1.9913707,diff,3013,2022,1231,2021,,
+3546954,69003,2022,"Vols dans les véhicules",Véhicule,9,2.9870561,diff,3013,2022,1231,2021,,
+3546955,69003,2022,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,3013,2022,1231,2021,2.7266667,1.1839424
+3546956,69003,2022,"Destructions et dégradations volontaires",Infraction,30,9.9568536,diff,3013,2022,1231,2021,,
+3546957,69003,2022,"Usage de stupéfiants","Mis en cause",,,ndiff,3013,2022,1231,2021,3.0299401,1.306157
+3546958,69003,2022,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,3013,2022,1231,2021,6.2348485,1.7948427
+3546959,69003,2022,"Trafic de stupéfiants","Mis en cause",,,ndiff,3013,2022,1231,2021,1.7521368,0.3375502
+3546960,69003,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,17,5.6422171,diff,3013,2022,1231,2021,,
+3546961,69004,2022,"Violences physiques intrafamiliales",Victime,,,ndiff,772,2022,296,2021,3.0404624,1.9820933
+3546962,69004,2022,"Violences physiques hors cadre familial",Victime,,,ndiff,772,2022,296,2021,2.721519,1.4219906
+3546963,69004,2022,"Violences sexuelles",Victime,,,ndiff,772,2022,296,2021,2.4517766,1.0619796
+3546964,69004,2022,"Vols avec armes",Infraction,0,0,diff,772,2022,296,2021,,
+3546965,69004,2022,"Vols violents sans arme",Infraction,0,0,diff,772,2022,296,2021,,
+3546966,69004,2022,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,772,2022,296,2021,2.6805556,2.2745888
+3546967,69004,2022,"Cambriolages de logement",Infraction,,,ndiff,772,2022,296,2021,2.6492537,5.1599952
+3546968,69004,2022,"Vols de véhicule",Véhicule,,,ndiff,772,2022,296,2021,2.3846154,1.4076726
+3546969,69004,2022,"Vols dans les véhicules",Véhicule,,,ndiff,772,2022,296,2021,2.4964539,1.5184457
+3546970,69004,2022,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,772,2022,296,2021,2.7266667,1.1839424
+3546971,69004,2022,"Destructions et dégradations volontaires",Infraction,,,ndiff,772,2022,296,2021,3.3106061,3.5081804
+3546972,69004,2022,"Usage de stupéfiants","Mis en cause",,,ndiff,772,2022,296,2021,3.0299401,1.306157
+3546973,69004,2022,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,772,2022,296,2021,6.2348485,1.7948427
+3546974,69004,2022,"Trafic de stupéfiants","Mis en cause",0,0,diff,772,2022,296,2021,,
+3546975,69004,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,772,2022,296,2021,4.2666667,5.0485131
+3546976,69005,2022,"Violences physiques intrafamiliales",Victime,,,ndiff,629,2022,235,2021,3.0404624,1.9820933
+3546977,69005,2022,"Violences physiques hors cadre familial",Victime,,,ndiff,629,2022,235,2021,2.721519,1.4219906
+3546978,69005,2022,"Violences sexuelles",Victime,,,ndiff,629,2022,235,2021,2.4517766,1.0619796
+3546979,69005,2022,"Vols avec armes",Infraction,0,0,diff,629,2022,235,2021,,
+3546980,69005,2022,"Vols violents sans arme",Infraction,,,ndiff,629,2022,235,2021,1.7640449,0.3546356
+3546981,69005,2022,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,629,2022,235,2021,2.6805556,2.2745888
+3546982,69005,2022,"Cambriolages de logement",Infraction,,,ndiff,629,2022,235,2021,2.6492537,5.1599952
+3546983,69005,2022,"Vols de véhicule",Véhicule,,,ndiff,629,2022,235,2021,2.3846154,1.4076726
+3546984,69005,2022,"Vols dans les véhicules",Véhicule,,,ndiff,629,2022,235,2021,2.4964539,1.5184457
+3546985,69005,2022,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,629,2022,235,2021,2.7266667,1.1839424
+3546986,69005,2022,"Destructions et dégradations volontaires",Infraction,,,ndiff,629,2022,235,2021,3.3106061,3.5081804
+3546987,69005,2022,"Usage de stupéfiants","Mis en cause",,,ndiff,629,2022,235,2021,3.0299401,1.306157
+3546988,69005,2022,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,629,2022,235,2021,6.2348485,1.7948427
+3546989,69005,2022,"Trafic de stupéfiants","Mis en cause",0,0,diff,629,2022,235,2021,,
+3546990,69005,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,629,2022,235,2021,4.2666667,5.0485131
+3546991,69006,2022,"Violences physiques intrafamiliales",Victime,21,4.3227666,diff,4858,2022,2679,2021,,
+3546992,69006,2022,"Violences physiques hors cadre familial",Victime,22,4.5286126,diff,4858,2022,2679,2021,,
+3546993,69006,2022,"Violences sexuelles",Victime,7,1.4409222,diff,4858,2022,2679,2021,,
+3546994,69006,2022,"Vols avec armes",Infraction,,,ndiff,4858,2022,2679,2021,1.046875,0.1055371
+3546995,69006,2022,"Vols violents sans arme",Infraction,0,0,diff,4858,2022,2679,2021,,
+3546996,69006,2022,"Vols sans violence contre des personnes","Victime entendue",15,3.0876904,diff,4858,2022,2679,2021,,
+3546997,69006,2022,"Cambriolages de logement",Infraction,21,7.8396129,diff,4858,2022,2679,2021,,
+3546998,69006,2022,"Vols de véhicule",Véhicule,,,ndiff,4858,2022,2679,2021,2.3846154,1.4076726
+3546999,69006,2022,"Vols dans les véhicules",Véhicule,12,2.4701523,diff,4858,2022,2679,2021,,
+3547000,69006,2022,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,4858,2022,2679,2021,2.7266667,1.1839424
+3547001,69006,2022,"Destructions et dégradations volontaires",Infraction,78,16.0559901,diff,4858,2022,2679,2021,,
+3547002,69006,2022,"Usage de stupéfiants","Mis en cause",,,ndiff,4858,2022,2679,2021,3.0299401,1.306157
+3547003,69006,2022,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,4858,2022,2679,2021,6.2348485,1.7948427
+3547004,69006,2022,"Trafic de stupéfiants","Mis en cause",,,ndiff,4858,2022,2679,2021,1.7521368,0.3375502
+3547005,69006,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,26,5.3519967,diff,4858,2022,2679,2021,,
+3547006,69007,2022,"Violences physiques intrafamiliales",Victime,,,ndiff,2760,2022,1301,2021,3.0404624,1.9820933
+3547007,69007,2022,"Violences physiques hors cadre familial",Victime,,,ndiff,2760,2022,1301,2021,2.721519,1.4219906
+3547008,69007,2022,"Violences sexuelles",Victime,,,ndiff,2760,2022,1301,2021,2.4517766,1.0619796
+3547009,69007,2022,"Vols avec armes",Infraction,0,0,diff,2760,2022,1301,2021,,
+3547010,69007,2022,"Vols violents sans arme",Infraction,0,0,diff,2760,2022,1301,2021,,
+3547011,69007,2022,"Vols sans violence contre des personnes","Victime entendue",13,4.7101449,diff,2760,2022,1301,2021,,
+3547012,69007,2022,"Cambriolages de logement",Infraction,5,3.8443783,diff,2760,2022,1301,2021,,
+3547013,69007,2022,"Vols de véhicule",Véhicule,,,ndiff,2760,2022,1301,2021,2.3846154,1.4076726
+3547014,69007,2022,"Vols dans les véhicules",Véhicule,,,ndiff,2760,2022,1301,2021,2.4964539,1.5184457
+3547015,69007,2022,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2760,2022,1301,2021,2.7266667,1.1839424
+3547016,69007,2022,"Destructions et dégradations volontaires",Infraction,10,3.6231884,diff,2760,2022,1301,2021,,
+3547017,69007,2022,"Usage de stupéfiants","Mis en cause",,,ndiff,2760,2022,1301,2021,3.0299401,1.306157
+3547018,69007,2022,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,2760,2022,1301,2021,6.2348485,1.7948427
+3547019,69007,2022,"Trafic de stupéfiants","Mis en cause",0,0,diff,2760,2022,1301,2021,,
+3547020,69007,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,14,5.0724638,diff,2760,2022,1301,2021,,
+3547021,69008,2022,"Violences physiques intrafamiliales",Victime,,,ndiff,674,2022,300,2021,3.0404624,1.9820933
+3547022,69008,2022,"Violences physiques hors cadre familial",Victime,0,0,diff,674,2022,300,2021,,
+3547023,69008,2022,"Violences sexuelles",Victime,,,ndiff,674,2022,300,2021,2.4517766,1.0619796
+3547024,69008,2022,"Vols avec armes",Infraction,0,0,diff,674,2022,300,2021,,
+3547025,69008,2022,"Vols violents sans arme",Infraction,0,0,diff,674,2022,300,2021,,
+3547026,69008,2022,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,674,2022,300,2021,,
+3547027,69008,2022,"Cambriolages de logement",Infraction,,,ndiff,674,2022,300,2021,2.6492537,5.1599952
+3547028,69008,2022,"Vols de véhicule",Véhicule,,,ndiff,674,2022,300,2021,2.3846154,1.4076726
+3547029,69008,2022,"Vols dans les véhicules",Véhicule,0,0,diff,674,2022,300,2021,,
+3547030,69008,2022,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,674,2022,300,2021,,
+3547031,69008,2022,"Destructions et dégradations volontaires",Infraction,,,ndiff,674,2022,300,2021,3.3106061,3.5081804
+3547032,69008,2022,"Usage de stupéfiants","Mis en cause",,,ndiff,674,2022,300,2021,3.0299401,1.306157
+3547033,69008,2022,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,674,2022,300,2021,,
+3547034,69008,2022,"Trafic de stupéfiants","Mis en cause",0,0,diff,674,2022,300,2021,,
+3547035,69008,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,674,2022,300,2021,4.2666667,5.0485131
+3547036,69009,2022,"Violences physiques intrafamiliales",Victime,42,5.1603391,diff,8139,2022,3316,2021,,
+3547037,69009,2022,"Violences physiques hors cadre familial",Victime,31,3.8088217,diff,8139,2022,3316,2021,,
+3547038,69009,2022,"Violences sexuelles",Victime,11,1.3515174,diff,8139,2022,3316,2021,,
+3547039,69009,2022,"Vols avec armes",Infraction,,,ndiff,8139,2022,3316,2021,1.046875,0.1055371
+3547040,69009,2022,"Vols violents sans arme",Infraction,,,ndiff,8139,2022,3316,2021,1.7640449,0.3546356
+3547041,69009,2022,"Vols sans violence contre des personnes","Victime entendue",56,6.8804521,diff,8139,2022,3316,2021,,
+3547042,69009,2022,"Cambriolages de logement",Infraction,30,9.047255,diff,8139,2022,3316,2021,,
+3547043,69009,2022,"Vols de véhicule",Véhicule,13,1.5972478,diff,8139,2022,3316,2021,,
+3547044,69009,2022,"Vols dans les véhicules",Véhicule,16,1.9658435,diff,8139,2022,3316,2021,,
+3547045,69009,2022,"Vols d'accessoires sur véhicules",Véhicule,15,1.8429783,diff,8139,2022,3316,2021,,
+3547046,69009,2022,"Destructions et dégradations volontaires",Infraction,59,7.2490478,diff,8139,2022,3316,2021,,
+3547047,69009,2022,"Usage de stupéfiants","Mis en cause",49,6.0203956,diff,8139,2022,3316,2021,,
+3547048,69009,2022,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,8139,2022,3316,2021,6.2348485,1.7948427
+3547049,69009,2022,"Trafic de stupéfiants","Mis en cause",,,ndiff,8139,2022,3316,2021,1.7521368,0.3375502
+3547050,69009,2022,"Escroqueries et fraudes aux moyens de paiement",Victime,59,7.2490478,diff,8139,2022,3316,2021,,
+4070716,69001,2023,"Violences physiques intrafamiliales",Victime,,,ndiff,397,2022,180,2021,3.0941176,2.124952
+4070717,69001,2023,"Violences physiques hors cadre familial",Victime,0,0,diff,397,2022,180,2021,,
+4070718,69001,2023,"Violences sexuelles",Victime,,,ndiff,397,2022,180,2021,2.3917526,1.1285776
+4070719,69001,2023,"Vols avec armes",Infraction,0,0,diff,397,2022,180,2021,,
+4070720,69001,2023,"Vols violents sans arme",Infraction,0,0,diff,397,2022,180,2021,,
+4070721,69001,2023,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,397,2022,180,2021,,
+4070722,69001,2023,"Cambriolages de logement",Infraction,0,0,diff,397,2022,180,2021,,
+4070723,69001,2023,"Vols de véhicule",Véhicule,0,0,diff,397,2022,180,2021,,
+4070724,69001,2023,"Vols dans les véhicules",Véhicule,0,0,diff,397,2022,180,2021,,
+4070725,69001,2023,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,397,2022,180,2021,2.3309353,1.1527131
+4070726,69001,2023,"Destructions et dégradations volontaires",Infraction,,,ndiff,397,2022,180,2021,3.8769231,4.1080817
+4070727,69001,2023,"Usage de stupéfiants","Mis en cause",0,0,diff,397,2022,180,2021,,
+4070728,69001,2023,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,397,2022,180,2021,,
+4070729,69001,2023,"Trafic de stupéfiants","Mis en cause",0,0,diff,397,2022,180,2021,,
+4070730,69001,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,397,2022,180,2021,3.953271,5.2996893
+4070731,69002,2023,"Violences physiques intrafamiliales",Victime,,,ndiff,239,2022,193,2021,3.0941176,2.124952
+4070732,69002,2023,"Violences physiques hors cadre familial",Victime,0,0,diff,239,2022,193,2021,,
+4070733,69002,2023,"Violences sexuelles",Victime,,,ndiff,239,2022,193,2021,2.3917526,1.1285776
+4070734,69002,2023,"Vols avec armes",Infraction,0,0,diff,239,2022,193,2021,,
+4070735,69002,2023,"Vols violents sans arme",Infraction,0,0,diff,239,2022,193,2021,,
+4070736,69002,2023,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,239,2022,193,2021,2.2133333,1.9081447
+4070737,69002,2023,"Cambriolages de logement",Infraction,0,0,diff,239,2022,193,2021,,
+4070738,69002,2023,"Vols de véhicule",Véhicule,0,0,diff,239,2022,193,2021,,
+4070739,69002,2023,"Vols dans les véhicules",Véhicule,0,0,diff,239,2022,193,2021,,
+4070740,69002,2023,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,239,2022,193,2021,,
+4070741,69002,2023,"Destructions et dégradations volontaires",Infraction,,,ndiff,239,2022,193,2021,3.8769231,4.1080817
+4070742,69002,2023,"Usage de stupéfiants","Mis en cause",0,0,diff,239,2022,193,2021,,
+4070743,69002,2023,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,239,2022,193,2021,,
+4070744,69002,2023,"Trafic de stupéfiants","Mis en cause",0,0,diff,239,2022,193,2021,,
+4070745,69002,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,239,2022,193,2021,3.953271,5.2996893
+4070746,69003,2023,"Violences physiques intrafamiliales",Victime,8,2.655161,diff,3013,2022,1231,2021,,
+4070747,69003,2023,"Violences physiques hors cadre familial",Victime,,,ndiff,3013,2022,1231,2021,2.2628205,1.2505092
+4070748,69003,2023,"Violences sexuelles",Victime,,,ndiff,3013,2022,1231,2021,2.3917526,1.1285776
+4070749,69003,2023,"Vols avec armes",Infraction,,,ndiff,3013,2022,1231,2021,1.1384615,0.1065846
+4070750,69003,2023,"Vols violents sans arme",Infraction,,,ndiff,3013,2022,1231,2021,1.137931,0.2312204
+4070751,69003,2023,"Vols sans violence contre des personnes","Victime entendue",24,7.9654829,diff,3013,2022,1231,2021,,
+4070752,69003,2023,"Cambriolages de logement",Infraction,,,ndiff,3013,2022,1231,2021,2.3550725,4.6350772
+4070753,69003,2023,"Vols de véhicule",Véhicule,11,3.6508463,diff,3013,2022,1231,2021,,
+4070754,69003,2023,"Vols dans les véhicules",Véhicule,14,4.6465317,diff,3013,2022,1231,2021,,
+4070755,69003,2023,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,3013,2022,1231,2021,2.3309353,1.1527131
+4070756,69003,2023,"Destructions et dégradations volontaires",Infraction,20,6.6379024,diff,3013,2022,1231,2021,,
+4070757,69003,2023,"Usage de stupéfiants","Mis en cause",6,1.9913707,diff,3013,2022,1231,2021,,
+4070758,69003,2023,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,3013,2022,1231,2021,2.568,0.881609
+4070759,69003,2023,"Trafic de stupéfiants","Mis en cause",,,ndiff,3013,2022,1231,2021,1.6486486,0.3059745
+4070760,69003,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,24,7.9654829,diff,3013,2022,1231,2021,,
+4070761,69004,2023,"Violences physiques intrafamiliales",Victime,,,ndiff,772,2022,296,2021,3.0941176,2.124952
+4070762,69004,2023,"Violences physiques hors cadre familial",Victime,,,ndiff,772,2022,296,2021,2.2628205,1.2505092
+4070763,69004,2023,"Violences sexuelles",Victime,0,0,diff,772,2022,296,2021,,
+4070764,69004,2023,"Vols avec armes",Infraction,0,0,diff,772,2022,296,2021,,
+4070765,69004,2023,"Vols violents sans arme",Infraction,0,0,diff,772,2022,296,2021,,
+4070766,69004,2023,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,772,2022,296,2021,2.2133333,1.9081447
+4070767,69004,2023,"Cambriolages de logement",Infraction,,,ndiff,772,2022,296,2021,2.3550725,4.6350772
+4070768,69004,2023,"Vols de véhicule",Véhicule,,,ndiff,772,2022,296,2021,2.7933333,1.8021893
+4070769,69004,2023,"Vols dans les véhicules",Véhicule,,,ndiff,772,2022,296,2021,2.6418919,1.6541862
+4070770,69004,2023,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,772,2022,296,2021,2.3309353,1.1527131
+4070771,69004,2023,"Destructions et dégradations volontaires",Infraction,,,ndiff,772,2022,296,2021,3.8769231,4.1080817
+4070772,69004,2023,"Usage de stupéfiants","Mis en cause",,,ndiff,772,2022,296,2021,2.462069,1.1404075
+4070773,69004,2023,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,772,2022,296,2021,2.568,0.881609
+4070774,69004,2023,"Trafic de stupéfiants","Mis en cause",0,0,diff,772,2022,296,2021,,
+4070775,69004,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,772,2022,296,2021,3.953271,5.2996893
+4070776,69005,2023,"Violences physiques intrafamiliales",Victime,,,ndiff,629,2022,235,2021,3.0941176,2.124952
+4070777,69005,2023,"Violences physiques hors cadre familial",Victime,,,ndiff,629,2022,235,2021,2.2628205,1.2505092
+4070778,69005,2023,"Violences sexuelles",Victime,,,ndiff,629,2022,235,2021,2.3917526,1.1285776
+4070779,69005,2023,"Vols avec armes",Infraction,0,0,diff,629,2022,235,2021,,
+4070780,69005,2023,"Vols violents sans arme",Infraction,,,ndiff,629,2022,235,2021,1.137931,0.2312204
+4070781,69005,2023,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,629,2022,235,2021,2.2133333,1.9081447
+4070782,69005,2023,"Cambriolages de logement",Infraction,,,ndiff,629,2022,235,2021,2.3550725,4.6350772
+4070783,69005,2023,"Vols de véhicule",Véhicule,,,ndiff,629,2022,235,2021,2.7933333,1.8021893
+4070784,69005,2023,"Vols dans les véhicules",Véhicule,,,ndiff,629,2022,235,2021,2.6418919,1.6541862
+4070785,69005,2023,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,629,2022,235,2021,2.3309353,1.1527131
+4070786,69005,2023,"Destructions et dégradations volontaires",Infraction,,,ndiff,629,2022,235,2021,3.8769231,4.1080817
+4070787,69005,2023,"Usage de stupéfiants","Mis en cause",,,ndiff,629,2022,235,2021,2.462069,1.1404075
+4070788,69005,2023,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,629,2022,235,2021,,
+4070789,69005,2023,"Trafic de stupéfiants","Mis en cause",,,ndiff,629,2022,235,2021,1.6486486,0.3059745
+4070790,69005,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,10,15.8982512,diff,629,2022,235,2021,,
+4070791,69006,2023,"Violences physiques intrafamiliales",Victime,15,3.0876904,diff,4858,2022,2679,2021,,
+4070792,69006,2023,"Violences physiques hors cadre familial",Victime,16,3.2935364,diff,4858,2022,2679,2021,,
+4070793,69006,2023,"Violences sexuelles",Victime,8,1.6467682,diff,4858,2022,2679,2021,,
+4070794,69006,2023,"Vols avec armes",Infraction,0,0,diff,4858,2022,2679,2021,,
+4070795,69006,2023,"Vols violents sans arme",Infraction,,,ndiff,4858,2022,2679,2021,1.137931,0.2312204
+4070796,69006,2023,"Vols sans violence contre des personnes","Victime entendue",17,3.4993825,diff,4858,2022,2679,2021,,
+4070797,69006,2023,"Cambriolages de logement",Infraction,17,6.3463533,diff,4858,2022,2679,2021,,
+4070798,69006,2023,"Vols de véhicule",Véhicule,,,ndiff,4858,2022,2679,2021,2.7933333,1.8021893
+4070799,69006,2023,"Vols dans les véhicules",Véhicule,9,1.8526142,diff,4858,2022,2679,2021,,
+4070800,69006,2023,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,4858,2022,2679,2021,2.3309353,1.1527131
+4070801,69006,2023,"Destructions et dégradations volontaires",Infraction,36,7.410457,diff,4858,2022,2679,2021,,
+4070802,69006,2023,"Usage de stupéfiants","Mis en cause",,,ndiff,4858,2022,2679,2021,2.462069,1.1404075
+4070803,69006,2023,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,4858,2022,2679,2021,2.568,0.881609
+4070804,69006,2023,"Trafic de stupéfiants","Mis en cause",,,ndiff,4858,2022,2679,2021,1.6486486,0.3059745
+4070805,69006,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,28,5.7636888,diff,4858,2022,2679,2021,,
+4070806,69007,2023,"Violences physiques intrafamiliales",Victime,,,ndiff,2760,2022,1301,2021,3.0941176,2.124952
+4070807,69007,2023,"Violences physiques hors cadre familial",Victime,,,ndiff,2760,2022,1301,2021,2.2628205,1.2505092
+4070808,69007,2023,"Violences sexuelles",Victime,,,ndiff,2760,2022,1301,2021,2.3917526,1.1285776
+4070809,69007,2023,"Vols avec armes",Infraction,0,0,diff,2760,2022,1301,2021,,
+4070810,69007,2023,"Vols violents sans arme",Infraction,0,0,diff,2760,2022,1301,2021,,
+4070811,69007,2023,"Vols sans violence contre des personnes","Victime entendue",14,5.0724638,diff,2760,2022,1301,2021,,
+4070812,69007,2023,"Cambriolages de logement",Infraction,,,ndiff,2760,2022,1301,2021,2.3550725,4.6350772
+4070813,69007,2023,"Vols de véhicule",Véhicule,,,ndiff,2760,2022,1301,2021,2.7933333,1.8021893
+4070814,69007,2023,"Vols dans les véhicules",Véhicule,,,ndiff,2760,2022,1301,2021,2.6418919,1.6541862
+4070815,69007,2023,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,2760,2022,1301,2021,2.3309353,1.1527131
+4070816,69007,2023,"Destructions et dégradations volontaires",Infraction,12,4.3478261,diff,2760,2022,1301,2021,,
+4070817,69007,2023,"Usage de stupéfiants","Mis en cause",,,ndiff,2760,2022,1301,2021,2.462069,1.1404075
+4070818,69007,2023,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,2760,2022,1301,2021,2.568,0.881609
+4070819,69007,2023,"Trafic de stupéfiants","Mis en cause",,,ndiff,2760,2022,1301,2021,1.6486486,0.3059745
+4070820,69007,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,25,9.057971,diff,2760,2022,1301,2021,,
+4070821,69008,2023,"Violences physiques intrafamiliales",Victime,,,ndiff,674,2022,300,2021,3.0941176,2.124952
+4070822,69008,2023,"Violences physiques hors cadre familial",Victime,0,0,diff,674,2022,300,2021,,
+4070823,69008,2023,"Violences sexuelles",Victime,,,ndiff,674,2022,300,2021,2.3917526,1.1285776
+4070824,69008,2023,"Vols avec armes",Infraction,0,0,diff,674,2022,300,2021,,
+4070825,69008,2023,"Vols violents sans arme",Infraction,0,0,diff,674,2022,300,2021,,
+4070826,69008,2023,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,674,2022,300,2021,2.2133333,1.9081447
+4070827,69008,2023,"Cambriolages de logement",Infraction,,,ndiff,674,2022,300,2021,2.3550725,4.6350772
+4070828,69008,2023,"Vols de véhicule",Véhicule,,,ndiff,674,2022,300,2021,2.7933333,1.8021893
+4070829,69008,2023,"Vols dans les véhicules",Véhicule,0,0,diff,674,2022,300,2021,,
+4070830,69008,2023,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,674,2022,300,2021,,
+4070831,69008,2023,"Destructions et dégradations volontaires",Infraction,,,ndiff,674,2022,300,2021,3.8769231,4.1080817
+4070832,69008,2023,"Usage de stupéfiants","Mis en cause",0,0,diff,674,2022,300,2021,,
+4070833,69008,2023,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,674,2022,300,2021,,
+4070834,69008,2023,"Trafic de stupéfiants","Mis en cause",0,0,diff,674,2022,300,2021,,
+4070835,69008,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,674,2022,300,2021,3.953271,5.2996893
+4070836,69009,2023,"Violences physiques intrafamiliales",Victime,31,3.8088217,diff,8139,2022,3316,2021,,
+4070837,69009,2023,"Violences physiques hors cadre familial",Victime,19,2.3344391,diff,8139,2022,3316,2021,,
+4070838,69009,2023,"Violences sexuelles",Victime,13,1.5972478,diff,8139,2022,3316,2021,,
+4070839,69009,2023,"Vols avec armes",Infraction,,,ndiff,8139,2022,3316,2021,1.1384615,0.1065846
+4070840,69009,2023,"Vols violents sans arme",Infraction,,,ndiff,8139,2022,3316,2021,1.137931,0.2312204
+4070841,69009,2023,"Vols sans violence contre des personnes","Victime entendue",36,4.4231478,diff,8139,2022,3316,2021,,
+4070842,69009,2023,"Cambriolages de logement",Infraction,26,7.8409543,diff,8139,2022,3316,2021,,
+4070843,69009,2023,"Vols de véhicule",Véhicule,12,1.4743826,diff,8139,2022,3316,2021,,
+4070844,69009,2023,"Vols dans les véhicules",Véhicule,27,3.3173609,diff,8139,2022,3316,2021,,
+4070845,69009,2023,"Vols d'accessoires sur véhicules",Véhicule,14,1.720113,diff,8139,2022,3316,2021,,
+4070846,69009,2023,"Destructions et dégradations volontaires",Infraction,49,6.0203956,diff,8139,2022,3316,2021,,
+4070847,69009,2023,"Usage de stupéfiants","Mis en cause",33,4.0545522,diff,8139,2022,3316,2021,,
+4070848,69009,2023,"Usage de stupéfiants (AFD)","Mis en cause",13,1.5972478,diff,8139,2022,3316,2021,,
+4070849,69009,2023,"Trafic de stupéfiants","Mis en cause",,,ndiff,8139,2022,3316,2021,1.6486486,0.3059745
+4070850,69009,2023,"Escroqueries et fraudes aux moyens de paiement",Victime,64,7.8633739,diff,8139,2022,3316,2021,,
+4594516,69001,2024,"Violences physiques intrafamiliales",Victime,,,ndiff,397,2022,180,2021,2.6419753,1.9461357
+4594517,69001,2024,"Violences physiques hors cadre familial",Victime,0,0,diff,397,2022,180,2021,,
+4594518,69001,2024,"Violences sexuelles",Victime,,,ndiff,397,2022,180,2021,2.507772,1.2567283
+4594519,69001,2024,"Vols avec armes",Infraction,0,0,diff,397,2022,180,2021,,
+4594520,69001,2024,"Vols violents sans arme",Infraction,0,0,diff,397,2022,180,2021,,
+4594521,69001,2024,"Vols sans violence contre des personnes","Victime entendue",0,0,diff,397,2022,180,2021,,
+4594522,69001,2024,"Cambriolages de logement",Infraction,,,ndiff,397,2022,180,2021,2.8732394,5.8821832
+4594523,69001,2024,"Vols de véhicule",Véhicule,0,0,diff,397,2022,180,2021,,
+4594524,69001,2024,"Vols dans les véhicules",Véhicule,0,0,diff,397,2022,180,2021,,
+4594525,69001,2024,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,397,2022,180,2021,2.1944444,1.0716551
+4594526,69001,2024,"Destructions et dégradations volontaires",Infraction,,,ndiff,397,2022,180,2021,3.24,3.5269836
+4594527,69001,2024,"Usage de stupéfiants","Mis en cause",0,0,diff,397,2022,180,2021,,
+4594528,69001,2024,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,397,2022,180,2021,,
+4594529,69001,2024,"Trafic de stupéfiants","Mis en cause",0,0,diff,397,2022,180,2021,,
+4594530,69001,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,397,2022,180,2021,3.7040816,5.148571
+4594531,69002,2024,"Violences physiques intrafamiliales",Victime,,,ndiff,239,2022,193,2021,2.6419753,1.9461357
+4594532,69002,2024,"Violences physiques hors cadre familial",Victime,,,ndiff,239,2022,193,2021,1.9802632,1.1179575
+4594533,69002,2024,"Violences sexuelles",Victime,,,ndiff,239,2022,193,2021,2.507772,1.2567283
+4594534,69002,2024,"Vols avec armes",Infraction,0,0,diff,239,2022,193,2021,,
+4594535,69002,2024,"Vols violents sans arme",Infraction,0,0,diff,239,2022,193,2021,,
+4594536,69002,2024,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,239,2022,193,2021,2.3443709,1.9964132
+4594537,69002,2024,"Cambriolages de logement",Infraction,,,ndiff,239,2022,193,2021,2.8732394,5.8821832
+4594538,69002,2024,"Vols de véhicule",Véhicule,0,0,diff,239,2022,193,2021,,
+4594539,69002,2024,"Vols dans les véhicules",Véhicule,,,ndiff,239,2022,193,2021,2.6891892,1.7141504
+4594540,69002,2024,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,239,2022,193,2021,,
+4594541,69002,2024,"Destructions et dégradations volontaires",Infraction,,,ndiff,239,2022,193,2021,3.24,3.5269836
+4594542,69002,2024,"Usage de stupéfiants","Mis en cause",0,0,diff,239,2022,193,2021,,
+4594543,69002,2024,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,239,2022,193,2021,,
+4594544,69002,2024,"Trafic de stupéfiants","Mis en cause",0,0,diff,239,2022,193,2021,,
+4594545,69002,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,239,2022,193,2021,3.7040816,5.148571
+4594546,69003,2024,"Violences physiques intrafamiliales",Victime,11,3.6508463,diff,3013,2022,1231,2021,,
+4594547,69003,2024,"Violences physiques hors cadre familial",Victime,,,ndiff,3013,2022,1231,2021,1.9802632,1.1179575
+4594548,69003,2024,"Violences sexuelles",Victime,,,ndiff,3013,2022,1231,2021,2.507772,1.2567283
+4594549,69003,2024,"Vols avec armes",Infraction,,,ndiff,3013,2022,1231,2021,0.8387097,0.0759239
+4594550,69003,2024,"Vols violents sans arme",Infraction,,,ndiff,3013,2022,1231,2021,1.1595745,0.2336454
+4594551,69003,2024,"Vols sans violence contre des personnes","Victime entendue",26,8.6292731,diff,3013,2022,1231,2021,,
+4594552,69003,2024,"Cambriolages de logement",Infraction,11,8.9358502,diff,3013,2022,1231,2021,,
+4594553,69003,2024,"Vols de véhicule",Véhicule,16,5.3103219,diff,3013,2022,1231,2021,,
+4594554,69003,2024,"Vols dans les véhicules",Véhicule,21,6.9697975,diff,3013,2022,1231,2021,,
+4594555,69003,2024,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,3013,2022,1231,2021,2.1944444,1.0716551
+4594556,69003,2024,"Destructions et dégradations volontaires",Infraction,19,6.3060073,diff,3013,2022,1231,2021,,
+4594557,69003,2024,"Usage de stupéfiants","Mis en cause",12,3.9827415,diff,3013,2022,1231,2021,,
+4594558,69003,2024,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,3013,2022,1231,2021,2.7086614,0.9763103
+4594559,69003,2024,"Trafic de stupéfiants","Mis en cause",,,ndiff,3013,2022,1231,2021,1.4040404,0.2721222
+4594560,69003,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,23,7.6335878,diff,3013,2022,1231,2021,,
+4594561,69004,2024,"Violences physiques intrafamiliales",Victime,,,ndiff,772,2022,296,2021,2.6419753,1.9461357
+4594562,69004,2024,"Violences physiques hors cadre familial",Victime,,,ndiff,772,2022,296,2021,1.9802632,1.1179575
+4594563,69004,2024,"Violences sexuelles",Victime,0,0,diff,772,2022,296,2021,,
+4594564,69004,2024,"Vols avec armes",Infraction,0,0,diff,772,2022,296,2021,,
+4594565,69004,2024,"Vols violents sans arme",Infraction,0,0,diff,772,2022,296,2021,,
+4594566,69004,2024,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,772,2022,296,2021,2.3443709,1.9964132
+4594567,69004,2024,"Cambriolages de logement",Infraction,,,ndiff,772,2022,296,2021,2.8732394,5.8821832
+4594568,69004,2024,"Vols de véhicule",Véhicule,,,ndiff,772,2022,296,2021,2.3546099,1.5718357
+4594569,69004,2024,"Vols dans les véhicules",Véhicule,,,ndiff,772,2022,296,2021,2.6891892,1.7141504
+4594570,69004,2024,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,772,2022,296,2021,,
+4594571,69004,2024,"Destructions et dégradations volontaires",Infraction,,,ndiff,772,2022,296,2021,3.24,3.5269836
+4594572,69004,2024,"Usage de stupéfiants","Mis en cause",,,ndiff,772,2022,296,2021,2.3,1.0810412
+4594573,69004,2024,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,772,2022,296,2021,2.7086614,0.9763103
+4594574,69004,2024,"Trafic de stupéfiants","Mis en cause",0,0,diff,772,2022,296,2021,,
+4594575,69004,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,772,2022,296,2021,3.7040816,5.148571
+4594576,69005,2024,"Violences physiques intrafamiliales",Victime,,,ndiff,629,2022,235,2021,2.6419753,1.9461357
+4594577,69005,2024,"Violences physiques hors cadre familial",Victime,,,ndiff,629,2022,235,2021,1.9802632,1.1179575
+4594578,69005,2024,"Violences sexuelles",Victime,,,ndiff,629,2022,235,2021,2.507772,1.2567283
+4594579,69005,2024,"Vols avec armes",Infraction,0,0,diff,629,2022,235,2021,,
+4594580,69005,2024,"Vols violents sans arme",Infraction,,,ndiff,629,2022,235,2021,1.1595745,0.2336454
+4594581,69005,2024,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,629,2022,235,2021,2.3443709,1.9964132
+4594582,69005,2024,"Cambriolages de logement",Infraction,,,ndiff,629,2022,235,2021,2.8732394,5.8821832
+4594583,69005,2024,"Vols de véhicule",Véhicule,,,ndiff,629,2022,235,2021,2.3546099,1.5718357
+4594584,69005,2024,"Vols dans les véhicules",Véhicule,,,ndiff,629,2022,235,2021,2.6891892,1.7141504
+4594585,69005,2024,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,629,2022,235,2021,2.1944444,1.0716551
+4594586,69005,2024,"Destructions et dégradations volontaires",Infraction,,,ndiff,629,2022,235,2021,3.24,3.5269836
+4594587,69005,2024,"Usage de stupéfiants","Mis en cause",,,ndiff,629,2022,235,2021,2.3,1.0810412
+4594588,69005,2024,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,629,2022,235,2021,,
+4594589,69005,2024,"Trafic de stupéfiants","Mis en cause",,,ndiff,629,2022,235,2021,1.4040404,0.2721222
+4594590,69005,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,10,15.8982512,diff,629,2022,235,2021,,
+4594591,69006,2024,"Violences physiques intrafamiliales",Victime,17,3.4993825,diff,4858,2022,2679,2021,,
+4594592,69006,2024,"Violences physiques hors cadre familial",Victime,28,5.7636888,diff,4858,2022,2679,2021,,
+4594593,69006,2024,"Violences sexuelles",Victime,10,2.0584603,diff,4858,2022,2679,2021,,
+4594594,69006,2024,"Vols avec armes",Infraction,0,0,diff,4858,2022,2679,2021,,
+4594595,69006,2024,"Vols violents sans arme",Infraction,,,ndiff,4858,2022,2679,2021,1.1595745,0.2336454
+4594596,69006,2024,"Vols sans violence contre des personnes","Victime entendue",17,3.4993825,diff,4858,2022,2679,2021,,
+4594597,69006,2024,"Cambriolages de logement",Infraction,7,2.6132043,diff,4858,2022,2679,2021,,
+4594598,69006,2024,"Vols de véhicule",Véhicule,,,ndiff,4858,2022,2679,2021,2.3546099,1.5718357
+4594599,69006,2024,"Vols dans les véhicules",Véhicule,27,5.5578427,diff,4858,2022,2679,2021,,
+4594600,69006,2024,"Vols d'accessoires sur véhicules",Véhicule,,,ndiff,4858,2022,2679,2021,2.1944444,1.0716551
+4594601,69006,2024,"Destructions et dégradations volontaires",Infraction,46,9.4689172,diff,4858,2022,2679,2021,,
+4594602,69006,2024,"Usage de stupéfiants","Mis en cause",,,ndiff,4858,2022,2679,2021,2.3,1.0810412
+4594603,69006,2024,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,4858,2022,2679,2021,2.7086614,0.9763103
+4594604,69006,2024,"Trafic de stupéfiants","Mis en cause",,,ndiff,4858,2022,2679,2021,1.4040404,0.2721222
+4594605,69006,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,20,4.1169205,diff,4858,2022,2679,2021,,
+4594606,69007,2024,"Violences physiques intrafamiliales",Victime,14,5.0724638,diff,2760,2022,1301,2021,,
+4594607,69007,2024,"Violences physiques hors cadre familial",Victime,,,ndiff,2760,2022,1301,2021,1.9802632,1.1179575
+4594608,69007,2024,"Violences sexuelles",Victime,,,ndiff,2760,2022,1301,2021,2.507772,1.2567283
+4594609,69007,2024,"Vols avec armes",Infraction,0,0,diff,2760,2022,1301,2021,,
+4594610,69007,2024,"Vols violents sans arme",Infraction,0,0,diff,2760,2022,1301,2021,,
+4594611,69007,2024,"Vols sans violence contre des personnes","Victime entendue",10,3.6231884,diff,2760,2022,1301,2021,,
+4594612,69007,2024,"Cambriolages de logement",Infraction,,,ndiff,2760,2022,1301,2021,2.8732394,5.8821832
+4594613,69007,2024,"Vols de véhicule",Véhicule,17,6.1594203,diff,2760,2022,1301,2021,,
+4594614,69007,2024,"Vols dans les véhicules",Véhicule,,,ndiff,2760,2022,1301,2021,2.6891892,1.7141504
+4594615,69007,2024,"Vols d'accessoires sur véhicules",Véhicule,10,3.6231884,diff,2760,2022,1301,2021,,
+4594616,69007,2024,"Destructions et dégradations volontaires",Infraction,16,5.7971014,diff,2760,2022,1301,2021,,
+4594617,69007,2024,"Usage de stupéfiants","Mis en cause",,,ndiff,2760,2022,1301,2021,2.3,1.0810412
+4594618,69007,2024,"Usage de stupéfiants (AFD)","Mis en cause",,,ndiff,2760,2022,1301,2021,2.7086614,0.9763103
+4594619,69007,2024,"Trafic de stupéfiants","Mis en cause",,,ndiff,2760,2022,1301,2021,1.4040404,0.2721222
+4594620,69007,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,16,5.7971014,diff,2760,2022,1301,2021,,
+4594621,69008,2024,"Violences physiques intrafamiliales",Victime,,,ndiff,674,2022,300,2021,2.6419753,1.9461357
+4594622,69008,2024,"Violences physiques hors cadre familial",Victime,0,0,diff,674,2022,300,2021,,
+4594623,69008,2024,"Violences sexuelles",Victime,,,ndiff,674,2022,300,2021,2.507772,1.2567283
+4594624,69008,2024,"Vols avec armes",Infraction,0,0,diff,674,2022,300,2021,,
+4594625,69008,2024,"Vols violents sans arme",Infraction,0,0,diff,674,2022,300,2021,,
+4594626,69008,2024,"Vols sans violence contre des personnes","Victime entendue",,,ndiff,674,2022,300,2021,2.3443709,1.9964132
+4594627,69008,2024,"Cambriolages de logement",Infraction,,,ndiff,674,2022,300,2021,2.8732394,5.8821832
+4594628,69008,2024,"Vols de véhicule",Véhicule,,,ndiff,674,2022,300,2021,2.3546099,1.5718357
+4594629,69008,2024,"Vols dans les véhicules",Véhicule,0,0,diff,674,2022,300,2021,,
+4594630,69008,2024,"Vols d'accessoires sur véhicules",Véhicule,0,0,diff,674,2022,300,2021,,
+4594631,69008,2024,"Destructions et dégradations volontaires",Infraction,,,ndiff,674,2022,300,2021,3.24,3.5269836
+4594632,69008,2024,"Usage de stupéfiants","Mis en cause",0,0,diff,674,2022,300,2021,,
+4594633,69008,2024,"Usage de stupéfiants (AFD)","Mis en cause",0,0,diff,674,2022,300,2021,,
+4594634,69008,2024,"Trafic de stupéfiants","Mis en cause",0,0,diff,674,2022,300,2021,,
+4594635,69008,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,,,ndiff,674,2022,300,2021,3.7040816,5.148571
+4594636,69009,2024,"Violences physiques intrafamiliales",Victime,43,5.2832043,diff,8139,2022,3316,2021,,
+4594637,69009,2024,"Violences physiques hors cadre familial",Victime,22,2.7030348,diff,8139,2022,3316,2021,,
+4594638,69009,2024,"Violences sexuelles",Victime,17,2.0887087,diff,8139,2022,3316,2021,,
+4594639,69009,2024,"Vols avec armes",Infraction,,,ndiff,8139,2022,3316,2021,0.8387097,0.0759239
+4594640,69009,2024,"Vols violents sans arme",Infraction,,,ndiff,8139,2022,3316,2021,1.1595745,0.2336454
+4594641,69009,2024,"Vols sans violence contre des personnes","Victime entendue",46,5.6518,diff,8139,2022,3316,2021,,
+4594642,69009,2024,"Cambriolages de logement",Infraction,32,9.6504053,diff,8139,2022,3316,2021,,
+4594643,69009,2024,"Vols de véhicule",Véhicule,11,1.3515174,diff,8139,2022,3316,2021,,
+4594644,69009,2024,"Vols dans les véhicules",Véhicule,29,3.5630913,diff,8139,2022,3316,2021,,
+4594645,69009,2024,"Vols d'accessoires sur véhicules",Véhicule,13,1.5972478,diff,8139,2022,3316,2021,,
+4594646,69009,2024,"Destructions et dégradations volontaires",Infraction,63,7.7405087,diff,8139,2022,3316,2021,,
+4594647,69009,2024,"Usage de stupéfiants","Mis en cause",41,5.0374739,diff,8139,2022,3316,2021,,
+4594648,69009,2024,"Usage de stupéfiants (AFD)","Mis en cause",29,3.5630913,diff,8139,2022,3316,2021,,
+4594649,69009,2024,"Trafic de stupéfiants","Mis en cause",,,ndiff,8139,2022,3316,2021,1.4040404,0.2721222
+4594650,69009,2024,"Escroqueries et fraudes aux moyens de paiement",Victime,61,7.4947782,diff,8139,2022,3316,2021,,

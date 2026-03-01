@@ -1,0 +1,16 @@
+{
+    "markdownlint.ignore": [
+        ".dockerignore",
+        ".gitignore",
+        ".git/info/exclude"
+    ],
+    "python.analysis.extraPaths": ["./src"],
+    "python.analysis.autoImportCompletions": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "spark.sql.repl.eagerEval.enabled": true
+}
