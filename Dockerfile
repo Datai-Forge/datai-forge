@@ -12,8 +12,7 @@ RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && \
 
 # Configuration
 ENV PYTHONPATH="/app" \
-    PYTHONUNBUFFERED=1 \
-    JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+    PYTHONUNBUFFERED=1
 
 # Dépendances système (JRE 17 + outils dev essentiels)
 RUN apt-get update && \
