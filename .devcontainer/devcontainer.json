@@ -34,6 +34,5 @@
 	},
 
 	// Commande à exécuter après la création du conteneur.
-	// Utile pour des initialisations ou simplement un message de bienvenue.
-	"postCreateCommand": "echo 'Conteneur de développement prêt. Bienvenue !'"
+	"postCreateCommand": "pip install -r requirements.txt && git config filter.nbstripout.clean 'python3 -m nbstripout' && echo 'Conteneur prêt'"
 }
