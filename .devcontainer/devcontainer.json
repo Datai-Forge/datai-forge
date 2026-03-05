@@ -34,5 +34,5 @@
 	},
 
 	// Commande à exécuter après la création du conteneur.
-	"postCreateCommand": "pip install -r requirements.txt && nbstripout --install"
+	"postCreateCommand": "pip install -r requirements.txt && git config filter.nbstripout.clean 'python3 -m nbstripout' && echo 'Conteneur prêt'"
 }
