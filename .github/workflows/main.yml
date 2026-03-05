@@ -1,0 +1,23 @@
+name: Datai Forge CI
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t datai-forge:latest .
+
+      - name: Run Test (Spark & Infrastructure)
+        run: |
+          docker run --rm datai-forge:latest pytest tests/
