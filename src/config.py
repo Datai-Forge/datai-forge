@@ -19,9 +19,10 @@ GOLD_PATH = os.path.join(PROJECT_ROOT, "gold")
 
 # Configuration spécifique aux élections
 PRESIDENTIELLE_BRONZE_PATH = os.path.join(BRONZE_PATH, "presidentielle")
+NIVEAU_VIE_PAUVRETE_BRONZE_PATH = os.path.join(BRONZE_PATH, "niveau_vie_pauvrete")
 
 # On s'assure que les dossiers existent à l'import de la config
-for path in [BRONZE_PATH, SILVER_PATH, GOLD_PATH, PRESIDENTIELLE_BRONZE_PATH]:
+for path in [BRONZE_PATH, SILVER_PATH, GOLD_PATH, PRESIDENTIELLE_BRONZE_PATH, NIVEAU_VIE_PAUVRETE_BRONZE_PATH]:
     if not os.path.exists(path):
         os.makedirs(path, exist_ok=True)
         logger.info(f"Création du dossier de données : {path}")
