@@ -17,6 +17,10 @@ gold/
 # Ignorer les fichiers système de macOS
 .DS_Store
 
+# Ignorer les fichiers de secrets
+.secrets
+.secrets.example
+
 # Ignorer les fichiers de configuration d'IDE
 .vscode/
 .idea/

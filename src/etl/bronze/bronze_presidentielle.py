@@ -28,7 +28,7 @@ def extract_and_load_bronze(spark, file_name):
     df = (spark.read
           .option("header", "true")
           .option("delimiter", ",")
-          .option("inferSchema", "true")
+          .option("inferSchema", "false")
           .csv(file_path))
 
     # Gouvernance de Données avec du lignage. Nom du fichier source + timestamp de traitement

@@ -1,6 +1,5 @@
+# Data output
 /data-raw/
-/venv/
-
 /bronze/*
 !/bronze/.gitkeep
 /silver/*
@@ -8,16 +7,29 @@
 /gold/*
 !/gold/.gitkeep
 
+# Environnement & Secrets
+/venv/
+.env
+.secrets
+.python-version
+
+# Python & Cache
 __pycache__/
 *.pyc
 *.pyd
 *.pyo
+.pytest_cache/
+.coverage
+htmlcov/
 
+# Système
 .DS_Store
 
+# Logs
 *.log
 
-.idea/
+# IDE
 .vscode/*
 !.vscode/launch.json
 !.vscode/settings.json
+.idea/
