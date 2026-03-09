@@ -5,3 +5,4 @@ setuptools
 ipykernel
 nbstripout==0.8.1
 pytest==8.3.4
+dtale==3.20.0
