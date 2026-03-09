@@ -9,15 +9,16 @@ To ensure reproducibility, the project uses Docker and VS Code:
 - **Docker Desktop** (or Engine on Linux).
 - **VS Code**.
 - **Dev Containers** extension by Microsoft.
+- **Act** to run CI locally (optional)
 
 ## 🚀 Quick Start
 
-1.  **Open the project**: Launch VS Code and open the project root folder.
-2.  **Start the container**:
-    - A notification should prompt you to "Reopen in Container".
-    - Alternatively, press `F1` (or `Ctrl+Shift+P`) and type: `Dev Containers: Reopen in Container`.
-3.  **Automatic Setup**: The container will build the image (Spark 3.5, Java 17, Python 3.12) and install dependencies defined in `requirements.txt`.
-4.  **Ready to code**: Once the build is finished, you are inside the container in the `/app` directory.
+1. **Open the project**: Launch VS Code and open the project root folder.
+2. **Start the container**:
+   - A notification should prompt you to "Reopen in Container".
+   - Alternatively, press `F1` (or `Ctrl+Shift+P`) and type: `Dev Containers: Reopen in Container`.
+3. **Automatic Setup**: The container will build the image (Spark 3.5, Java 17, Python 3.12) and install dependencies defined in `requirements.txt`.
+4. **Ready to code**: Once the build is finished, you are inside the container in the `/app` directory.
 
 ## 📂 Project Structure
 
@@ -67,4 +68,3 @@ Open any Python script and press **F5**. The configuration in `.vscode/launch.js
 - **Logging**: Use the `logging` module (configured in scripts) instead of `print` to ensure traceability in production environments.
 
 ---
-*Project carried out as part of the MSPR Bloc 3 - Expert Informatique et Science de l'Information.*
