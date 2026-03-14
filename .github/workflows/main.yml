@@ -44,3 +44,51 @@ jobs:
         run: |
           docker inspect ${{ env.DOCKER_REPO }}:${{ github.sha }} > /dev/null 2>&1 || docker pull ${{ env.DOCKER_REPO }}:${{ github.sha }}
           docker run --rm ${{ env.DOCKER_REPO }}:${{ github.sha }} bash -c "scripts/run_etl_pipeline.sh && pytest tests/"
+
+  notify-success:
+    name: Discord Notification
+    runs-on: ubuntu-latest
+    needs: [tests]
+    if: success()
+    steps:
+      - name: Send Discord embed
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            TITLE="✅ PR validée — ${{ github.event.pull_request.title }}"
+            URL="${{ github.event.pull_request.html_url }}"
+            AUTHOR="${{ github.event.pull_request.user.login }}"
+            DESCRIPTION="La PR de **${AUTHOR}** a passé tous les checks avec succès."
+          else
+            TITLE="✅ Push validé sur \`${{ github.ref_name }}\`"
+            URL="${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}"
+            AUTHOR="${{ github.actor }}"
+            DESCRIPTION="Le push de **${AUTHOR}** a passé tous les checks avec succès."
+          fi
+
+          PAYLOAD=$(jq -n \
+            --arg title "$TITLE" \
+            --arg desc "$DESCRIPTION" \
+            --arg url "$URL" \
+            --arg author "$AUTHOR" \
+            --arg sha "${{ github.sha }}" \
+            --arg repo "${{ github.repository }}" \
+            '{
+              embeds: [{
+                title: $title,
+                description: $desc,
+                url: $url,
+                color: 3066993,
+                fields: [
+                  { name: "Repo", value: $repo, inline: true },
+                  { name: "Commit", value: (($sha)[:7]), inline: true },
+                  { name: "Auteur", value: $author, inline: true }
+                ],
+                footer: { text: "Datai Forge CI" },
+                timestamp: (now | todate)
+              }]
+            }')
+
+          curl -s -H "Content-Type: application/json" \
+               -X POST \
+               -d "$PAYLOAD" \
+               "${{ secrets.DISCORD_WEBHOOK }}"
