@@ -60,3 +60,30 @@ def test_silver_row_count_integrity(spark, folder_name):
 
     assert actual_rows == expected_rows, \
         f"Erreur d'intégrité pour {folder_name} : Attendu {expected_rows} lignes ({num_bronze_rows} bureaux x {num_candidates} candidats), Obtenu {actual_rows}"
+
+@pytest.mark.parametrize("folder_name", [
+    "lyon_T1_presidentiel_2022",
+    "lyon_T2_presidentiel_2022"
+])
+def test_silver_political_enrichment_integrity(spark, folder_name):
+    """
+    Vérifie que les données d'enrichissement politique sont bien présentes et complètes.
+    """
+    df = get_silver_df(spark, folder_name)
+
+    new_cols = ["parti_code", "parti_nom", "nuance_officielle", "bloc_analytique"]
+
+    # Pour vérifier la présence des colonnes
+    for col in new_cols:
+        assert col in df.columns, f"La colonne {col} est absente du schéma Silver pour {folder_name}."
+
+    # On vérifie qu'il n'y a pas de null
+    null_count = df.filter(
+        F.col("parti_code").isNull() |
+        F.col("parti_nom").isNull() |
+        F.col("nuance_officielle").isNull() |
+        F.col("bloc_analytique").isNull()
+    ).count()
+
+    assert null_count == 0, \
+        f"Erreur d'audit : {null_count} lignes ont des données politiques manquantes dans {folder_name}. Vérifiez le mapping CSV."

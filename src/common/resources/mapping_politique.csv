@@ -1,0 +1,13 @@
+nom,prenom,parti_code,parti_nom,nuance_officielle,bloc_analytique
+ARTHAUD,Nathalie,LO,Lutte Ouvrière,DXG,EXTREME_GAUCHE
+ROUSSEL,Fabien,PCF,Parti Communiste Français,COM,GAUCHE
+MACRON,Emmanuel,RE,Renaissance,ENS,CENTRE
+LASSALLE,Jean,RES,Résistons !,DVD,DROITE
+LE PEN,Marine,RN,Rassemblement National,RN,EXTREME_DROITE
+MÉLENCHON,Jean-luc,LFI,La France Insoumise,LFI,GAUCHE
+HIDALGO,Anne,PS,Parti Socialiste,SOC,GAUCHE
+JADOT,Yannick,EELV,Europe Écologie Les Verts,VEC,GAUCHE
+PÉCRESSE,Valérie,LR,Les Républicains,LR,DROITE
+POUTOU,Philippe,NPA,Nouveau Parti Anticapitaliste,DXG,EXTREME_GAUCHE
+DUPONT-AIGNAN,Nicolas,DLF,Debout la France,DSV,EXTREME_DROITE
+ZEMMOUR,Éric,REC,Reconquête !,REC,EXTREME_DROITE
