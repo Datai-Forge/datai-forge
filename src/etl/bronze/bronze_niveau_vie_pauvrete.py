@@ -25,6 +25,10 @@ def extract_and_load_bronze(spark, file_name):
 
     logger.info(f"Début de l'ingestion Bronze pour : {file_name}")
 
+    # Réduit la pression mémoire sur un conteneur limité (~2 Go RAM)
+    spark.conf.set("spark.sql.shuffle.partitions", "2")
+    spark.conf.set("spark.default.parallelism", "2")
+
     df = (spark.read
           .option("header", "true")
           .option("delimiter", ",")
@@ -49,14 +53,25 @@ def extract_and_load_bronze(spark, file_name):
     df.show(5)
 
 if __name__ == "__main__":
-    # On démarre notre session Spark
-    spark = get_spark_session(app_name="Ingestion_Bronze_Niveau_vie_pauvrete")
+    # chargement des datasets dans un tableau
+    files = [
+        "2017_Filosofi2017_carreaux_1km_met.csv",
+        "2019_carreaux_1km_met.csv",
+        "2021_carreaux_1km_met.csv",
+    ]
 
-    try:
-        # Ingestion du tour 1 et 2
-        extract_and_load_bronze(spark, "2017_Filosofi2017_carreaux_1km_met.csv")
-        extract_and_load_bronze(spark, "2019_carreaux_1km_met.csv")
-        extract_and_load_bronze(spark, "2021_carreaux_1km_met.csv")
-    finally:
-        spark.stop()
-        logger.info("Couche bronze terminée proprement.")
+    # pour chanque fichier, on démarre notre session Spark
+
+    for file_name in files:
+        #  On démarre notre session Spark
+        spark = get_spark_session(app_name=f"Ingestion_Bronze_{file_name}")
+        try:
+            extract_and_load_bronze(spark, file_name)
+        except Exception:
+            logger.exception(f"Echec ingestion pour {file_name}")
+        finally:
+            try:
+                spark.stop()
+            except Exception:
+                logger.warning(f"Impossible d'arrêter proprement Spark pour {file_name} (JVM déjà arrêtée).")
+            logger.info(f"Session Spark fermée pour {file_name}")
