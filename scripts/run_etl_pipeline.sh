@@ -3,10 +3,13 @@ set -e  # Arrête le script si une commande échoue
 
 echo "🚀 Démarrage de la Pipeline ETL"
 
-echo "1/2 Ingestion Bronze..."
+echo "1/3 Ingestion Bronze..."
 python3 -m src.etl.bronze.bronze_presidentielle
 
-echo "2/2 Transformation Silver..."
+echo "2/3 Transformation Silver..."
 python3 -m src.etl.silver.silver_presidentielle
+
+echo "3/3 Transformation Gold..."
+python3 -m src.etl.gold.gold_presidentielle_bi
 
 echo "✅ Pipeline ETL terminée avec succès !"
