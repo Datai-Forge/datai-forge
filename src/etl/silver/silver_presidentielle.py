@@ -1,6 +1,8 @@
 import os
 import logging
 from pyspark.sql.functions import current_timestamp, expr, upper, initcap
+from pyspark.sql import functions as F
+
 
 from src.config import SILVER_PATH, PRESIDENTIELLE_BRONZE_PATH, MAPPING_POLITIQUE_PATH
 from src.common.spark_session_manager import get_spark_session
@@ -80,9 +82,6 @@ def transform_bronze_to_silver(spark, folder_name):
     df = unpivot_candidates(df, num_candidates)
 
     # Casting et nettoyage
-    # On ne caste que les colonnes brutes
-    # Les colonnes calculées ) sont ignorées
-    # car supression
     df = df.withColumn("voix", df["voix"].cast("int")) \
            .withColumn("inscrits", df["inscrits"].cast("int")) \
            .withColumn("abstentions", df["abstentions"].cast("int")) \
@@ -91,7 +90,16 @@ def transform_bronze_to_silver(spark, folder_name):
            .withColumn("nom", upper(df["nom"])) \
            .withColumn("prenom", initcap(df["prenom"]))
 
-    # Enrichissement avec le mapping politique (Lookup)
+    # Normalisation de l'arrondissement (Shift Left)
+    # Règle métier : Lyon utilise un code AA (arrondissement) BB (bureau).
+    # Cas particulier : le bureau '0001' est le bureau centralisateur situé à l'Hôtel de Ville (1er arr).
+    df = df.withColumn("num_arr_tech", F.substring(F.col("code_du_b_vote"), 1, 2).cast("int")) \
+           .withColumn("arrondissement",
+                F.when((F.col("num_arr_tech") == 1) | (F.col("num_arr_tech") == 0), "1er Arrondissement")
+                .otherwise(F.concat(F.col("num_arr_tech"), F.lit("ème Arrondissement")))
+           ).drop("num_arr_tech")
+
+    # Enrichissement avec le mapping politique
     if os.path.exists(MAPPING_POLITIQUE_PATH):
         logger.info(f"Enrichissement politique via : {MAPPING_POLITIQUE_PATH}")
         mapping_df = spark.read.option("header", "true").csv(MAPPING_POLITIQUE_PATH)
@@ -105,8 +113,8 @@ def transform_bronze_to_silver(spark, folder_name):
     # On ne garde que les colonnes propres et on ignore les colonnes calculées
     final_cols = [
         "code_du_departement", "libelle_du_departement", "code_de_la_commune", "libelle_de_la_commune",
-        "code_du_b_vote", "inscrits", "abstentions", "votants", "exprimes",
-        "n_panneau", "sexe", "nom", "prenom", "voix",
+        "code_du_b_vote", "arrondissement", "inscrits", "abstentions", "votants", "exprimes",
+        "id_candidat", "n_panneau", "sexe", "nom", "prenom", "voix",
         "parti_code", "parti_nom", "nuance_officielle", "bloc_analytique",
         "silver_processing_timestamp"
     ]
@@ -128,7 +136,7 @@ def transform_bronze_to_silver(spark, folder_name):
     else:
         logger.error(f"❌ ERREUR DE CHECKSUM : Attendu {total_expected}, Obtenu {total_actual}")
 
-    # Écriture
+    # sauvegarde
     if not os.path.exists(PRESIDENTIELLE_SILVER_PATH):
         os.makedirs(PRESIDENTIELLE_SILVER_PATH, exist_ok=True)
 
