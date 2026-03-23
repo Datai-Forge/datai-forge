@@ -5,6 +5,7 @@ echo "🚀 Démarrage de la Pipeline ETL"
 
 echo "1/3 Ingestion Bronze..."
 python3 -m src.etl.bronze.bronze_presidentielle
+python3 -m src.etl.bronze.bronze_securite
 
 echo "2/3 Transformation Silver..."
 python3 -m src.etl.silver.silver_presidentielle
