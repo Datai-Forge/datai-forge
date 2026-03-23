@@ -2,7 +2,7 @@ import os
 import logging
 from pyspark.sql.functions import lit, current_timestamp
 
-from src.config import RAW_DATA_PATH, NIVEAU_VIE_PAUVRETE_BRONZE_PATH
+from src.config import RAW_DATA_PATH, NIVEAU_VIE_PAUVRETE_200m_BRONZE_PATH
 from src.common.spark_session_manager import get_spark_session
 
 # Config du logging
@@ -21,7 +21,7 @@ def extract_and_load_bronze(spark, file_name):
 
 
     output_dir_name = file_name.replace('.csv', '')
-    output_full_path = os.path.join(NIVEAU_VIE_PAUVRETE_BRONZE_PATH, output_dir_name)
+    output_full_path = os.path.join(NIVEAU_VIE_PAUVRETE_200m_BRONZE_PATH, output_dir_name)
 
     logger.info(f"Début de l'ingestion Bronze pour : {file_name}")
 
@@ -55,9 +55,9 @@ def extract_and_load_bronze(spark, file_name):
 if __name__ == "__main__":
     # chargement des datasets dans un tableau
     files = [
-        "2017_Filosofi2017_carreaux_1km_met.csv",
-        "2019_carreaux_1km_met.csv",
-        "2021_carreaux_1km_met.csv",
+        "2017_carreaux_200m_met.csv",
+        "2019_carreaux_200m_met.csv",
+        "2021_carreaux_200m_met.csv",
     ]
 
     # pour chanque fichier, on démarre notre session Spark
