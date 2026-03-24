@@ -1,4 +1,6 @@
 import re
+from pyspark.sql import DataFrame
+from pyspark.sql import SparkSession
 
 def clean_column_name(name):
     if not name:
@@ -16,3 +18,23 @@ def clean_column_name(name):
 
     name = re.sub(r'_+', '_', name)
     return name.strip('_')
+
+
+def rename_dataframe_columns(df: DataFrame, column_mapping: dict) -> DataFrame:
+    """
+    Renames columns in a PySpark DataFrame based on a provided mapping.
+
+    Args:
+        df (DataFrame): The input PySpark DataFrame.
+        column_mapping (dict): A dictionary where keys are current column names
+                               and values are the new column names.
+
+    Returns:
+        DataFrame: A new PySpark DataFrame with the specified columns renamed.
+    """
+    for old_name, new_name in column_mapping.items():
+        if old_name in df.columns:
+            df = df.withColumnRenamed(old_name, new_name)
+        else:
+            print(f"Warning: Column '{old_name}' not found in DataFrame. Skipping rename.")
+    return df
