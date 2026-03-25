@@ -60,14 +60,13 @@ def transform_bronze_to_silver(spark, folder_name):
     df_silver_2017 = df_silver_2017.withColumn("Men_pauv", F.col("Men_pauv").cast("float"))
     df_silver_2017 = df_silver_2017.withColumn("Men", F.col("Men").cast("float"))
 
-    # split column lcog_geo into 2 columns, the second column will be named "arrondissement limitrophe" string tyed
+    # split column lcog_geo into 5 zipcode columns (5 chars each) from df_bronze_2017
     max_lcog_geo_chars = (
-    df_silver_2017
-        .select(F.max(F.length(F.col("lcog_geo").cast("string"))).alias("max_char_count"))
-        .collect()[0]["max_char_count"]
+        df_silver_2017
+            .select(F.max(F.length(F.col("lcog_geo").cast("string"))).alias("max_char_count"))
+            .collect()[0]["max_char_count"]
     )
 
-    # Split lcog_geo into 5 zipcode columns (5 chars each) from df_bronze_2017
     chunk_size = 5
     num_chunks = max_lcog_geo_chars // chunk_size  # 25 // 5 = 5
 
@@ -81,13 +80,18 @@ def transform_bronze_to_silver(spark, folder_name):
         end_needed = start_pos + chunk_size - 1
         df_bronze_2017_split = df_bronze_2017_split.withColumn(
             f"lcog_geo_{i+1}",
-            F.when(
-                F.length(F.col("lcog_geo_clean")) >= end_needed,
-                F.substring(F.col("lcog_geo_clean"), start_pos, chunk_size)
+            F.coalesce(
+                F.when(
+                    F.length(F.col("lcog_geo_clean")) >= end_needed,
+                    F.substring(F.col("lcog_geo_clean"), start_pos, chunk_size)
+                ),
+                F.lit("non_applicable")
             )
         )
+
     df_bronze_2017_split = df_bronze_2017_split.drop("lcog_geo_clean")
     df_silver_2017 = df_bronze_2017_split
+
     # quick check
     df_silver_2017.select("lcog_geo", "lcog_geo_1", "lcog_geo_2", "lcog_geo_3", "lcog_geo_4", "lcog_geo_5").show(20, truncate=False)
 
@@ -138,14 +142,15 @@ def transform_bronze_to_silver(spark, folder_name):
         when(
             (col("Arrondissement").isNotNull()) &
             (
-                col("lcog_geo_2").isNotNull() |
-                col("lcog_geo_3").isNotNull() |
-                col("lcog_geo_4").isNotNull() |
-                col("lcog_geo_5").isNotNull()
+                (col("lcog_geo_2") != "non_applicable") |
+                (col("lcog_geo_3") != "non_applicable") |
+                (col("lcog_geo_4") != "non_applicable") |
+                (col("lcog_geo_5") != "non_applicable")
             ),
             1
         ).otherwise(0)
     )
+
     df_silver_2017.select(
         "Arrondissement", "lcog_geo_2", "lcog_geo_3", "lcog_geo_4", "lcog_geo_5", "est_limitrophe"
     ).show(20, truncate=False)
@@ -159,6 +164,10 @@ def transform_bronze_to_silver(spark, folder_name):
     # add code insee departement column
     df_silver_2017 = df_silver_2017.withColumn("code_commune", F.lit("69123"))
 
+    # return df with the 9 area of lyon
+    df_silver_2017 = df_silver_2017.filter(
+        F.col("Arrondissement").cast("string").startswith("6938")
+    )
     # add tomestamp and save in silver
     df_silver_2017 = df_silver_2017.withColumn("silver_processing_timestamp", current_timestamp())
     df_silver_2017.write.mode("overwrite").parquet(silver_full_path)
