@@ -4,7 +4,7 @@ set -e  # Arrête le script si une commande échoue
 echo "🚀 Démarrage de la Pipeline ETL"
 
 echo "1/3 Ingestion Bronze..."
-python3 -m src.etl.bronze.niveau_vie_pauvrete_200m
+python3 -m src.etl.bronze.bronze_niveau_vie_pauvrete_200m
 python3 -m src.etl.bronze.bronze_presidentielle
 python3 -m src.etl.bronze.bronze_securite
 
