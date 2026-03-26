@@ -1,5 +1,4 @@
 # Data output
-/data-raw/
 /bronze/*
 !/bronze/.gitkeep
 /silver/*
@@ -40,3 +39,4 @@ htmlcov/
 # Notebooks
 
 *.ipynb
+notebooks/niveau_vie_pauvrete/lyon_niveau_vie_pauvrete_2017_200m_bronze.ipynb

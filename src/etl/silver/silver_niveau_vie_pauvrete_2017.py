@@ -68,11 +68,11 @@ def transform_bronze_to_silver(spark, folder_name):
     )
 
     chunk_size = 5
-    num_chunks = max_lcog_geo_chars // chunk_size  # 25 // 5 = 5
+    num_chunks = 5  # toujours 5 colonnes attendues
 
     df_bronze_2017_split = df_silver_2017.withColumn(
         "lcog_geo_clean",
-        F.regexp_replace(F.col("lcog_geo").cast("string"), r"\D", "")  # keep digits only
+        F.regexp_replace(F.col("lcog_geo").cast("string"), r"\D", "")
     )
 
     for i in range(num_chunks):
@@ -80,20 +80,17 @@ def transform_bronze_to_silver(spark, folder_name):
         end_needed = start_pos + chunk_size - 1
         df_bronze_2017_split = df_bronze_2017_split.withColumn(
             f"lcog_geo_{i+1}",
-            F.coalesce(
-                F.when(
-                    F.length(F.col("lcog_geo_clean")) >= end_needed,
-                    F.substring(F.col("lcog_geo_clean"), start_pos, chunk_size)
-                ),
-                F.lit("non_applicable")
-            )
+            F.when(
+                F.length(F.col("lcog_geo_clean")) >= end_needed,
+                F.substring(F.col("lcog_geo_clean"), start_pos, chunk_size)
+            ).otherwise(F.lit("NA"))
         )
 
-    df_bronze_2017_split = df_bronze_2017_split.drop("lcog_geo_clean")
-    df_silver_2017 = df_bronze_2017_split
+    df_silver_2017 = df_bronze_2017_split.drop("lcog_geo_clean")
 
-    # quick check
-    df_silver_2017.select("lcog_geo", "lcog_geo_1", "lcog_geo_2", "lcog_geo_3", "lcog_geo_4", "lcog_geo_5").show(20, truncate=False)
+    # quick check robuste
+    debug_cols = ["lcog_geo"] + [f"lcog_geo_{i}" for i in range(1, 6)]
+    df_silver_2017.select(*debug_cols).show(20, truncate=False)
 
     # rename columns header
     new_names = {
@@ -136,23 +133,8 @@ def transform_bronze_to_silver(spark, folder_name):
     # Use select with an alias for each column
     df_silver_2017 = df_silver_2017.select([df_silver_2017[c].alias(new_names.get(c, c)) for c in df_silver_2017.columns])
 
-    # add boolean column, named "est_limitrophe", with values 0 when the condition it's false and 1 when condition it's true
-    df_silver_2017 = df_silver_2017.withColumn(
-    "est_limitrophe",
-        when(
-            (col("Arrondissement").isNotNull()) &
-            (
-                (col("lcog_geo_2") != "non_applicable") |
-                (col("lcog_geo_3") != "non_applicable") |
-                (col("lcog_geo_4") != "non_applicable") |
-                (col("lcog_geo_5") != "non_applicable")
-            ),
-            1
-        ).otherwise(0)
-    )
-
     df_silver_2017.select(
-        "Arrondissement", "lcog_geo_2", "lcog_geo_3", "lcog_geo_4", "lcog_geo_5", "est_limitrophe"
+        "Arrondissement", "lcog_geo_2", "lcog_geo_3", "lcog_geo_4", "lcog_geo_5"
     ).show(20, truncate=False)
 
     # add code insee commune column
@@ -168,7 +150,7 @@ def transform_bronze_to_silver(spark, folder_name):
     df_silver_2017 = df_silver_2017.filter(
         F.col("Arrondissement").cast("string").startswith("6938")
     )
-    # add tomestamp and save in silver
+    # add timestamp and save in silver
     df_silver_2017 = df_silver_2017.withColumn("silver_processing_timestamp", current_timestamp())
     df_silver_2017.write.mode("overwrite").parquet(silver_full_path)
     logger.info(f"Transformation terminée avec succès : {silver_full_path}")
