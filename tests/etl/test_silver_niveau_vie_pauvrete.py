@@ -10,6 +10,7 @@ def get_silver_df(spark, folder_name):
 @pytest.mark.parametrize("folder_name", [
     "niveau_vie_pauvrete_2017",
     "niveau_vie_pauvrete_2019",
+    "niveau_vie_pauvrete_2021",
 ])
 def test_silver_check_city_areas(spark, folder_name):
     """
