@@ -17,5 +17,7 @@ python3 -m src.etl.silver.silver_securite
 
 echo "3/3 Transformation Gold..."
 python3 -m src.etl.gold.gold_presidentielle_bi
+python3 -m src.etl.gold.gold_securite_bi
+
 
 echo "✅ Pipeline ETL terminée avec succès !"

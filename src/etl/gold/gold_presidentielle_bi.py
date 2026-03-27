@@ -107,6 +107,3 @@ def run_gold_bi_pipeline():
 
 if __name__ == "__main__":
     run_gold_bi_pipeline()
-
-if __name__ == "__main__":
-    run_gold_bi_pipeline()
