@@ -12,6 +12,7 @@ echo "2/3 Transformation Silver..."
 python3 -m src.etl.silver.silver_presidentielle
 python3 -m src.etl.silver.silver_niveau_vie_pauvrete_2017
 python3 -m src.etl.silver.silver_niveau_vie_pauvrete_2019
+python3 -m src.etl.silver.silver_niveau_vie_pauvrete_2021
 python3 -m src.etl.silver.silver_securite
 
 echo "3/3 Transformation Gold..."
