@@ -6,6 +6,13 @@
 /gold/*
 !/gold/.gitkeep
 
+# Reports & Documentation (Generated Artifacts)
+/reports/
+/site/
+docs/reports_data/
+docs/coverage/
+docs/reports/
+
 # Environnement & Secrets
 /venv/
 .env
@@ -20,6 +27,7 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+.ruff_cache/
 
 # Système
 .DS_Store
@@ -37,6 +45,5 @@ htmlcov/
 .secret
 
 # Notebooks
-
 *.ipynb
-notebooks/niveau_vie_pauvrete/lyon_niveau_vie_pauvrete_2017_200m_bronze.ipynb
+!notebooks/niveau_vie_pauvrete/lyon_niveau_vie_pauvrete_2017_200m_bronze.ipynb
