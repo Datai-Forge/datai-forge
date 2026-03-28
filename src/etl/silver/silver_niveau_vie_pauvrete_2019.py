@@ -150,6 +150,14 @@ def transform_bronze_to_silver(spark, folder_name):
     df_silver_2019 = df_silver_2019.filter(
         F.col("Arrondissement").cast("string").startswith("6938")
     )
+
+    # Mettre la premiere lettre de chaque nom de colonne en minuscule
+    new_cols = [
+        (c[0].lower() + c[1:]) if isinstance(c, str) and len(c) > 0 else c
+        for c in df_silver_2019.columns
+    ]
+    df_silver_2019 = df_silver_2019.toDF(*new_cols)
+
     # add timestamp and save in silver
     df_silver_2019 = df_silver_2019.withColumn("silver_processing_timestamp", current_timestamp())
     df_silver_2019.write.mode("overwrite").parquet(silver_full_path)

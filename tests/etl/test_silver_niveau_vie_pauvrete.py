@@ -1,6 +1,7 @@
 import pytest
 from pyspark.sql import functions as F
 from src.config import BRONZE_PATH, SILVER_PATH
+from pyspark.sql.functions import lit
 
 def get_silver_df(spark, folder_name):
     """Charge le df silver pour les tests"""
@@ -46,4 +47,38 @@ def test_silver_check_city_areas(spark, folder_name):
     assert observed_values == expected_values, (
         f"Valeurs observées incorrectes. "
         f"observed={sorted(observed_values)} expected={sorted(expected_values)}"
+    )
+
+def reorder_like_reference(df, ref_cols, keep_extra_cols=False):
+    for c in ref_cols:
+        if c not in df.columns:
+            df = df.withColumn(c, lit(None))
+
+    if keep_extra_cols:
+        extra_cols = [c for c in df.columns if c not in ref_cols]
+        ordered_cols = ref_cols + extra_cols
+    else:
+        ordered_cols = ref_cols
+
+    return df.select(*ordered_cols)
+
+def test_silver_nvp_columns_order_matches_2017_reference(spark):
+    ref_path = f"{SILVER_PATH}/niveau_vie_pauvrete/niveau_vie_pauvrete_2017"
+    path_2019 = f"{SILVER_PATH}/niveau_vie_pauvrete/niveau_vie_pauvrete_2019"
+    path_2021 = f"{SILVER_PATH}/niveau_vie_pauvrete/niveau_vie_pauvrete_2021"
+
+    df_ref = spark.read.parquet(ref_path)
+    ref_cols = df_ref.columns
+
+    df_2019 = spark.read.parquet(path_2019)
+    df_2021 = spark.read.parquet(path_2021)
+
+    df_2019_ordered = reorder_like_reference(df_2019, ref_cols, keep_extra_cols=False)
+    df_2021_ordered = reorder_like_reference(df_2021, ref_cols, keep_extra_cols=False)
+
+    assert df_2019_ordered.columns == ref_cols, (
+        "L ordre des colonnes 2019 ne correspond pas a la reference 2017"
+    )
+    assert df_2021_ordered.columns == ref_cols, (
+        "L ordre des colonnes 2021 ne correspond pas a la reference 2017"
     )
