@@ -1,0 +1,49 @@
+site_name: Datai Forge - Documentation Technique
+site_description: Documentation technique et audits de qualité du projet de prédiction électorale.
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Accueil: index.md
+  - Architecture: architecture.md
+  - Guide Développeur: guide.md
+  - Qualité & Santé:
+      - Couverture de Tests: reports/coverage.md
+      - Audit de Sécurité: reports/security.md
+      - Qualité de Code: reports/quality.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true

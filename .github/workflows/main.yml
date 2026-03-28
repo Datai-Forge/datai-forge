@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [develop]
 
+# Permissions explicites pour le GITHUB_TOKEN
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+
 env:
   DOCKER_REPO: ${{ secrets.DOCKERHUB_USERNAME }}/datai-forge
 
@@ -40,10 +47,59 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run ETL & Tests
+      - name: Create report directories
+        run: mkdir -p docs/reports docs/coverage
+
+      - name: Run ETL, Quality Audits & Tests
         run: |
           docker inspect ${{ env.DOCKER_REPO }}:${{ github.sha }} > /dev/null 2>&1 || docker pull ${{ env.DOCKER_REPO }}:${{ github.sha }}
-          docker run --rm ${{ env.DOCKER_REPO }}:${{ github.sha }} bash -c "scripts/run_etl_pipeline.sh && pytest tests/"
+          docker run --rm \
+            -v ${{ github.workspace }}/docs:/app/docs \
+            ${{ env.DOCKER_REPO }}:${{ github.sha }} \
+            bash -c "scripts/run_etl_pipeline.sh && \
+                     ruff check . --output-format text > docs/reports/quality-report.txt || true && \
+                     bandit -r src/ --format txt --output docs/reports/security-report.txt || true && \
+                     pytest --cov=src --cov-report=html:docs/coverage tests/"
+
+      - name: Upload Docs Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: engineering-hub-docs
+          path: docs/
+          retention-days: 1
+
+  documentation:
+    name: Build & Deploy documentation Hub
+    needs: tests
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download Docs Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: engineering-hub-docs
+          path: docs/
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install MkDocs Material
+        run: pip install mkdocs-material
+
+      - name: Build Documentation
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
 
   notify-success:
     name: Discord Notification
