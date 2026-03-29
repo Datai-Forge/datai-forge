@@ -1,6 +1,8 @@
 site_name: Datai Forge - Documentation Technique
 site_description: Documentation technique et audits de qualité du projet de prédiction électorale.
-site_url: https://datai-forge.github.io/datai-forge/
+site_url: https://datai-forge.github.io/datai-forge
+repo_url: https://github.com/Datai-Forge/datai-forge
+repo_name: GitHub
 use_directory_urls: true
 
 theme:
@@ -25,14 +27,24 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
     - search.suggest
     - search.highlight
 
 nav:
   - Accueil: index.md
   - Architecture: architecture.md
+  - Choix des Données:
+      - Élections: datasets/elections.md
+      - Sécurité: datasets/securite.md
+      - Niveau de Vie: datasets/social.md
   - Guide Développeur: guide.md
   - Qualité & Santé:
+      - Standards & Outils: standards.md
       - Couverture de Tests: reports/coverage.md
       - Audit de Sécurité: reports/security.md
       - Qualité de Code: reports/quality.md

@@ -24,8 +24,8 @@ python_files = ["test_*.py"]
 addopts = """
     --cov=src
     --cov-report=term-missing
-    --cov-report=html:reports/coverage
-    --cov-report=xml:reports/coverage/coverage.xml
+    --cov-report=html:docs/coverage
+    --cov-report=xml:docs/coverage/coverage.xml
     -v
 """
 

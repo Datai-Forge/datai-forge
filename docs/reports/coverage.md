@@ -4,9 +4,9 @@ Ce rapport mesure quel pourcentage du code est effectivement exécuté lors des 
 
 ## 📊 Visualisation Directe
 
-<iframe src="../../coverage/index.html" style="width:100%; height:800px; border:none;"></iframe>
+<iframe src="../../coverage/index.html" style="width:100%; height:1000px; border:none;"></iframe>
 
 ---
 
-!!! tip "Lien externe"
-Si le rapport ne s'affiche pas correctement, vous pouvez l'ouvrir en [plein écran](../../coverage/index.html).
+!!! tip "Navigation détaillée"
+    Pour explorer le détail par fichier ou si l'affichage ci-dessus est trop étroit, vous pouvez ouvrir le [Rapport Complet en Plein Écran](../coverage/index.html).
