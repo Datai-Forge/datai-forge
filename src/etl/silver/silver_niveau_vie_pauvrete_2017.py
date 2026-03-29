@@ -28,6 +28,9 @@ def transform_bronze_to_silver(spark, folder_name):
     nvp_2017_bronze_path = os.path.join(BRONZE_PATH, "niveau_vie_pauvrete_200m", "2017_carreaux_200m_met")
     df_silver_2017 = spark.read.parquet(nvp_2017_bronze_path)
 
+    # exclure la colonne Groupe
+    df_silver_2017 = df_silver_2017.drop("groupe")
+
     # # Convert columns from 'Ind' to 'Men_pauv' to integer type.
     # # This assumes 'Ind' and 'Men_pauv' exist and define a contiguous range of columns
     # # in the DataFrame's schema.
@@ -99,7 +102,6 @@ def transform_bronze_to_silver(spark, folder_name):
         "Idcar_1km":"Id_carreaux_au_1km",
         "I_est_1km":"Id_est_au_1km",
         "Idcar_nat":"Id_Inspire_carreau_nature_dedie_au_carreau_200_m",
-        "Groupe":"Numéro_groupe_dedie_au_carreau",
         "Ind":"Nb_individus",
         "Men_1ind":"Nb_menages_a_un_seul_individu",
         "Men_5ind":"Nb_menages_a_5_individus_ou_plus",
@@ -150,6 +152,13 @@ def transform_bronze_to_silver(spark, folder_name):
     df_silver_2017 = df_silver_2017.filter(
         F.col("Arrondissement").cast("string").startswith("6938")
     )
+    # Mettre la premiere lettre de chaque nom de colonne en minuscule
+    new_cols = [
+        (c[0].lower() + c[1:]) if isinstance(c, str) and len(c) > 0 else c
+        for c in df_silver_2017.columns
+    ]
+    df_silver_2017 = df_silver_2017.toDF(*new_cols)
+
     # add timestamp and save in silver
     df_silver_2017 = df_silver_2017.withColumn("silver_processing_timestamp", current_timestamp())
     df_silver_2017.write.mode("overwrite").parquet(silver_full_path)
