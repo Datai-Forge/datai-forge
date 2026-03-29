@@ -11,7 +11,8 @@
 /site/
 docs/reports_data/
 docs/coverage/
-docs/reports/
+docs/reports/*
+!docs/reports/*.md
 
 # Environnement & Secrets
 /venv/

@@ -1,5 +1,7 @@
 site_name: Datai Forge - Documentation Technique
 site_description: Documentation technique et audits de qualité du projet de prédiction électorale.
+site_url: https://datai-forge.github.io/datai-forge/
+use_directory_urls: true
 
 theme:
   name: material
