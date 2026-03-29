@@ -1,10 +1,10 @@
 # Datai Forge - documentations et qualités
 
-Ce portail centralise toute la documentation technique, les décisions d'architecture et les rapports de santé de notre modèle prédictif pour les élections présidentielles de 2027.
+Ce portail centralise toute la documentation technique, les décisions d'architecture et les rapports de santé du modèle prédictif pour les élections présidentielles de 2027.
 
 ## 🎯 Objectif du Projet
 
-Prédire les résultats du scrutin de 2027 à l'échelle de la ville de Lyon (Code INSEE 69123) en croisant des données historiques électorales, socio-économiques et de sécurité (Nous enrichirons les données avec d'autres indicateurs dans l'avenir)
+Prédire les résultats du scrutin de 2027 à l'échelle de la commune de Lyon (Code INSEE 69123) en croisant des données historiques électorales, socio-économiques et de sécurité (Nous enrichirons les données avec d'autres indicateurs dans l'avenir)
 
 ## 🛠️ Stack Technique
 
@@ -24,5 +24,5 @@ Le projet repose sur certains standards industriels :
 
 ---
 
-!!! info "Note de l'équipe"
-Ce site est mis à jour automatiquement à chaque modification du code source sur la branche principale.
+!!! info "Note pour l'équipe"
+Ce site est mis à jour automatiquement à chaque push sur develop.

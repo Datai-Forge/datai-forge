@@ -92,7 +92,9 @@ jobs:
         run: pip install mkdocs-material
 
       - name: Build Documentation
-        run: mkdocs build
+        run: |
+          rm .gitignore
+          mkdocs build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
