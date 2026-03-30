@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # Your main development container
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile # Assumes your devcontainer's Dockerfile is in .devcontainer/
+    volumes:
+      - .:/app # Mounts your project root into the container at /app
+    # Add any other configurations from your existing devcontainer setup here,
+    # such as environment variables, ports, etc.
+    command: sleep infinity # Keeps the container running for VS Code to attach
+    depends_on:
+      - mysql # Ensures MySQL starts before the app service
+
+  # MySQL database service
+  mysql:
+    image: mysql:8.0 # You can choose a specific version, e.g., mysql:8.0
+    restart: unless-stopped # Always restart if it stops
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password_here # <--- CHANGE THIS SECURELY
+      MYSQL_DATABASE: your_database_name_here # <--- CHANGE THIS
+      MYSQL_USER: your_app_user_here # <--- CHANGE THIS
+      MYSQL_PASSWORD: your_app_password_here # <--- CHANGE THIS
+    ports:
+      - "3306:3306" # Expose MySQL port to your host machine
+    volumes:
+      - mysql_data:/var/lib/mysql # Persistent volume for MySQL data
+      # Uncomment the line below if you have custom MySQL configuration files
+      # - ./mysql_conf:/etc/mysql/conf.d
+
+volumes:
+  mysql_data: # Define the named volume for persistent MySQL data
