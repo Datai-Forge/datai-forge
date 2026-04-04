@@ -20,28 +20,51 @@ Le projet suit l'architecture de données **Médaillon**, permettant de garantir
 ### 3. 🥇 Gold (ML-Ready / BI)
 
 - **Produit 1 : Gold BI** : Schéma en constellation (Faits & Dimensions) pour le reporting et la visualisation.
-- **Produit 2 : Gold ML** : Table plate (Feature Store) optimisée pour l'entraînement du modèle prédictif (à venir).
+- **Produit 2 : Gold ML (One Big Table)** : Une table unique "plate" regroupant toutes les features.
 
-#### 🛡️ Intégrité Numérique (Source of Truth)
+#### 🔄 Pipeline Gold ML Incrémentale
 
-Une décision a été prise concernant la précision des calculs :
+Contrairement à une approche monolithique, la construction de la table finale pour le Machine Learning est **découpée en 3 étapes séquentielles** :
 
-- **Recalcul Systématique** : Aucun pourcentage ou ratio n'est extrait directement des fichiers sources (pour éviter les erreurs d'arrondi).
-- **Entiers Bruts** : La couche Silver ne manipulent que des **entiers bruts** (nombre de voix, inscrits, votants...).
-- **Précision Gold** : Les métriques analytiques sont calculées uniquement en couche Gold au moment de la modélisation.
+1.  **Step 1 (Base)** : Création du socle électoral (Pivotement des blocs politiques).
+2.  **Step 2 (Security)** : Enrichissement par les indicateurs de délinquance (3 Piliers & Deltas).
+3.  **Step 3 (Social)** : Enrichissement par les données socio-économiques Insee (Revenus, Pauvreté).
+
+#### ❓ Pourquoi une approche incrémentale ?
+
+Nous avons opté pour ce design pour quatre raisons fondamentales :
+
+1.  **Auditabilité (Checkpoints)** : À chaque étape, un fichier Parquet intermédiaire est généré. Cela permet à un Data Scientist d'auditer la donnée à la fin de l'étape 2 sans avoir à relancer toute la chaîne.
+2.  **Debuggabilité ciblée** : Si une erreur de jointure survient sur les données Insee (Step 3), nous savons immédiatement que le problème est isolé dans ce script, sans impacter la logique électorale ou de sécurité.
+3.  **Modularité (Plugin-like)** : Si demain nous souhaitons ajouter un "Step 4 : Météo" ou "Step 5 : Transports", il suffit de créer un nouveau script qui consomme la sortie du Step 3, sans toucher au code existant.
+4.  **Optimisation des Ressources** : Spark gère mieux des transformations séquentielles sauvegardées sur disque que des jointures massives à 15 tables en une seule exécution, évitant ainsi les débordements de mémoire (OOM).
+
+---
 
 ## 🔄 Flux de Données
 
 ```mermaid
-graph LR
-    RAW[Données Brutes CSV] --> B[Bronze Layer]
-    B --> S[Silver Layer]
-    S --> G_BI[Gold BI - Star Schema]
-    S --> G_ML[Gold ML - Feature Store]
-    G_ML --> MODEL[Modèle Prédictif 2027]
+graph TD
+    subgraph "Ingestion & Nettoyage"
+        RAW[Données Brutes CSV] --> B[Bronze Layer]
+        B --> S[Silver Layer]
+    end
+
+    subgraph "Couche Gold BI"
+        S --> G_BI[Gold BI - Reporting]
+    end
+
+    subgraph "Pipeline Gold ML Incrémentale"
+        S --> G1[Gold ML Step 1: Base Électorale]
+        G1 --> G2[Gold ML Step 2: Enrichissement Sécurité]
+        G2 --> G3[Gold ML Step 3: Enrichissement Social]
+        G3 --> OBT[One Big Table Finale]
+    end
+
+    OBT --> MODEL[Modèle Prédictif 2027]
 ```
 
 ---
 
 !!! tip "Mise en œuvre pratique"
-Pour exécuter l'intégralité de ce flux de manière automatisée (de l'ingestion brute à la couche Gold), consultez la section sur le **[Lancement Global de la Pipeline](guide.md#lancement-global-de-la-pipeline-bash)**.
+    Pour exécuter l'intégralité de ce flux de manière automatisée (de l'ingestion brute à la couche Gold), consultez la section sur le **[Lancement Global de la Pipeline](onboarding.md#lancement-global-de-la-pipeline)**.
