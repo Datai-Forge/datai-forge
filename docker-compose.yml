@@ -6,13 +6,11 @@ services:
       dockerfile: Dockerfile # Assumes your devcontainer's Dockerfile is in .devcontainer/
     volumes:
       - .:/app # Mounts your project root into the container at /app
+    env_file: .secrets
     environment:
       # MySQL connection variables (must match mysql service below)
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
-      MYSQL_DATABASE: lyon_decisional
-      MYSQL_USER: lyon_user
-      MYSQL_PASSWORD: lyon_secure_password_2026
     command: sleep infinity # Keeps the container running for VS Code to attach
     depends_on:
       mysql:
@@ -22,11 +20,7 @@ services:
   mysql:
     image: mysql:8.0 # You can choose a specific version, e.g., mysql:8.0
     restart: unless-stopped # Always restart if it stops
-    environment:
-      MYSQL_ROOT_PASSWORD: root_secure_password_2026
-      MYSQL_DATABASE: lyon_decisional
-      MYSQL_USER: lyon_user
-      MYSQL_PASSWORD: lyon_secure_password_2026
+    env_file: .secrets
     ports:
       - "3306:3306" # Expose MySQL port to your host machine
     volumes:
