@@ -1,12 +1,15 @@
 import logging
 import os
-from pyspark.sql import functions as F
-from src.common.spark_session_manager import get_spark_session
-from src.config import SILVER_PATH, GOLD_PATH
 
-# Configuration du logging senior
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from pyspark.sql import functions as F
+
+from src.common.spark_session_manager import get_spark_session
+from src.config import GOLD_PATH, SILVER_PATH
+
+# Configuration du logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
+
 
 def run_gold_bi_pipeline():
     """
@@ -31,37 +34,42 @@ def run_gold_bi_pipeline():
 
     # Dimension candidat
     logger.info("Extraction de dim_candidats...")
-    dim_candidats = df_silver.select(
-        "id_candidat",
-        "nom",
-        "prenom",
-        "sexe",
-        "parti_code",
-        "parti_nom",
-        "nuance_officielle",
-        "bloc_analytique"
-    ).distinct().filter(F.col("id_candidat").isNotNull())
+    dim_candidats = (
+        df_silver.select(
+            "id_candidat",
+            "nom",
+            "prenom",
+            "sexe",
+            "parti_code",
+            "parti_nom",
+            "nuance_officielle",
+            "bloc_analytique",
+        )
+        .distinct()
+        .filter(F.col("id_candidat").isNotNull())
+    )
 
     # Dimension géographique
     logger.info("Extraction de dim_geographie...")
     # Règle métier : Identifier le bureau 0001 comme Rattachement Administratif
-    dim_geographie = df_silver.select(
-        F.col("code_du_b_vote").alias("id_bureau"),
-        "libelle_de_la_commune",
-        "arrondissement"
-    ).distinct().withColumn("code_insee", F.lit("69123")) \
-    .withColumn("type_bureau",
-        F.when(F.col("id_bureau") == "0001", "Rattachement Administratif")
-        .otherwise("Standard")
+    dim_geographie = (
+        df_silver.select(
+            F.col("code_du_b_vote").alias("id_bureau"), "libelle_de_la_commune", "arrondissement"
+        )
+        .distinct()
+        .withColumn("code_insee", F.lit("69123"))
+        .withColumn(
+            "type_bureau",
+            F.when(F.col("id_bureau") == "0001", "Rattachement Administratif").otherwise(
+                "Standard"
+            ),
+        )
     )
 
     # Table de faits pour les votes
     logger.info("Extraction de fact_votes...")
     fact_votes = df_silver.select(
-        F.col("code_du_b_vote").alias("id_bureau"),
-        "id_candidat",
-        "tour",
-        "voix"
+        F.col("code_du_b_vote").alias("id_bureau"), "id_candidat", "tour", "voix"
     ).filter(F.col("id_candidat").isNotNull())
 
     # Table de faits pour la participation
@@ -73,15 +81,13 @@ def run_gold_bi_pipeline():
         "inscrits",
         "abstentions",
         "votants",
-        "exprimes"
+        "exprimes",
     ).distinct()
 
     # Ajout d'indicateurs pré-calculés
     fact_participation = fact_participation.withColumn(
         "taux_participation", F.round((F.col("votants") / F.col("inscrits")) * 100, 2)
-    ).withColumn(
-        "taux_abstention", F.round((F.col("abstentions") / F.col("inscrits")) * 100, 2)
-    )
+    ).withColumn("taux_abstention", F.round((F.col("abstentions") / F.col("inscrits")) * 100, 2))
 
     # pour la sauvegarde
     output_base_path = os.path.join(GOLD_PATH, "presidentielle", "bi")
@@ -91,7 +97,9 @@ def run_gold_bi_pipeline():
     dim_candidats.write.mode("overwrite").parquet(os.path.join(output_base_path, "dim_candidats"))
     dim_geographie.write.mode("overwrite").parquet(os.path.join(output_base_path, "dim_geographie"))
     fact_votes.write.mode("overwrite").parquet(os.path.join(output_base_path, "fact_votes"))
-    fact_participation.write.mode("overwrite").parquet(os.path.join(output_base_path, "fact_participation"))
+    fact_participation.write.mode("overwrite").parquet(
+        os.path.join(output_base_path, "fact_participation")
+    )
 
     # Audit rapide
     total_voix = fact_votes.agg(F.sum("voix")).collect()[0][0]
@@ -104,6 +112,7 @@ def run_gold_bi_pipeline():
         logger.warning("⚠️ Écart détecté entre les voix et les exprimés !")
 
     logger.info("Pipeline Gold BI terminée avec succès !")
+
 
 if __name__ == "__main__":
     run_gold_bi_pipeline()
