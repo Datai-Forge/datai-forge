@@ -20,5 +20,9 @@ python3 -m src.etl.gold.gold_presidentielle_bi
 python3 -m src.etl.gold.gold_securite_bi
 python3 -m src.etl.gold.niveau_vie_pauvrete_gold
 
+echo "🤖 Génération OBT pour machine learning..."
+python3 -m src.etl.gold.gold_ml_step1_base
+python3 -m src.etl.gold.gold_ml_step2_enrichment_security
+python3 -m src.etl.gold.gold_ml_step3_enrichment_social
 
 echo "✅ Pipeline ETL terminée avec succès !"

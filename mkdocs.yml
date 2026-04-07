@@ -37,12 +37,23 @@ theme:
 
 nav:
   - Accueil: index.md
+  - Résumé: resume_modelisation.md
   - Architecture: architecture.md
-  - Choix des Données:
-      - Élections: datasets/elections.md
-      - Sécurité: datasets/securite.md
-      - Niveau de Vie: datasets/social.md
-  - Guide Développeur: guide.md
+  - Machine Learning:
+      - Choix des Données ML: ml_choix_donnees.md
+      - Stratégie & OBT: ml.md
+      - Variables ML: dictionnaires/features_ml.md
+
+  - Données:
+      - Fiches Techniques:
+          - Élections: datasets/elections.md
+          - Sécurité: datasets/securite.md
+          - Niveau de Vie: datasets/social.md
+      - Dictionnaire des Données:
+          - Élections: dictionnaires/elections.md
+  - Onboarding:
+      - Guide de démarrage: onboarding.md
+      - Outils complémentaires: outils_complementaires.md
   - Qualité & Santé:
       - Standards & Outils: standards.md
       - Couverture de Tests: reports/coverage.md
