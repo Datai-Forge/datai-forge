@@ -59,6 +59,22 @@ The `notebooks/` directory is dedicated to exploratory analysis. The Jupyter ext
 
 Open any Python script and press **F5**. The configuration in `.vscode/launch.json` is set up to launch the current script with the interactive debugger and the `PYTHONPATH` correctly configured.
 
+### 4. Launch the BI Dash app
+
+The devcontainer auto-starts the dashboard at startup.
+
+Default URL:
+
+`http://localhost:8050`
+
+If you need to restart it manually, run:
+
+```bash
+python -m src.bi.dash_app
+```
+
+Live logs are written to `/tmp/dash_app.log`.
+
 ## 💡 Best Practices & Standards
 
 - **Path Centralization**: Always use `src.config` to access data directories. Never hardcode relative paths.
