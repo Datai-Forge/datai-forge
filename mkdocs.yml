@@ -37,10 +37,13 @@ theme:
 
 nav:
   - Accueil: index.md
+  - Résumé: resume_modelisation.md
   - Architecture: architecture.md
   - Machine Learning:
       - Choix des Données ML: ml_choix_donnees.md
       - Stratégie & OBT: ml.md
+      - Variables ML: dictionnaires/features_ml.md
+
   - Données:
       - Fiches Techniques:
           - Élections: datasets/elections.md

@@ -1,0 +1,37 @@
+services:
+  # Your main development container
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile # Assumes your devcontainer's Dockerfile is in .devcontainer/
+    volumes:
+      - .:/app # Mounts your project root into the container at /app
+    env_file: .secrets
+    environment:
+      # MySQL connection variables (must match mysql service below)
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+    command: sleep infinity # Keeps the container running for VS Code to attach
+    depends_on:
+      mysql:
+        condition: service_healthy # Waits for MySQL to be healthy
+
+  # MySQL database service
+  mysql:
+    image: mysql:8.0 # You can choose a specific version, e.g., mysql:8.0
+    restart: unless-stopped # Always restart if it stops
+    env_file: .secrets
+    ports:
+      - "3306:3306" # Expose MySQL port to your host machine
+    volumes:
+      - mysql_data:/var/lib/mysql # Persistent volume for MySQL data
+      # Uncomment the line below if you have custom MySQL configuration files
+      # - ./mysql_conf:/etc/mysql/conf.d
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+      interval: 5s
+
+volumes:
+  mysql_data: # Define the named volume for persistent MySQL data
