@@ -20,13 +20,29 @@ Nous avons comparé deux algorithmes :
 - Un algorithme linéaire : **Régression Linéaire Multiple**
 - Un algorithme non-linéaire basé sur les arbres de décision : **Forêt Aléatoire (Random Forest)**
 
-### Les Scores (Coefficient de Détermination $R^2$)
+### Les Performances par Blocs Politiques (Tour 1)
 
-- **Régression Linéaire : $R^2 = 0.50$** (Explique 50% de la logique du vote)
-- **Random Forest : $R^2 = 0.33$** (Explique 33% de la logique du vote)
+Voici les résultats de notre **Baseline v1 (Régression Linéaire)** pour chaque camp politique. Ces scores nous permettent de voir quels électorats sont les plus "prévisibles" par les variables socio-économiques.
+
+| Bloc Politique | Précision ($R^2$) | Marge d'erreur (RMSE) | Erreur moyenne (MAE) |
+| :--- | :--- | :--- | :--- |
+| **CENTRE** | **0.59** | 4.9 pts | 3.9 pts |
+| **DROITE** | **0.52** | 2.1 pts | 1.6 pts |
+| **EXTREME_DROITE** | **0.51** | 3.9 pts | 3.1 pts |
+| **GAUCHE** | **0.51** | 8.3 pts | 6.9 pts |
+| **EXTREME_GAUCHE** | **0.51** | 0.4 pts | 0.3 pts |
+
+> 💡 **Observation Clé :** Le vote pour le **Bloc Centre (Majorité)** est le mieux capté (59%). C'est un vote très corrélé au revenu et à la sociologie urbaine. Pour la **Gauche**, l'erreur (RMSE 8.3) est plus élevée, ce qui confirme que l'arrondissement est une maille trop large pour capter les poches de vote populaire très localisées.
+
+### Comparaison des Algorithmes
+
+Nous avons également benchmarké le comportement des algorithmes sur le bloc test :
+
+- **Régression Linéaire : $R^2 = 0.51$** (Moyenne sur les blocs)
+- **Random Forest : $R^2 = 0.33$**
 
 > 💡 **Pourquoi le Random Forest "échoue"-t-il ?**
-> Il montre que le modèle ne parvient pas à extraire de règles de décision robustes à partir de données trop agrégées. Les arbres de décision ont besoin de **variance** pour séparer les profils. Sans nuances claires entre les données (p*uisque tous les bureaux d'un arrondissement ont le même profil*), l'algorithme "s'emmêle les pinceaux".
+> Il montre que le modèle ne parvient pas à extraire de règles de décision robustes à partir de données trop agrégées. Les arbres de décision ont besoin de **variance** pour séparer les profils. Sans nuances claires entre les données (*puisque tous les bureaux d'un arrondissement ont le même profil*), l'algorithme "s'emmêle les pinceaux".
 
 ---
 
