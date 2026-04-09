@@ -45,23 +45,32 @@ Nous avons opté pour ce design pour quatre raisons :
 
 ```mermaid
 graph TD
-    subgraph "Ingestion & Nettoyage"
-        RAW[Données Brutes CSV] --> B[Bronze Layer]
-        B --> S[Silver Layer]
+    subgraph "Sources"
+        RAW[Données Brutes CSV]
     end
 
-    subgraph "Couche Gold BI"
-        S --> G_BI[Gold BI - Reporting]
+    subgraph "Traitement et raffinement "
+        RAW --> B[Bronze Layer - Parquet]
+        B --> S[Silver Layer - Cleaned]
+
+        subgraph "Pipeline Gold ML Incrémentale"
+            S --> G1[Gold ML Step 1: Élections]
+            G1 --> G2[Gold ML Step 2: Sécurité]
+            G2 --> G3[Gold ML Step 3: Social]
+            G3 --> OBT[One Big Table ML]
+        end
+
+        subgraph "Couche Gold BI"
+            S --> G_BI[Gold BI - Schéma en Étoile]
+        end
     end
 
-    subgraph "Pipeline Gold ML Incrémentale"
-        S --> G1[Gold ML Step 1: Base Électorale]
-        G1 --> G2[Gold ML Step 2: Enrichissement Sécurité]
-        G2 --> G3[Gold ML Step 3: Enrichissement Social]
-        G3 --> OBT[One Big Table Finale]
+    subgraph "Serving & Reporting"
+        G_BI -- "Synchronisation Gold" --> DB[(MySQL Lyon Decisional)]
+        DB -- "SQL Queries" --> DASH[Dashboard Dash]
     end
 
-    OBT --> MODEL[Modèle Prédictif 2027]
+    OBT --> MODEL[Modèle Prédictif ML]
 ```
 
 ---

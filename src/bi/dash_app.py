@@ -1,22 +1,18 @@
-"""Dash BI application for election, social and security indicators."""
-
-from __future__ import annotations
+"""Dash BI application for normalized security and election analysis in Lyon."""
 
 import os
 import re
-import socket
-from pathlib import Path
 
-import dash
 import mysql.connector
 import pandas as pd
 import plotly.express as px
-from dash import Dash, dash_table, dcc, html
+import plotly.graph_objects as go
+from dash import Dash, Input, Output, dcc, html
 
-from src.common.mysql_bootstrap import ensure_mysql_data_loaded
+# --- DATABASE HELPERS ---
 
 
-def get_connection() -> mysql.connector.MySQLConnection:
+def get_connection():
     return mysql.connector.connect(
         host=os.getenv("MYSQL_HOST", "mysql"),
         port=int(os.getenv("MYSQL_PORT", "3306")),
@@ -34,345 +30,259 @@ def read_sql(sql: str, params: list | None = None) -> pd.DataFrame:
         connection.close()
 
 
-def pick_nvp_metric() -> str | None:
-    columns = read_sql(
-        """
-        SELECT column_name
-        FROM information_schema.columns
-        WHERE table_schema = DATABASE()
-          AND table_name = 'fact_niveau_vie_pauvrete_200m'
-        ORDER BY ordinal_position
-        """
-    )
-    columns.columns = [c.lower() for c in columns.columns]
-    if "column_name" not in columns.columns:
-        return None
-
-    excluded_cols = {"sk_geographie", "sk_temps", "gold_processing_timestamp"}
-    measure_candidates = [c for c in columns["column_name"].tolist() if c not in excluded_cols]
-    if not measure_candidates:
-        return None
-
-    priority_patterns = ["niveau_vie", "med", "revenu", "pauvrete", "taux"]
-    for pattern in priority_patterns:
-        match = next((m for m in measure_candidates if pattern in m.lower()), None)
-        if match is not None:
-            return match
-
-    return measure_candidates[0]
+# --- DATA LOADING ---
 
 
-def normalize_arrondissement(value: object) -> str | None:
-    match = re.search(r"([1-9])", str(value))
-    return match.group(1) if match else None
+def load_votes_by_block(arrondissement: str = "ALL") -> pd.DataFrame:
+    where, params = ("", [])
+    if arrondissement != "ALL":
+        where, params = ("WHERE b.arrondissement = %s", [arrondissement])
+    sql = f"""
+        SELECT c.bloc_analytique, SUM(v.voix) as total_voix
+        FROM fact_votes v
+        JOIN dim_candidats c ON c.id_candidat = v.id_candidat
+        JOIN dim_geographie_bureau b ON b.id_bureau = v.id_bureau
+        {where}
+        GROUP BY c.bloc_analytique
+    """
+    return read_sql(sql, params)
 
 
-def load_nvp_by_arrondissement() -> tuple[pd.DataFrame, str, int]:
-    selected_metric = pick_nvp_metric()
-    if selected_metric is not None:
-        sql_df = read_sql(
-            f"""
-            SELECT
-                g.arrondissement AS arrondissement,
-                t.annee,
-                AVG(f.`{selected_metric}`) AS niveau_vie_moyen
-            FROM fact_niveau_vie_pauvrete_200m f
-            JOIN dim_geographie_200m g ON g.sk_geographie = f.sk_geographie
-            JOIN dim_temps t ON t.sk_temps = f.sk_temps
-            WHERE g.arrondissement IS NOT NULL
-              AND f.`{selected_metric}` IS NOT NULL
-            GROUP BY g.arrondissement, t.annee
-            ORDER BY t.annee, g.arrondissement
-            """
-        )
-        if not sql_df.empty:
-            latest_year = int(sql_df["annee"].max())
-            return sql_df, selected_metric, latest_year
-
-    fallback_candidates = [
-        Path("data-raw/2021_carreaux_200m_met.csv"),
-        Path("../data-raw/2021_carreaux_200m_met.csv"),
-        Path("../../data-raw/2021_carreaux_200m_met.csv"),
-        Path("/app/data-raw/2021_carreaux_200m_met.csv"),
-    ]
-    fallback_path = next((p for p in fallback_candidates if p.exists()), None)
-    if fallback_path is None:
-        return (
-            pd.DataFrame(columns=["arrondissement", "annee", "niveau_vie_moyen"]),
-            "ind_snv",
-            2021,
-        )
-
-    raw = pd.read_csv(fallback_path)
-    fallback_metric = next((c for c in ["ind_snv", "men_pauv"] if c in raw.columns), None)
-    if fallback_metric is None or "lcog_geo" not in raw.columns:
-        return (
-            pd.DataFrame(columns=["arrondissement", "annee", "niveau_vie_moyen"]),
-            "ind_snv",
-            2021,
-        )
-
-    raw["arrondissement"] = (
-        raw["lcog_geo"]
-        .astype(str)
-        .str.replace('"', "", regex=False)
-        .str.extract(r"(6938[1-9])", expand=False)
-        .str[-1]
-    )
-    out = (
-        raw.dropna(subset=["arrondissement", fallback_metric])
-        .groupby("arrondissement", as_index=False)[fallback_metric]
-        .mean()
-        .rename(columns={fallback_metric: "niveau_vie_moyen"})
-    )
-    out["annee"] = 2021
-    return out, fallback_metric, 2021
-
-
-def load_participation_by_bureau() -> pd.DataFrame:
-    return read_sql(
-        """
+def load_global_metrics():
+    """Aggregates Participation and NORMALIZED Security data."""
+    # 1. Participation & Inscrits
+    df = read_sql("""
         SELECT
-            b.id_bureau,
             b.arrondissement,
-            p.tour,
-            p.inscrits,
-            p.taux_participation
+            AVG(p.taux_participation) as participation,
+            SUM(p.inscrits) as inscrits
         FROM fact_participation p
         JOIN dim_geographie_bureau b ON b.id_bureau = p.id_bureau
-        WHERE b.arrondissement IS NOT NULL
-        """
-    )
+        GROUP BY b.arrondissement
+    """)
 
-
-def build_scatter_figure(data: pd.DataFrame, metric_label: str, year: int):
-    if data.empty:
-        return px.scatter(title="Aucune donnee disponible pour niveau de vie vs participation")
-    fig = px.scatter(
-        data,
-        x="niveau_vie_moyen",
-        y="taux_participation",
-        color="tour",
-        size="inscrits",
-        hover_data=["id_bureau", "arrondissement"],
-        title=f"Niveau de vie ({year}) vs participation par bureau",
-        labels={
-            "niveau_vie_moyen": f"Niveau de vie moyen arrondissement ({metric_label})",
-            "taux_participation": "Taux de participation (%)",
-            "tour": "Tour",
-        },
-    )
-    fig.update_layout(legend_title_text="Tour")
-    return fig
-
-
-def build_top_bureaux_figure(data: pd.DataFrame):
-    if data.empty:
-        return px.bar(title="Aucune donnee disponible pour les bureaux")
-    top_bureaux = data.sort_values("taux_participation", ascending=False).head(15).copy()
-    top_bureaux["id_bureau"] = top_bureaux["id_bureau"].astype(str)
-    fig = px.bar(
-        top_bureaux.sort_values("taux_participation"),
-        x="taux_participation",
-        y="id_bureau",
-        color="tour",
-        orientation="h",
-        title="Top 15 bureaux par taux de participation",
-        labels={
-            "id_bureau": "Bureau de vote",
-            "taux_participation": "Taux de participation (%)",
-            "tour": "Tour",
-        },
-    )
-    fig.update_layout(legend_title_text="Tour")
-    return fig
-
-
-def load_demography_security_trends() -> pd.DataFrame:
-    demography = read_sql(
-        """
+    # 2. Sécurité + Population (pour normalisation)
+    # On prend la population la plus récente (2022 ou max)
+    df_sec_pop = read_sql("""
         SELECT
-            g.nom_arrondissement AS arrondissement,
-            d.annee,
-            d.population
-        FROM fact_demographie_annuelle d
-        JOIN dim_geographie_arrondissement g ON g.code_arrondissement = d.code_arrondissement
-        """
-    )
-    security = read_sql(
-        """
-        SELECT
-            g.nom_arrondissement AS arrondissement,
-            s.annee,
-            SUM(s.nombre) AS incidents_total
+            g.nom_arrondissement as arrondissement,
+            SUM(s.nombre) as total_incidents,
+            MAX(d.population) as population
         FROM fact_securite s
         JOIN dim_geographie_arrondissement g ON g.code_arrondissement = s.code_arrondissement
-        GROUP BY g.nom_arrondissement, s.annee
-        """
-    )
-    merged = demography.merge(
-        security,
-        on=["arrondissement", "annee"],
-        how="inner",
-    )
-    if merged.empty:
-        return merged
+        JOIN fact_demographie_annuelle d ON d.code_arrondissement = s.code_arrondissement
+        WHERE s.annee = 2022 AND d.annee = 2022
+        GROUP BY g.nom_arrondissement
+    """)
 
-    summary = (
-        merged.sort_values(["arrondissement", "annee"])
-        .groupby("arrondissement", as_index=False)
-        .agg(
-            annee_min=("annee", "min"),
-            annee_max=("annee", "max"),
-            population_debut=("population", "first"),
-            population_fin=("population", "last"),
-            insecurite_debut=("incidents_total", "first"),
-            insecurite_fin=("incidents_total", "last"),
+    def clean_name(name):
+        if not name:
+            return ""
+        match = re.search(r"(\d+)", str(name))
+        if match:
+            if match.group(1) == "1":
+                return f"{match.group(1)}er"
+            return f"{match.group(1)}ème"
+        return name
+
+    df["arrdt_key"] = df["arrondissement"].apply(clean_name)
+    df_sec_pop["arrdt_key"] = df_sec_pop["arrondissement"].apply(clean_name)
+
+    merged = df.merge(
+        df_sec_pop[["arrdt_key", "total_incidents", "population"]], on="arrdt_key", how="left"
+    )
+
+    # Calcul du taux pour 1000 habitants
+    merged["taux_incidents"] = (merged["total_incidents"] / merged["population"]) * 1000
+    return merged.fillna(0)
+
+
+def get_arrondissements():
+    sql = (
+        "SELECT DISTINCT arrondissement "
+        "FROM dim_geographie_bureau "
+        "WHERE arrondissement IS NOT NULL"
+    )
+    return read_sql(sql)["arrondissement"].tolist()
+
+
+# --- APP SETUP ---
+
+app = Dash(__name__)
+app.title = "Lyon BI - Sécurité Normalisée"
+
+POLITICAL_COLORS = {
+    "EXTREME_GAUCHE": "#7D0000",
+    "GAUCHE": "#E60000",
+    "CENTRE": "#FFC400",
+    "DROITE": "#0066CC",
+    "EXTREME_DROITE": "#003366",
+}
+CARD = {
+    "backgroundColor": "white",
+    "padding": "20px",
+    "borderRadius": "12px",
+    "boxShadow": "0 4px 15px rgba(0,0,0,0.05)",
+    "marginBottom": "20px",
+}
+
+app.layout = html.Div(
+    style={"backgroundColor": "#f0f2f5", "padding": "30px", "fontFamily": "Segoe UI, sans-serif"},
+    children=[
+        html.H1(
+            "Analyse Électorale et Sécuritaire Normalisée",
+            style={"textAlign": "center", "color": "#1a2a6c", "fontWeight": "bold"},
+        ),
+        html.Div(
+            [
+                html.Label("📍 Focus par Arrondissement :", style={"fontWeight": "bold"}),
+                dcc.Dropdown(
+                    id="arrdt-selector",
+                    options=[{"label": "Vue d'ensemble (Lyon)", "value": "ALL"}]
+                    + [{"label": a, "value": a} for a in get_arrondissements()],
+                    value="ALL",
+                    clearable=False,
+                ),
+            ],
+            style={"width": "450px", "margin": "30px auto"},
+        ),
+        html.Div(id="kpi-row", style={"display": "flex", "gap": "20px", "marginBottom": "30px"}),
+        html.Div(
+            style={"display": "flex", "gap": "20px"},
+            children=[
+                html.Div(
+                    style={"flex": "1"},
+                    children=[
+                        html.Div(
+                            [
+                                html.H3("Rapport de Force Politique", style={"marginTop": "0"}),
+                                dcc.Graph(id="pie-chart"),
+                            ],
+                            style=CARD,
+                        ),
+                    ],
+                ),
+                html.Div(
+                    style={"flex": "1.5"},
+                    children=[
+                        html.Div(
+                            [
+                                html.H3("Corrélation Participation vs Taux de Délinquance"),
+                                html.P(
+                                    "La courbe montre le nombre d'incidents pour 1000 habitants "
+                                    "(Indicateur neutre de la démographie).",
+                                    style={
+                                        "color": "#7f8c8d",
+                                        "fontSize": "13px",
+                                        "marginBottom": "20px",
+                                    },
+                                ),
+                                dcc.Graph(id="ranking-chart"),
+                            ],
+                            style={**CARD, "height": "100%"},
+                        )
+                    ],
+                ),
+            ],
+        ),
+    ],
+)
+
+# --- CALLBACKS ---
+
+
+@app.callback(
+    [
+        Output("pie-chart", "figure"),
+        Output("ranking-chart", "figure"),
+        Output("kpi-row", "children"),
+    ],
+    [Input("arrdt-selector", "value")],
+)
+def update_dashboard(selected_arrdt):
+    df_votes = load_votes_by_block(selected_arrdt)
+    df_global = load_global_metrics()
+
+    # 1. Pie Chart
+    pie_fig = px.pie(
+        df_votes,
+        values="total_voix",
+        names="bloc_analytique",
+        color="bloc_analytique",
+        color_discrete_map=POLITICAL_COLORS,
+        hole=0.5,
+    )
+    pie_fig.update_layout(margin=dict(l=10, r=10, t=10, b=10))
+
+    # 2. Ranking Chart (Normalized)
+    df_rank = df_global.sort_values("participation", ascending=False)
+    rank_fig = go.Figure()
+
+    rank_fig.add_trace(
+        go.Bar(
+            x=df_rank["arrondissement"],
+            y=df_rank["participation"],
+            name="Participation (%)",
+            marker_color="#3498db",
+            opacity=0.7,
         )
     )
-    summary["delta_population"] = summary["population_fin"] - summary["population_debut"]
-    summary["delta_insecurite"] = summary["insecurite_fin"] - summary["insecurite_debut"]
-    summary["cas_critique"] = (summary["delta_population"] <= 0) & (summary["delta_insecurite"] > 0)
-    return summary
 
-
-def build_demography_security_figure(summary: pd.DataFrame):
-    if summary.empty:
-        return px.scatter(title="Aucune donnee disponible pour demographie vs insecurite")
-
-    fig = px.scatter(
-        summary,
-        x="delta_population",
-        y="delta_insecurite",
-        color="cas_critique",
-        text="arrondissement",
-        title="Evolution demographique vs evolution de l'insecurite (debut -> fin)",
-        labels={
-            "delta_population": "Variation population",
-            "delta_insecurite": "Variation incidents",
-            "cas_critique": "Pas de croissance demo + insecurite en hausse",
-        },
-        color_discrete_map={True: "#d62728", False: "#1f77b4"},
+    rank_fig.add_trace(
+        go.Scatter(
+            x=df_rank["arrondissement"],
+            y=df_rank["taux_incidents"],
+            name="Incidents / 1000 hab.",
+            yaxis="y2",
+            line=dict(color="#e74c3c", width=3),
+            mode="lines+markers",
+        )
     )
-    fig.add_hline(y=0, line_dash="dash")
-    fig.add_vline(x=0, line_dash="dash")
-    fig.update_traces(textposition="top center")
-    return fig
 
+    rank_fig.update_layout(
+        title="Zoom : Détail des Écarts de Participation",
+        yaxis=dict(
+            title="Taux de Participation (%)", range=[70, 85]
+        ),  # Zoom pour voir les 10% d'écart
+        yaxis2=dict(title="Incidents pour 1000 hab.", overlaying="y", side="right", showgrid=False),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        plot_bgcolor="rgba(0,0,0,0)",
+        margin=dict(l=20, r=20, t=40, b=20),
+    )
 
-def build_dashboard() -> Dash:
-    ensure_mysql_data_loaded()
-
-    nvp_by_arrdt, metric_label, metric_year = load_nvp_by_arrondissement()
-    participation = load_participation_by_bureau()
-
-    if not nvp_by_arrdt.empty and not participation.empty:
-        nvp_latest = nvp_by_arrdt[nvp_by_arrdt["annee"] == int(nvp_by_arrdt["annee"].max())].copy()
-        nvp_latest["arrdt_norm"] = nvp_latest["arrondissement"].map(normalize_arrondissement)
-        participation["arrdt_norm"] = participation["arrondissement"].map(normalize_arrondissement)
-        bureau_with_income = participation.merge(
-            nvp_latest[["arrdt_norm", "niveau_vie_moyen"]],
-            on="arrdt_norm",
-            how="left",
+    if selected_arrdt != "ALL":
+        opacity_list = [1.0 if a == selected_arrdt else 0.2 for a in df_rank["arrondissement"]]
+        rank_fig.update_traces(
+            marker_opacity=opacity_list,
+            selector=dict(type="bar"),
         )
-        bureau_with_income = bureau_with_income.dropna(
-            subset=["niveau_vie_moyen", "taux_participation"]
-        )
+
+    # 3. KPIs
+    if selected_arrdt == "ALL":
+        part = df_global["participation"].mean()
+        tot_ins = df_global["inscrits"].sum()
+        pop = df_global["population"].sum()
     else:
-        bureau_with_income = pd.DataFrame(
-            columns=[
-                "id_bureau",
-                "arrondissement",
-                "tour",
-                "inscrits",
-                "taux_participation",
-                "niveau_vie_moyen",
-            ]
-        )
+        row = df_global[df_global["arrondissement"] == selected_arrdt].iloc[0]
+        part, tot_ins, pop = row["participation"], row["inscrits"], row["population"]
 
-    scatter_fig = build_scatter_figure(bureau_with_income, metric_label, metric_year)
-    top_bureaux_fig = build_top_bureaux_figure(bureau_with_income)
+    kpis = [
+        html.Div(
+            [html.H2(f"{part:.1f}%"), html.P("Participation")],
+            style={**CARD, "flex": "1", "textAlign": "center", "borderLeft": "5px solid #3498db"},
+        ),
+        html.Div(
+            [html.H2(f"{tot_ins:,}".replace(",", " ")), html.P("Inscrits")],
+            style={**CARD, "flex": "1", "textAlign": "center", "borderLeft": "5px solid #2ecc71"},
+        ),
+        html.Div(
+            [html.H2(f"{pop:,.0f}".replace(",", " ")), html.P("Population (Hab.)")],
+            style={**CARD, "flex": "1", "textAlign": "center", "borderLeft": "5px solid #9b59b6"},
+        ),
+    ]
 
-    demo_security_summary = load_demography_security_trends()
-    demo_security_fig = build_demography_security_figure(demo_security_summary)
-
-    if "cas_critique" in demo_security_summary.columns:
-        critical_arrondissements = demo_security_summary[
-            demo_security_summary["cas_critique"]
-        ].copy()
-    else:
-        critical_arrondissements = pd.DataFrame(
-            columns=[
-                "arrondissement",
-                "annee_min",
-                "annee_max",
-                "delta_population",
-                "delta_insecurite",
-            ]
-        )
-
-    if not critical_arrondissements.empty:
-        critical_arrondissements = critical_arrondissements.sort_values(
-            "delta_insecurite", ascending=False
-        )
-
-    app = dash.Dash(__name__)
-    app.title = "Lyon BI Dashboard"
-
-    app.layout = html.Div(
-        [
-            html.H1("Dashboard BI - Elections, niveau de vie et insecurite"),
-            html.P(
-                "Focus: arrondissements sans croissance demographique et insecurite en hausse, "
-                "plus croisement niveau de vie et participation par bureau."
-            ),
-            dcc.Graph(figure=demo_security_fig),
-            html.H2("Arrondissements critiques"),
-            dash_table.DataTable(
-                columns=[
-                    {"name": "Arrondissement", "id": "arrondissement"},
-                    {"name": "Annee debut", "id": "annee_min"},
-                    {"name": "Annee fin", "id": "annee_max"},
-                    {"name": "Delta population", "id": "delta_population"},
-                    {"name": "Delta insecurite", "id": "delta_insecurite"},
-                ],
-                data=critical_arrondissements[
-                    [
-                        "arrondissement",
-                        "annee_min",
-                        "annee_max",
-                        "delta_population",
-                        "delta_insecurite",
-                    ]
-                ].to_dict("records")
-                if not critical_arrondissements.empty
-                else [],
-                style_table={"overflowX": "auto"},
-                style_cell={"textAlign": "left", "padding": "8px"},
-                style_header={"fontWeight": "bold"},
-                page_size=10,
-            ),
-            dcc.Graph(figure=scatter_fig),
-            dcc.Graph(figure=top_bureaux_fig),
-        ],
-        style={"maxWidth": "1200px", "margin": "0 auto", "padding": "16px"},
-    )
-    return app
-
-
-app = build_dashboard()
-
-
-def _is_port_open(host: str, port: int) -> bool:
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-        sock.settimeout(0.3)
-        return sock.connect_ex((host, port)) == 0
+    return pie_fig, rank_fig, kpis
 
 
 if __name__ == "__main__":
-    port = int(os.getenv("DASH_PORT", "8050"))
-    if _is_port_open("127.0.0.1", port):
-        print(f"Dash app already running on http://localhost:{port}")
-        raise SystemExit(0)
-
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run(host="0.0.0.0", port=8050, debug=False)
