@@ -1,8 +1,7 @@
-"""Utilities to seed the MySQL BI schema from raw CSV sources.
+"""Utilities to seed the MySQL BI schema from gold medallion outputs.
 
-The project schema is created separately from the data load step. This module
-populates the tables used by the notebook when MySQL is empty so the BI cells
-can query real rows without requiring a manual ETL run first.
+The project schema is created separately from this data load step. This module
+populates BI tables used by notebooks when MySQL is empty.
 """
 
 from __future__ import annotations
@@ -15,7 +14,7 @@ from collections.abc import Iterable
 import mysql.connector
 import pandas as pd
 
-from src.config import MAPPING_POLITIQUE_PATH, RAW_DATA_PATH, SECURITY_RAW_FILE
+from src.config import GOLD_PATH
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +26,10 @@ MYSQL_CONFIG = {
     "password": os.getenv("MYSQL_PASSWORD", ""),
     "database": os.getenv("MYSQL_DATABASE", "lyon_decisional"),
 }
+
+GOLD_PRESIDENTIELLE_BI_PATH = os.path.join(GOLD_PATH, "presidentielle", "bi")
+GOLD_SECURITE_BI_PATH = os.path.join(GOLD_PATH, "securite", "bi")
+GOLD_NIVEAU_VIE_BI_STAR_PATH = os.path.join(GOLD_PATH, "niveau_vie_pauvrete", "bi_star")
 
 
 def _to_int(value) -> int | None:
@@ -68,12 +71,6 @@ def _native(value):
     return value
 
 
-def _normalize_key(value: str | None) -> str:
-    if value is None:
-        return ""
-    return re.sub(r"\s+", " ", str(value).strip()).casefold()
-
-
 def _derive_arrondissement(code_bureau: str | None) -> str | None:
     if not code_bureau:
         return None
@@ -86,7 +83,7 @@ def _derive_arrondissement(code_bureau: str | None) -> str | None:
         return "1er Arrondissement"
     if arrondissement_raw is None:
         return None
-    return f"{arrondissement_raw}ème Arrondissement"
+    return f"{arrondissement_raw}eme Arrondissement"
 
 
 def _connect() -> mysql.connector.MySQLConnection:
@@ -105,15 +102,42 @@ def _insert_rows(
         cursor.execute(statement, row)
 
 
-def _load_political_mapping() -> pd.DataFrame:
-    if not os.path.exists(MAPPING_POLITIQUE_PATH):
-        logger.warning("Political mapping file not found: %s", MAPPING_POLITIQUE_PATH)
+def _read_gold_parquet(dataset_path: str, dataset_name: str) -> pd.DataFrame:
+    if not os.path.exists(dataset_path):
+        logger.warning("Gold dataset not found for %s: %s", dataset_name, dataset_path)
         return pd.DataFrame()
 
-    mapping = pd.read_csv(MAPPING_POLITIQUE_PATH, dtype=str).fillna("")
-    mapping["nom_norm"] = mapping["nom"].map(_normalize_key)
-    mapping["prenom_norm"] = mapping["prenom"].map(_normalize_key)
-    return mapping
+    try:
+        return pd.read_parquet(dataset_path)
+    except Exception:
+        logger.exception("Failed to read gold dataset %s from %s", dataset_name, dataset_path)
+        return pd.DataFrame()
+
+
+def _records(df: pd.DataFrame) -> list[dict]:
+    if df.empty:
+        return []
+    return df.where(pd.notna(df), None).to_dict(orient="records")
+
+
+def _to_date_string(value) -> str | None:
+    native = _native(value)
+    if native is None:
+        return None
+    parsed = pd.to_datetime(native, errors="coerce")
+    if pd.isna(parsed):
+        return None
+    return parsed.date().isoformat()
+
+
+def _to_datetime_string(value) -> str | None:
+    native = _native(value)
+    if native is None:
+        return None
+    parsed = pd.to_datetime(native, errors="coerce")
+    if pd.isna(parsed):
+        return None
+    return parsed.strftime("%Y-%m-%d %H:%M:%S")
 
 
 def _insert_year_dimension(
@@ -139,92 +163,90 @@ def _load_presidential_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int
     if _table_row_count(cursor, "fact_votes") > 0:
         return 0
 
-    mapping = _load_political_mapping()
-    mapping_lookup = {}
-    for record in mapping.to_dict(orient="records"):
-        mapping_lookup[(record["nom_norm"], record["prenom_norm"])] = record
+    dim_candidats = _read_gold_parquet(
+        os.path.join(GOLD_PRESIDENTIELLE_BI_PATH, "dim_candidats"),
+        "presidentielle.dim_candidats",
+    )
+    dim_geographie = _read_gold_parquet(
+        os.path.join(GOLD_PRESIDENTIELLE_BI_PATH, "dim_geographie"),
+        "presidentielle.dim_geographie",
+    )
+    fact_participation = _read_gold_parquet(
+        os.path.join(GOLD_PRESIDENTIELLE_BI_PATH, "fact_participation"),
+        "presidentielle.fact_participation",
+    )
+    fact_votes = _read_gold_parquet(
+        os.path.join(GOLD_PRESIDENTIELLE_BI_PATH, "fact_votes"),
+        "presidentielle.fact_votes",
+    )
 
-    candidate_rows = {}
-    bureau_rows = {}
-    participation_rows = []
-    fact_vote_rows = []
-    years = {2022}
+    if fact_votes.empty:
+        return 0
 
-    presidential_files = [
-        (1, os.path.join(RAW_DATA_PATH, "lyon_T1_presidentiel_2022.csv")),
-        (2, os.path.join(RAW_DATA_PATH, "lyon_T2_presidentiel_2022.csv")),
-    ]
+    _insert_year_dimension(cursor, [2022])
 
-    for tour, path in presidential_files:
-        if not os.path.exists(path):
-            logger.warning("Presidential raw file not found: %s", path)
+    candidate_rows = []
+    for record in _records(dim_candidats):
+        candidate_id = str(record.get("id_candidat") or "").strip()
+        if not candidate_id:
             continue
-
-        df = pd.read_csv(path, dtype=str).fillna("")
-        for row in df.itertuples(index=False, name=None):
-            bureau_id = str(row[6]).strip().zfill(4)
-            arrondissement = _derive_arrondissement(bureau_id)
-            inscrits = _to_int(row[7])
-            abstentions = _to_int(row[8])
-            votants = _to_int(row[10])
-            exprimes = _to_int(row[18])
-
-            bureau_rows[bureau_id] = (
-                bureau_id,
-                "69123",
-                "Lyon",
-                arrondissement,
-                "Rattachement Administratif" if bureau_id == "0001" else "Standard",
+        candidate_rows.append(
+            (
+                candidate_id,
+                str(record.get("nom") or "").strip().upper() or None,
+                str(record.get("prenom") or "").strip().title() or None,
+                str(record.get("sexe") or "").strip() or None,
+                str(record.get("parti_code") or "").strip() or None,
+                str(record.get("parti_nom") or "").strip() or None,
+                str(record.get("nuance_officielle") or "").strip() or None,
+                str(record.get("bloc_analytique") or "").strip() or None,
             )
+        )
 
-            if inscrits and votants is not None and exprimes is not None:
-                participation_rows.append(
-                    (
-                        bureau_id,
-                        tour,
-                        inscrits,
-                        abstentions,
-                        votants,
-                        exprimes,
-                        round((votants / inscrits) * 100, 2) if inscrits else None,
-                        round((abstentions / inscrits) * 100, 2) if inscrits else None,
-                    )
-                )
+    bureau_rows = []
+    for record in _records(dim_geographie):
+        bureau_id = str(record.get("id_bureau") or "").strip()
+        if not bureau_id:
+            continue
+        bureau_rows.append(
+            (
+                bureau_id,
+                str(record.get("code_insee") or "").strip() or "69123",
+                str(record.get("libelle_de_la_commune") or "").strip() or "Lyon",
+                str(record.get("arrondissement") or "").strip()
+                or _derive_arrondissement(bureau_id),
+                str(record.get("type_bureau") or "").strip()
+                or ("Rattachement Administratif" if bureau_id == "0001" else "Standard"),
+            )
+        )
 
-            candidate_start = 21
-            candidate_fields = 7
-            num_candidates = (len(row) - candidate_start) // candidate_fields
-            for index in range(num_candidates):
-                offset = candidate_start + index * candidate_fields
-                sexe = str(row[offset + 1]).strip()
-                nom = str(row[offset + 2]).strip()
-                prenom = str(row[offset + 3]).strip()
-                voix = _to_int(row[offset + 4])
+    participation_rows = []
+    for record in _records(fact_participation):
+        bureau_id = str(record.get("id_bureau") or "").strip()
+        tour = _to_int(record.get("tour"))
+        if not bureau_id or tour is None:
+            continue
+        participation_rows.append(
+            (
+                bureau_id,
+                tour,
+                _to_int(record.get("inscrits")),
+                _to_int(record.get("abstentions")),
+                _to_int(record.get("votants")),
+                _to_int(record.get("exprimes")),
+                _to_float(record.get("taux_participation")),
+                _to_float(record.get("taux_abstention")),
+            )
+        )
 
-                if not nom and not prenom:
-                    continue
-
-                candidate_key = (_normalize_key(nom), _normalize_key(prenom))
-                mapped = mapping_lookup.get(candidate_key, {})
-                candidate_id = (
-                    mapped.get("id_candidat")
-                    or f"{_normalize_key(nom)}|{_normalize_key(prenom)}|{_normalize_key(sexe)}"
-                )
-
-                candidate_rows[candidate_id] = (
-                    candidate_id,
-                    nom.strip().upper(),
-                    prenom.strip().title(),
-                    sexe,
-                    mapped.get("parti_code") or None,
-                    mapped.get("parti_nom") or None,
-                    mapped.get("nuance_officielle") or None,
-                    mapped.get("bloc_analytique") or None,
-                )
-
-                fact_vote_rows.append((bureau_id, candidate_id, tour, voix))
-
-    _insert_year_dimension(cursor, years)
+    vote_rows = []
+    for record in _records(fact_votes):
+        bureau_id = str(record.get("id_bureau") or "").strip()
+        candidate_id = str(record.get("id_candidat") or "").strip()
+        tour = _to_int(record.get("tour"))
+        if not bureau_id or not candidate_id or tour is None:
+            continue
+        vote_rows.append((bureau_id, candidate_id, tour, _to_int(record.get("voix"))))
 
     if bureau_rows:
         cursor.executemany(
@@ -233,7 +255,7 @@ def _load_presidential_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int
             (id_bureau, code_insee, libelle_de_la_commune, arrondissement, type_bureau)
             VALUES (%s, %s, %s, %s, %s)
             """,
-            list(bureau_rows.values()),
+            bureau_rows,
         )
 
     if candidate_rows:
@@ -246,7 +268,7 @@ def _load_presidential_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            list(candidate_rows.values()),
+            candidate_rows,
         )
 
     if participation_rows:
@@ -262,106 +284,95 @@ def _load_presidential_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int
             participation_rows,
         )
 
-    if fact_vote_rows:
+    if vote_rows:
         cursor.executemany(
             """
             INSERT IGNORE INTO fact_votes
             (id_bureau, id_candidat, tour, voix)
             VALUES (%s, %s, %s, %s)
             """,
-            fact_vote_rows,
+            vote_rows,
         )
 
-    return len(fact_vote_rows)
+    return len(vote_rows)
 
 
 def _load_security_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int:
     if _table_row_count(cursor, "fact_securite") > 0:
         return 0
 
-    if not os.path.exists(SECURITY_RAW_FILE):
-        logger.warning("Security raw file not found: %s", SECURITY_RAW_FILE)
+    dim_geographie = _read_gold_parquet(
+        os.path.join(GOLD_SECURITE_BI_PATH, "dim_geographie_lyon"),
+        "securite.dim_geographie_lyon",
+    )
+    dim_indicateurs = _read_gold_parquet(
+        os.path.join(GOLD_SECURITE_BI_PATH, "dim_indicateurs_securite"),
+        "securite.dim_indicateurs_securite",
+    )
+    fact_securite = _read_gold_parquet(
+        os.path.join(GOLD_SECURITE_BI_PATH, "fact_securite"),
+        "securite.fact_securite",
+    )
+    fact_demographie = _read_gold_parquet(
+        os.path.join(GOLD_SECURITE_BI_PATH, "fact_demographie_annuelle"),
+        "securite.fact_demographie_annuelle",
+    )
+
+    if fact_securite.empty:
         return 0
-
-    df = pd.read_csv(SECURITY_RAW_FILE, dtype=str).fillna("")
-    if "CODGEO_2025" not in df.columns:
-        logger.warning("Unexpected security CSV format; CODGEO_2025 column missing")
-        return 0
-
-    df = df[df["CODGEO_2025"].astype(str).str.match(r"^6938[1-9]$")]
-    df["annee"] = pd.to_numeric(df["annee"], errors="coerce").astype("Int64")
-    df = df[df["annee"].between(2017, 2022)]
-    df["nombre"] = pd.to_numeric(df["nombre"], errors="coerce").astype("Int64")
-    df["taux_pour_mille"] = pd.to_numeric(df["taux_pour_mille"], errors="coerce")
-    df["insee_pop"] = pd.to_numeric(df.get("insee_pop"), errors="coerce").astype("Int64")
-    df["insee_log"] = pd.to_numeric(df.get("insee_log"), errors="coerce").astype("Int64")
-
-    if df.empty:
-        return 0
-
-    _insert_year_dimension(cursor, df["annee"].dropna().astype(int).unique())
 
     geography_rows = []
-    for code in sorted(df["CODGEO_2025"].dropna().astype(str).unique()):
-        if code == "69381":
-            name = "1er Arrondissement"
-        elif code == "69382":
-            name = "2ème Arrondissement"
-        elif code == "69383":
-            name = "3ème Arrondissement"
-        elif code == "69384":
-            name = "4ème Arrondissement"
-        elif code == "69385":
-            name = "5ème Arrondissement"
-        elif code == "69386":
-            name = "6ème Arrondissement"
-        elif code == "69387":
-            name = "7ème Arrondissement"
-        elif code == "69388":
-            name = "8ème Arrondissement"
-        elif code == "69389":
-            name = "9ème Arrondissement"
-        else:
-            name = "Inconnu"
-        geography_rows.append((str(code), str(name)))
+    for record in _records(dim_geographie):
+        code = str(record.get("code_arrondissement") or "").strip()
+        if not code:
+            continue
+        geography_rows.append(
+            (code, str(record.get("nom_arrondissement") or "").strip() or "Inconnu")
+        )
 
-    indicator_rows = [
-        (str(indicateur), str(unite))
-        for indicateur, unite in df[["indicateur", "unite_de_compte"]]
-        .drop_duplicates()
-        .itertuples(index=False, name=None)
-    ]
+    indicator_rows = []
+    for record in _records(dim_indicateurs):
+        indicator_id = str(record.get("id_indicateur") or "").strip()
+        if not indicator_id:
+            continue
+        indicator_rows.append(
+            (indicator_id, str(record.get("unite_de_compte") or "").strip() or None)
+        )
 
-    fact_rows = []
-    for code, indicateur, annee, nombre, taux_pour_mille in (
-        df[["CODGEO_2025", "indicateur", "annee", "nombre", "taux_pour_mille"]]
-        .drop_duplicates()
-        .itertuples(index=False, name=None)
-    ):
-        fact_rows.append(
+    securite_rows = []
+    for record in _records(fact_securite):
+        code = str(record.get("code_arrondissement") or "").strip()
+        indicator_id = str(record.get("id_indicateur") or "").strip()
+        annee = _to_int(record.get("annee"))
+        if not code or not indicator_id or annee is None:
+            continue
+        securite_rows.append(
             (
-                str(_native(code)),
-                str(_native(indicateur)),
-                int(_native(annee)) if _native(annee) is not None else None,
-                int(_native(nombre)) if _native(nombre) is not None else None,
-                float(_native(taux_pour_mille)) if _native(taux_pour_mille) is not None else None,
+                code,
+                indicator_id,
+                annee,
+                _to_int(record.get("nombre")),
+                _to_float(record.get("taux_pour_1000")),
             )
         )
 
     demo_rows = []
-    for code, annee, population, logements in (
-        df[["CODGEO_2025", "annee", "insee_pop", "insee_log"]]
-        .drop_duplicates()
-        .itertuples(index=False, name=None)
-    ):
+    for record in _records(fact_demographie):
+        code = str(record.get("code_arrondissement") or "").strip()
+        annee = _to_int(record.get("annee"))
+        if not code or annee is None:
+            continue
         demo_rows.append(
             (
-                str(_native(code)),
-                int(_native(annee)) if _native(annee) is not None else None,
-                int(_native(population)) if _native(population) is not None else None,
-                int(_native(logements)) if _native(logements) is not None else None,
+                code,
+                annee,
+                _to_int(record.get("population")),
+                _to_int(record.get("logements")),
             )
         )
+
+    if securite_rows:
+        _insert_year_dimension(cursor, [row[2] for row in securite_rows])
 
     if geography_rows:
         _insert_rows(
@@ -385,7 +396,7 @@ def _load_security_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int:
             indicator_rows,
         )
 
-    if fact_rows:
+    if securite_rows:
         _insert_rows(
             cursor,
             """
@@ -393,7 +404,7 @@ def _load_security_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int:
             (code_arrondissement, id_indicateur, annee, nombre, taux_pour_1000)
             VALUES (%s, %s, %s, %s, %s)
             """,
-            fact_rows,
+            securite_rows,
         )
 
     if demo_rows:
@@ -407,24 +418,143 @@ def _load_security_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int:
             demo_rows,
         )
 
+    return len(securite_rows)
+
+
+def _load_poverty_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int:
+    if _table_row_count(cursor, "fact_niveau_vie_pauvrete_200m") > 0:
+        return 0
+
+    dim_geographie = _read_gold_parquet(
+        os.path.join(GOLD_NIVEAU_VIE_BI_STAR_PATH, "dim_geographie_200m"),
+        "niveau_vie_pauvrete.dim_geographie_200m",
+    )
+    dim_temps = _read_gold_parquet(
+        os.path.join(GOLD_NIVEAU_VIE_BI_STAR_PATH, "dim_temps"),
+        "niveau_vie_pauvrete.dim_temps",
+    )
+    fact = _read_gold_parquet(
+        os.path.join(GOLD_NIVEAU_VIE_BI_STAR_PATH, "fact_niveau_vie_pauvrete_200m"),
+        "niveau_vie_pauvrete.fact_niveau_vie_pauvrete_200m",
+    )
+
+    if fact.empty:
+        return 0
+
+    geography_rows = []
+    for record in _records(dim_geographie):
+        sk_geographie = _to_int(record.get("sk_geographie"))
+        if sk_geographie is None:
+            continue
+        geography_rows.append(
+            (
+                sk_geographie,
+                record.get("identifiant_carreaux_au_200m"),
+                record.get("id_carreaux_au_1km"),
+                record.get("id_inspire_carreau_nature_dedie_au_carreau_200_m"),
+                record.get("identifiant_est_200m"),
+                record.get("id_est_au_1km"),
+                record.get("arrondissement"),
+                record.get("commune"),
+                record.get("code_commune"),
+                record.get("lcog_geo_2"),
+                record.get("lcog_geo_3"),
+                record.get("lcog_geo_4"),
+                record.get("lcog_geo_5"),
+            )
+        )
+
+    time_rows = []
+    for record in _records(dim_temps):
+        sk_temps = _to_int(record.get("sk_temps"))
+        annee = _to_int(record.get("annee"))
+        if sk_temps is None or annee is None:
+            continue
+        time_rows.append(
+            (
+                sk_temps,
+                annee,
+                _to_date_string(record.get("date_reference_annee")),
+                _to_int(record.get("decennie")),
+            )
+        )
+
+    fact_rows = []
+    for record in _records(fact):
+        sk_geographie = _to_int(record.get("sk_geographie"))
+        sk_temps = _to_int(record.get("sk_temps"))
+        if sk_geographie is None or sk_temps is None:
+            continue
+        fact_rows.append(
+            (
+                sk_geographie,
+                sk_temps,
+                _to_datetime_string(record.get("gold_processing_timestamp")),
+            )
+        )
+
+    if time_rows:
+        cursor.executemany(
+            """
+            INSERT IGNORE INTO dim_temps (sk_temps, annee, date_reference_annee, decennie)
+            VALUES (%s, %s, %s, %s)
+            """,
+            time_rows,
+        )
+
+    if geography_rows:
+        cursor.executemany(
+            """
+            INSERT IGNORE INTO dim_geographie_200m (
+                sk_geographie,
+                identifiant_carreaux_au_200m,
+                id_carreaux_au_1km,
+                id_inspire_carreau_nature_dedie_au_carreau_200_m,
+                identifiant_est_200m,
+                id_est_au_1km,
+                arrondissement,
+                commune,
+                code_commune,
+                lcog_geo_2,
+                lcog_geo_3,
+                lcog_geo_4,
+                lcog_geo_5
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            geography_rows,
+        )
+
+    if fact_rows:
+        cursor.executemany(
+            """
+            INSERT IGNORE INTO fact_niveau_vie_pauvrete_200m
+            (sk_geographie, sk_temps, gold_processing_timestamp)
+            VALUES (%s, %s, %s)
+            """,
+            fact_rows,
+        )
+
     return len(fact_rows)
 
 
 def ensure_mysql_data_loaded() -> str:
-    """Load MySQL tables from the raw CSV files if they are still empty."""
+    """Load MySQL tables from gold medallion datasets if they are still empty."""
 
     connection = _connect()
     try:
         cursor = connection.cursor()
+        loaded_poverty = _load_poverty_domain(cursor)
         loaded_votes = _load_presidential_domain(cursor)
         loaded_security = _load_security_domain(cursor)
         connection.commit()
         cursor.close()
 
-        if loaded_votes or loaded_security:
+        if loaded_poverty or loaded_votes or loaded_security:
             return (
-                "Loaded raw presidential and security data into MySQL. "
-                f"Votes inserted: {loaded_votes}, security rows inserted: {loaded_security}."
+                "Loaded gold medallion datasets into MySQL. "
+                f"Poverty rows inserted: {loaded_poverty}, "
+                f"votes inserted: {loaded_votes}, security rows inserted: {loaded_security}."
             )
 
         return "MySQL already contains data for the notebook tables."
