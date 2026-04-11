@@ -1,0 +1,2017 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation technique et audits de qualité du projet de prédiction électorale.">
+      
+      
+      
+        <link rel="canonical" href="https://datai-forge.github.io/datai-forge/ml/">
+      
+      
+        <link rel="prev" href="../ml_choix_donnees/">
+      
+      
+        <link rel="next" href="../dictionnaires/features_ml/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Stratégie & OBT - Datai Forge - Documentation Technique</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#strategie-de-machine-learning" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Datai Forge - Documentation Technique" class="md-header__button md-logo" aria-label="Datai Forge - Documentation Technique" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Datai Forge - Documentation Technique
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Stratégie & OBT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Datai-Forge/datai-forge" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resume_modelisation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Résumé
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ml_choix_donnees/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../datasets/elections/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Données
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../onboarding/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Onboarding
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../standards/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Qualité & Santé
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Datai Forge - Documentation Technique" class="md-nav__button md-logo" aria-label="Datai Forge - Documentation Technique" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Datai Forge - Documentation Technique
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Datai-Forge/datai-forge" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resume_modelisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Résumé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml_choix_donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choix des Données ML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stratégie & OBT
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stratégie & OBT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-one-big-table-obt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ La "One Big Table" (OBT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ La &#34;One Big Table&#34; (OBT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grain-de-lobservation-multi-niveaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grain de l'Observation (Multi-niveaux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-de-construction-incrementale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Pipeline de Construction Incrémentale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Pipeline de Construction Incrémentale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-le-socle-electoral-gold_ml_step1_basepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 1 : Le Socle Électoral (gold_ml_step1_base.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-enrichissement-securite-gold_ml_step2_enrichment_securitypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 2 : Enrichissement Sécurité (gold_ml_step2_enrichment_security.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-enrichissement-socio-economique-gold_ml_step3_enrichment_socialpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 3 : Enrichissement Socio-Économique (gold_ml_step3_enrichment_social.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-engineering-elections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗳️ Feature Engineering : Élections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗳️ Feature Engineering : Élections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-lindividu-au-bloc-analytique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De l'Individu au Bloc Analytique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nettoyage-du-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nettoyage du Signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-engineering-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Feature Engineering : Sécurité
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Feature Engineering : Sécurité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamique-temporelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamique Temporelle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-de-performance-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Diagnostic de Performance (Baseline)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Diagnostic de Performance (Baseline)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultats-du-benchmark-comparatif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résultats du Benchmark Comparatif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse-de-lecart-de-performance-le-plafond-de-verre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyse de l'Écart de Performance (Le "Plafond de Verre")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importance-des-features-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importance des Features (Insights)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-damelioration-soutenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Roadmap d'Amélioration (Soutenance)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dictionnaires/features_ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables ML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fiches Techniques
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fiches Techniques
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/elections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Élections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/securite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/social/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Niveau de Vie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dictionnaire des Données
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dictionnaire des Données
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dictionnaires/elections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Élections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Onboarding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Onboarding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide de démarrage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../outils_complementaires/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outils complémentaires
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qualité & Santé
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Qualité & Santé
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards & Outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Couverture de Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audit de Sécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qualité de Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-one-big-table-obt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ La "One Big Table" (OBT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ La &#34;One Big Table&#34; (OBT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grain-de-lobservation-multi-niveaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grain de l'Observation (Multi-niveaux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-de-construction-incrementale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Pipeline de Construction Incrémentale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Pipeline de Construction Incrémentale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-le-socle-electoral-gold_ml_step1_basepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 1 : Le Socle Électoral (gold_ml_step1_base.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-enrichissement-securite-gold_ml_step2_enrichment_securitypy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 2 : Enrichissement Sécurité (gold_ml_step2_enrichment_security.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-enrichissement-socio-economique-gold_ml_step3_enrichment_socialpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Étape 3 : Enrichissement Socio-Économique (gold_ml_step3_enrichment_social.py)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-engineering-elections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗳️ Feature Engineering : Élections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗳️ Feature Engineering : Élections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-lindividu-au-bloc-analytique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De l'Individu au Bloc Analytique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nettoyage-du-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nettoyage du Signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-engineering-securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Feature Engineering : Sécurité
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ Feature Engineering : Sécurité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamique-temporelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamique Temporelle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-de-performance-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Diagnostic de Performance (Baseline)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Diagnostic de Performance (Baseline)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resultats-du-benchmark-comparatif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résultats du Benchmark Comparatif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse-de-lecart-de-performance-le-plafond-de-verre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyse de l'Écart de Performance (Le "Plafond de Verre")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importance-des-features-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importance des Features (Insights)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-damelioration-soutenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Roadmap d'Amélioration (Soutenance)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="strategie-de-machine-learning">🤖 Stratégie de Machine Learning<a class="headerlink" href="#strategie-de-machine-learning" title="Permanent link">&para;</a></h1>
+<p>Ce document détaille la méthodologie et les choix d'ingénierie des données appliqués pour la construction du modèle prédictif des élections 2027.</p>
+<h2 id="la-one-big-table-obt">🏗️ La "One Big Table" (OBT)<a class="headerlink" href="#la-one-big-table-obt" title="Permanent link">&para;</a></h2>
+<p>Le cœur de notre approche ML repose sur la construction d'une <strong>Table Unique (OBT)</strong>. Contrairement à la couche Silver qui est atomique et normalisée, l'OBT Gold ML est optimisée pour l'apprentissage statistique.</p>
+<h3 id="grain-de-lobservation-multi-niveaux">Grain de l'Observation (Multi-niveaux)<a class="headerlink" href="#grain-de-lobservation-multi-niveaux" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Cibles (Target $Y$)</strong> : Le <strong>Bureau de Vote</strong> par Tour (608 lignes). C'est la maille la plus fine pour capter le résultat électoral.</li>
+<li><strong>Variables (Features)</strong> : Les indicateurs territoriaux (Sécurité, Social) sont agrégés au niveau de l'<strong>Arrondissement</strong> (Code INSEE 69381-69389).</li>
+<li><strong>Réconciliation</strong> : Chaque bureau de vote "hérite" des caractéristiques sociologiques de son arrondissement de rattachement via une jointure <code>N:1</code>.</li>
+</ul>
+<hr />
+<h2 id="pipeline-de-construction-incrementale">🛠️ Pipeline de Construction Incrémentale<a class="headerlink" href="#pipeline-de-construction-incrementale" title="Permanent link">&para;</a></h2>
+<p>La construction de l'OBT finale est opérée en trois étapes séquentielles. Nous avons choisi cette architecture <strong>incrémentale</strong> (Step 1 ➔ Step 2 ➔ Step 3) plutôt qu'un bloc monolithique pour plusieurs raisons :</p>
+<ol>
+<li><strong>Audit (Checkpoints)</strong> : On génère un fichier Parquet intermédiaire après chaque enrichissement. On peut auditer l'état de la donnée sans tout recalculer.</li>
+<li><strong>Modularité</strong> : Facilité d'ajouter un "Step 4" (ex: temps de présence dans les médias, transports) sans modifier le code existant.</li>
+<li><strong>Debuggabilité</strong> : En cas d'erreur de jointure, le problème est immédiatement localisé dans le script concerné.</li>
+</ol>
+<h3 id="etape-1-le-socle-electoral-gold_ml_step1_basepy">Étape 1 : Le Socle Électoral (<code>gold_ml_step1_base.py</code>)<a class="headerlink" href="#etape-1-le-socle-electoral-gold_ml_step1_basepy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Action</strong> : Pivotement des résultats du format Long (candidats) vers le format Wide (blocs politiques).</li>
+<li><strong>Nettoyage</strong> : Exclusion systématique du bureau 0001 (Administratif) pour supprimer le bruit statistique. (ces bureaux sont décorrélés de la réalité urbaine et sociologique)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Catégorie</th>
+<th style="text-align: left;">Colonnes ajoutées (Noms exacts)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Identifiants</strong></td>
+<td style="text-align: left;"><code>id_bureau</code>, <code>tour</code>, <code>code_insee_arrondissement</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Features (X)</strong></td>
+<td style="text-align: left;"><code>feat_abstention_pct</code>, <code>feat_participation_pct</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cibles (Y)</strong></td>
+<td style="text-align: left;"><code>target_score_gauche_pct</code>, <code>target_score_centre_pct</code>, <code>target_score_droite_pct</code>, <code>target_score_extreme_droite_pct</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="etape-2-enrichissement-securite-gold_ml_step2_enrichment_securitypy">Étape 2 : Enrichissement Sécurité (<code>gold_ml_step2_enrichment_security.py</code>)<a class="headerlink" href="#etape-2-enrichissement-securite-gold_ml_step2_enrichment_securitypy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Action</strong> : Agrégation des indicateurs SSMSI par <strong>Arrondissement</strong> en 3 Piliers (Violence, Propriété, Rue/Stup).</li>
+<li><strong>Dynamique</strong> : Calcul des évolutions (Deltas) sur 3 et 5 ans.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Catégorie</th>
+<th style="text-align: left;">Colonnes ajoutées (Noms exacts)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Piliers (Snapshot)</strong></td>
+<td style="text-align: left;"><code>feat_secu_violence_2021</code>, <code>feat_secu_propriete_2021</code>, <code>feat_secu_rue_stup_2021</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dynamique (3 ans)</strong></td>
+<td style="text-align: left;"><code>feat_secu_violence_delta_3ans</code>, <code>feat_secu_propriete_delta_3ans</code>, <code>feat_secu_rue_stup_delta_3ans</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dynamique (5 ans)</strong></td>
+<td style="text-align: left;"><code>feat_secu_violence_delta_5ans</code>, <code>feat_secu_propriete_delta_5ans</code>, <code>feat_secu_rue_stup_delta_5ans</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="etape-3-enrichissement-socio-economique-gold_ml_step3_enrichment_socialpy">Étape 3 : Enrichissement Socio-Économique (<code>gold_ml_step3_enrichment_social.py</code>)<a class="headerlink" href="#etape-3-enrichissement-socio-economique-gold_ml_step3_enrichment_socialpy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Action</strong> : Agrégation des indicateurs Insee Filosofi par <strong>Arrondissement</strong>.</li>
+<li><strong>Calcul</strong> : Création de ratios (pauvreté, revenus) et des évolutions sur 5 ans.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Catégorie</th>
+<th style="text-align: left;">Colonnes ajoutées (Noms exacts)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Structure (Snapshot)</strong></td>
+<td style="text-align: left;"><code>feat_social_revenu_moyen</code>, <code>feat_social_taux_pauvrete</code>, <code>feat_social_pct_proprietaires</code>, <code>feat_social_pct_logements_sociaux</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dynamique (5 ans)</strong></td>
+<td style="text-align: left;"><code>feat_social_delta_revenu_5ans</code>, <code>feat_social_delta_pauvrete_5ans</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="feature-engineering-elections">🗳️ Feature Engineering : Élections<a class="headerlink" href="#feature-engineering-elections" title="Permanent link">&para;</a></h2>
+<h3 id="de-lindividu-au-bloc-analytique">De l'Individu au Bloc Analytique<a class="headerlink" href="#de-lindividu-au-bloc-analytique" title="Permanent link">&para;</a></h3>
+<p>Nous avons fait le choix de <strong>pivoter</strong> les résultats électoraux pour passer d'une liste de candidats (Macron, Le Pen, etc.) à des <strong>blocs politiques structurels</strong> (Gauche, Centre, Droite, etc.). Pour ça, nous avons créé un jeu de données <code>mapping_politique</code> qui lie les partis politiques à des blocs politiques.</p>
+<ul>
+<li><strong>Robustesse 2027</strong> : Le modèle apprend la signature politique d'un territoire. Il reste valide même si les noms des candidats changent en 2027.</li>
+<li><strong>Normalisation</strong> : Toutes les cibles ($Y$) sont exprimées en <strong>pourcentage des suffrages exprimés</strong> pour éliminer le biais de taille des bureaux de vote.</li>
+</ul>
+<h3 id="nettoyage-du-signal">Nettoyage du Signal<a class="headerlink" href="#nettoyage-du-signal" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Typologie des Bureaux</strong> : Nous excluons systématiquement les bureaux de type <strong>ORDINAIRE</strong>. Seuls les bureaux de quartier classiques sont conservés.</li>
+<li><strong>Raison</strong> : Les bureaux <strong>ADMINISTRATIFS</strong> regroupent des populations nomades (SDF, détenus, personnes du voyage) dont le comportement électoral est un artefact administratif décorrélé de la sociologie du quartier physique.</li>
+</ul>
+<hr />
+<h2 id="feature-engineering-securite">🛡️ Feature Engineering : Sécurité<a class="headerlink" href="#feature-engineering-securite" title="Permanent link">&para;</a></h2>
+<p>Plutôt que d'injecter les 14 indicateurs bruts du Ministère de l'Intérieur au risque de créer du bruit statistique (sur-apprentissage), nous les avons regroupés en <strong>3 Familles d'Insécurité</strong> (Piliers).</p>
+<p><em>Note : Pour la justification théorique et sociologique détaillée de ce choix (Théorie de François Abel et étude du SSMSI), consultez l'onglet <a href="../ml_choix_donnees/">Choix des Données ML</a>.</em></p>
+<h3 id="dynamique-temporelle">Dynamique Temporelle<a class="headerlink" href="#dynamique-temporelle" title="Permanent link">&para;</a></h3>
+<p>Pour chaque pilier, nous calculons deux types de variables :</p>
+<ol>
+<li><strong>Le Snapshot (2021)</strong> : L'état des lieux immédiat pré-élection.</li>
+<li><strong>Les Deltas (3 ans et 5 ans)</strong> : L'évolution de la délinquance. Cela permet au modèle de déterminer si l'électeur vote en fonction du niveau absolu de crime ou de son <strong>sentiment de dégradation</strong> (Dynamique).</li>
+</ol>
+<hr />
+<h2 id="diagnostic-de-performance-baseline">📊 Diagnostic de Performance (Baseline)<a class="headerlink" href="#diagnostic-de-performance-baseline" title="Permanent link">&para;</a></h2>
+<p>Suite à la construction de l'OBT, un premier benchmark a été réalisé pour établir une performance de référence (Baseline) sur la prédiction du <strong>Bloc Gauche (Tour 1)</strong>.</p>
+<h3 id="resultats-du-benchmark-comparatif">Résultats du Benchmark Comparatif<a class="headerlink" href="#resultats-du-benchmark-comparatif" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Modèle</th>
+<th style="text-align: center;">Score $R^2$</th>
+<th style="text-align: center;">Erreur (RMSE)</th>
+<th style="text-align: left;">Observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Régression Linéaire</strong></td>
+<td style="text-align: center;"><strong>0.5013</strong></td>
+<td style="text-align: center;">8.38%</td>
+<td style="text-align: left;">Explique 50% de la variance mais instable (Multicolinéarité).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Random Forest</strong></td>
+<td style="text-align: center;"><strong>0.3277</strong></td>
+<td style="text-align: center;">9.73%</td>
+<td style="text-align: left;">Performance dégradée malgré la robustesse de l'algorithme.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analyse-de-lecart-de-performance-le-plafond-de-verre">Analyse de l'Écart de Performance (Le "Plafond de Verre")<a class="headerlink" href="#analyse-de-lecart-de-performance-le-plafond-de-verre" title="Permanent link">&para;</a></h3>
+<p>Le paradoxe d'un Random Forest moins performant qu'une simple régression linéaire s'explique par un <strong>défaut de conception de l'OBT</strong> (Phase 1) :</p>
+<ol>
+<li><strong>Conflit de Granularité</strong> : Les cibles ($Y$) sont au grain <strong>Bureau de Vote</strong> (304 unités), mais les caractéristiques sociales sont au grain <strong>Arrondissement</strong> (9 unités).</li>
+<li><strong>Perte de Variance</strong> : En attribuant la même valeur moyenne (revenu, pauvreté) à tous les bureaux d'un même arrondissement, on "gomme" la diversité sociologique. Un quartier aisé et un quartier populaire du même arrondissement deviennent identiques pour le modèle.</li>
+<li><strong>Échec des Arbres de Décision</strong> : Le Random Forest ne peut pas "découper" les données pour créer des règles précises si les features sont identiques pour des votes différents. Il finit par produire une moyenne floue, d'où un $R^2$ faible (0.33).</li>
+</ol>
+<h3 id="importance-des-features-insights">Importance des Features (Insights)<a class="headerlink" href="#importance-des-features-insights" title="Permanent link">&para;</a></h3>
+<p>Le Random Forest révèle tout de même quelles variables portent le plus de signal :</p>
+<ul>
+<li><strong><code>feat_secu_violence_delta_5ans</code> (30%)</strong> : La dynamique de la violence sur un mandat complet est le premier prédicteur.</li>
+<li><strong><code>feat_participation_pct</code> (21%)</strong> : La mobilisation électorale reste un pilier du score.</li>
+<li><strong><code>feat_social_taux_pauvrete</code> (11%)</strong> : Seul indicateur social émergeant à l'échelle de l'arrondissement.</li>
+</ul>
+<hr />
+<h2 id="roadmap-damelioration-soutenance">🚀 Roadmap d'Amélioration (Soutenance)<a class="headerlink" href="#roadmap-damelioration-soutenance" title="Permanent link">&para;</a></h2>
+<p>Pour dépasser ce seuil de 50% d'explication et réduire l'erreur (RMSE) sous les 5 points, la stratégie technique retenue est la suivante :</p>
+<ol>
+<li><strong>Refactorisation du Grain Social</strong> : Abandonner l'agrégation par arrondissement au profit d'une <strong>jointure spatiale par Carreaux Insee (200m)</strong>. Cela permettra de donner une "identité sociale" unique à chaque bureau de vote.</li>
+<li><strong>Gestion de la Multicolinéarité</strong> : Utilisation de modèles de régularisation (<strong>Lasso/Ridge</strong>) pour stabiliser les coefficients et éliminer les variables redondantes (Deltas 3 ans vs 5 ans).</li>
+<li><strong>Ingénierie de l'Interaction</strong> : Tester des variables combinées (ex: Pauvreté $\times$ Sentiment d'insécurité) pour capturer des comportements non-linéaires.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.expand", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

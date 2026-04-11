@@ -1,0 +1,68 @@
+Run started:2026-04-11 17:51:49.421639
+
+Test results:
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Low
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/plugins/b608_hardcoded_sql_expressions.html
+   Location: src/bi/dash_app.py:40:14
+39	        where, params = ("WHERE b.arrondissement = %s", [arrondissement])
+40	    sql = f"""
+41	        SELECT c.bloc_analytique, SUM(v.voix) as total_voix
+42	        FROM fact_votes v
+43	        JOIN dim_candidats c ON c.id_candidat = v.id_candidat
+44	        JOIN dim_geographie_bureau b ON b.id_bureau = v.id_bureau
+45	        {where}
+46	        GROUP BY c.bloc_analytique
+47	    """
+48	    return read_sql(sql, params)
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: src/bi/dash_app.py:288:17
+287	if __name__ == "__main__":
+288	    app.run(host="0.0.0.0", port=8050, debug=False)
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/plugins/b110_try_except_pass.html
+   Location: src/common/mysql_bootstrap.py:69:8
+68	            value = value.item()
+69	        except Exception:
+70	            pass
+71	    return value
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.8/plugins/b608_hardcoded_sql_expressions.html
+   Location: src/common/mysql_bootstrap.py:94:21
+93	def _table_row_count(cursor: mysql.connector.cursor.MySQLCursor, table_name: str) -> int:
+94	    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+95	    return int(cursor.fetchone()[0])
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2577
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 1
+		Medium: 3
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 1
+		Medium: 2
+		High: 1
+Files skipped (0):

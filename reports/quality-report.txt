@@ -1,0 +1,66 @@
+src/common/spark_session_manager.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/common/utils.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/common/utils.py:3:25: F401 [*] `pyspark.sql.SparkSession` imported but unused
+src/config.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/config.py:35:101: E501 Line too long (154 > 100)
+src/etl/bronze/bronze_niveau_vie_pauvrete_200m.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/bronze/bronze_niveau_vie_pauvrete_200m.py:42:101: E501 Line too long (127 > 100)
+src/etl/bronze/bronze_niveau_vie_pauvrete_200m.py:52:17: F541 [*] f-string without any placeholders
+src/etl/bronze/bronze_niveau_vie_pauvrete_200m.py:76:101: E501 Line too long (109 > 100)
+src/etl/bronze/bronze_presidentielle.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/bronze/bronze_presidentielle.py:38:101: E501 Line too long (127 > 100)
+src/etl/bronze/bronze_presidentielle.py:48:17: F541 [*] f-string without any placeholders
+src/etl/bronze/bronze_securite.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/bronze/bronze_securite.py:38:101: E501 Line too long (127 > 100)
+src/etl/bronze/bronze_securite.py:48:17: F541 [*] f-string without any placeholders
+src/etl/gold/gold_securite_bi.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/gold/gold_securite_bi.py:17:101: E501 Line too long (109 > 100)
+src/etl/gold/gold_securite_bi.py:58:101: E501 Line too long (116 > 100)
+src/etl/gold/gold_securite_bi.py:84:101: E501 Line too long (111 > 100)
+src/etl/gold/gold_securite_bi.py:85:101: E501 Line too long (105 > 100)
+src/etl/gold/gold_securite_bi.py:87:101: E501 Line too long (113 > 100)
+src/etl/gold/gold_securite_bi.py:94:101: E501 Line too long (103 > 100)
+src/etl/gold/niveau_vie_pauvrete_gold.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/gold/niveau_vie_pauvrete_gold.py:99:101: E501 Line too long (114 > 100)
+src/etl/gold/niveau_vie_pauvrete_gold.py:108:101: E501 Line too long (112 > 100)
+src/etl/gold/niveau_vie_pauvrete_gold.py:135:101: E501 Line too long (103 > 100)
+src/etl/gold/niveau_vie_pauvrete_gold.py:137:101: E501 Line too long (103 > 100)
+src/etl/gold/niveau_vie_pauvrete_gold.py:148:101: E501 Line too long (102 > 100)
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:3:54: F401 [*] `pyspark.sql.functions.expr` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:3:60: F401 [*] `pyspark.sql.functions.upper` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:3:67: F401 [*] `pyspark.sql.functions.initcap` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:5:35: F401 [*] `pyspark.sql.functions.when` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:5:41: F401 [*] `pyspark.sql.functions.col` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:9:30: F401 [*] `src.common.utils.clean_column_name` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:28:101: E501 Line too long (106 > 100)
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:67:5: F841 Local variable `max_lcog_geo_chars` is assigned to but never used
+src/etl/silver/silver_niveau_vie_pauvrete_2017.py:136:101: E501 Line too long (122 > 100)
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:3:54: F401 [*] `pyspark.sql.functions.expr` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:3:60: F401 [*] `pyspark.sql.functions.upper` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:3:67: F401 [*] `pyspark.sql.functions.initcap` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:5:35: F401 [*] `pyspark.sql.functions.when` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:5:41: F401 [*] `pyspark.sql.functions.col` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:9:30: F401 [*] `src.common.utils.clean_column_name` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:28:101: E501 Line too long (106 > 100)
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:64:5: F841 Local variable `max_lcog_geo_chars` is assigned to but never used
+src/etl/silver/silver_niveau_vie_pauvrete_2019.py:134:101: E501 Line too long (122 > 100)
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:3:54: F401 [*] `pyspark.sql.functions.expr` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:3:60: F401 [*] `pyspark.sql.functions.upper` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:3:67: F401 [*] `pyspark.sql.functions.initcap` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:5:35: F401 [*] `pyspark.sql.functions.when` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:5:41: F401 [*] `pyspark.sql.functions.col` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:9:30: F401 [*] `src.common.utils.clean_column_name` imported but unused
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:28:101: E501 Line too long (106 > 100)
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:64:5: F841 Local variable `max_lcog_geo_chars` is assigned to but never used
+src/etl/silver/silver_niveau_vie_pauvrete_2021.py:134:101: E501 Line too long (122 > 100)
+src/etl/silver/silver_securite.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src/etl/silver/silver_securite.py:39:101: E501 Line too long (119 > 100)
+src/etl/silver/silver_securite.py:41:101: E501 Line too long (132 > 100)
+tests/conftest.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+tests/etl/test_silver_niveau_vie_pauvrete.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+tests/etl/test_silver_niveau_vie_pauvrete.py:3:24: F401 [*] `src.config.BRONZE_PATH` imported but unused
+Found 64 errors.
+[*] 37 fixable with the `--fix` option (3 hidden fixes can be enabled with the `--unsafe-fixes` option).
