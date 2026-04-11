@@ -37,19 +37,100 @@ graph TD
             G2 --> G3[Gold ML Step 3: Social]
             G3 --> OBT[One Big Table ML]
         end
+subgraph "Couche Gold BI"
+    S --> G_BI[Gold BI - Schéma en Étoile]
+end
+end
 
-        subgraph "Couche Gold BI"
-            S --> G_BI[Gold BI - Schéma en Étoile]
+subgraph "Serving & Reporting"
+G_BI -- "Synchronisation Gold" --> DB[(MySQL Lyon Decisional)]
+DB -- "SQL Queries" --> DASH[Dashboard Dash]
+end
+
+OBT --> MODEL[Modèle Prédictif ML]
+```
+
+## 📊 Schéma Décisionnel (Constellation d'Étoiles)
+
+Le schéma ci-dessous présente la structure de la base de données décisionnelle, organisée verticalement pour une meilleure lecture des hiérarchies :
+
+```mermaid
+graph TD
+    %% Style des nœuds
+    classDef dim fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b;
+    classDef fact fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100;
+    classDef shared fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#4a148c;
+
+    %% NIVEAU 1 : DIMENSIONS PIVOTS (PARTAGÉES)
+    subgraph LVL1 [Axe Temps & Géographie]
+        DG["<b>dim_geographie</b><hr/><i>ID Bureau, Arrondissement,<br/>ID Carreau, Commune</i>"]
+        DT["<b>dim_temps</b><hr/><i>Année (PK), Décennie</i>"]
+    end
+
+    %% NIVEAU 2 : DIMENSIONS SPÉCIFIQUES
+    subgraph LVL2 [Référentiels Métier]
+        DC["<b>dim_candidats</b><hr/><i>Nom, Parti, Bloc Politique</i>"]
+        DI["<b>dim_indicateurs_securite</b><hr/><i>Type de crime, Unité</i>"]
+    end
+
+    %% NIVEAU 3 : TABLES DE FAITS (EMPILEMENT VERTICAL)
+    subgraph LVL3 [Mesures & Indicateurs]
+
+        subgraph FAITS_ELEC [Élections]
+            FV["<b>fact_votes</b><br/>(Voix)"]
+            FP["<b>fact_participation</b><br/>(Inscrits, Abst.)"]
+        end
+
+        subgraph FAITS_SEC [Sécurité & Démographie]
+            FS["<b>fact_securite</b><br/>(Nombre, Taux)"]
+            FD["<b>fact_demographie_annuelle</b><br/>(Pop, Log.)"]
+        end
+
+        subgraph FAITS_SOC [Socio-Économique]
+            FPa["<b>fact_pauvrete_200m</b><br/>(Revenus, Pauvreté)"]
         end
     end
 
-    subgraph "Serving & Reporting"
-        G_BI -- "Synchronisation Gold" --> DB[(MySQL Lyon Decisional)]
-        DB -- "SQL Queries" --> DASH[Dashboard Dash]
-    end
+    %% Relations Dimensions vers Faits
+    DG ==> FV
+    DG ==> FP
+    DG ==> FS
+    DG ==> FD
+    DG ==> FPa
 
-    OBT --> MODEL[Modèle Prédictif ML]
+    DT -.-> FV
+    DT -.-> FP
+    DT -.-> FS
+    DT -.-> FD
+    DT -.-> FPa
+
+    DC --> FV
+    DI --> FS
+
+    %% Application des styles
+    class DG,DT shared;
+    class DC,DI dim;
+    class FV,FP,FS,FD,FPa fact;
 ```
+
+### 🔍 Détails des Relations et Granularité
+
+Le schéma repose sur l'utilisation de **clés de jointure naturelles et de substitution (SK)** pour lier les domaines :
+
+1. **Axe Géographique (Dimension Pivot) :**
+    - **Élections :** Liées par `id_bureau` (Code bureau de vote).
+    - **Sécurité & Démographie :** Liées par `code_arrondissement` (Code INSEE 69381 à 69389).
+    - **Social :** Lié par `sk_geographie` (Hash unique du carreau 200m).
+    - _Note : Une table de correspondance interne permet de remonter du bureau de vote vers l'arrondissement._
+
+2. **Axe Temporel (Dimension Pivot) :**
+    - Toutes les tables de faits sont liées à `dim_temps` via l'année (`annee` ou `sk_temps`). Cela permet de comparer, par exemple, l'évolution de la délinquance en 2021 avec les revenus Insee de la même année.
+
+3. **Axe Candidats :**
+    - La table `fact_votes` est la seule liée à `dim_candidats`. Elle permet de filtrer les résultats par **Bloc Analytique** (Gauche, Droite, Centre, etc.) pour simplifier la lecture des tendances politiques.
+
+4. **Axe Indicateurs Sécurité :**
+    - La table `fact_securite` utilise `id_indicateur` pour distinguer les 15 types de crimes et délits suivis (ex: Cambriolages, Vols avec violence).
 
 ---
 
@@ -162,6 +243,7 @@ Le schéma repose sur l'utilisation de **clés de jointure naturelles et de subs
 3.  **Axe Candidats :** Permet d'analyser les votes par **Bloc Analytique** (Gauche, Droite, Centre, etc.).
 
 ---
+## ✅ Exécution du Flux
 
 !!! tip "Mise en œuvre pratique"
 Pour exécuter l'intégralité de ce flux de manière automatisée, consultez le **[Guide de démarrage](onboarding.md)**.
