@@ -489,6 +489,15 @@ def _load_poverty_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int:
             (
                 sk_geographie,
                 sk_temps,
+                _to_int(record.get("nb_individus")),
+                _to_int(record.get("nb_menages")),
+                _to_float(record.get("somme_niveaux_de_vie_winsorises_des_individus")),
+                _to_int(record.get("nb_individus_18-24_ans")),
+                _to_int(record.get("nb_individus_de_25-39_ans")),
+                _to_int(record.get("nb_individus_40-54_ans")),
+                _to_int(record.get("nb_individus_55-64_ans")),
+                _to_int(record.get("nb_individus_65-79_ans")),
+                _to_int(record.get("nb_individus_+80_ans")),
                 _to_datetime_string(record.get("gold_processing_timestamp")),
             )
         )
@@ -529,8 +538,14 @@ def _load_poverty_domain(cursor: mysql.connector.cursor.MySQLCursor) -> int:
         cursor.executemany(
             """
             INSERT IGNORE INTO fact_niveau_vie_pauvrete_200m
-            (sk_geographie, sk_temps, gold_processing_timestamp)
-            VALUES (%s, %s, %s)
+            (
+                sk_geographie, sk_temps, nb_individus, nb_menages,
+                somme_niveaux_de_vie_winsorises_des_individus,
+                nb_individus_18_24_ans, nb_individus_25_39_ans, nb_individus_40_54_ans,
+                nb_individus_55_64_ans, nb_individus_65_79_ans, nb_individus_80p_ans,
+                gold_processing_timestamp
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
             fact_rows,
         )

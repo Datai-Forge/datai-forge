@@ -1,13 +1,15 @@
-import os
 import logging
-from pyspark.sql.functions import lit, current_timestamp
+import os
 
-from src.config import RAW_DATA_PATH, NIVEAU_VIE_PAUVRETE_200m_BRONZE_PATH
+from pyspark.sql.functions import current_timestamp, lit
+
 from src.common.spark_session_manager import get_spark_session
+from src.config import RAW_DATA_PATH, NIVEAU_VIE_PAUVRETE_200m_BRONZE_PATH
 
 # Config du logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
+
 
 def extract_and_load_bronze(spark, file_name):
     """
@@ -19,8 +21,7 @@ def extract_and_load_bronze(spark, file_name):
         logger.error(f"Fichier source introuvable : {file_path}")
         return
 
-
-    output_dir_name = file_name.replace('.csv', '')
+    output_dir_name = file_name.replace(".csv", "")
     output_full_path = os.path.join(NIVEAU_VIE_PAUVRETE_200m_BRONZE_PATH, output_dir_name)
 
     logger.info(f"Début de l'ingestion Bronze pour : {file_name}")
@@ -29,17 +30,20 @@ def extract_and_load_bronze(spark, file_name):
     spark.conf.set("spark.sql.shuffle.partitions", "2")
     spark.conf.set("spark.default.parallelism", "2")
 
-    df = (spark.read
-          .option("header", "true")
-          .option("delimiter", ",")
-          .option("inferSchema", "false")
-          .csv(file_path))
+    df = (
+        spark.read.option("header", "true")
+        .option("delimiter", ",")
+        .option("inferSchema", "false")
+        .csv(file_path)
+    )
 
     # Gouvernance de Données avec du lignage. Nom du fichier source + timestamp de traitement
-    df = (df.withColumn("source_file", lit(file_name))
-            .withColumn("bronze_processing_timestamp", current_timestamp()))
+    df = df.withColumn("source_file", lit(file_name)).withColumn(
+        "bronze_processing_timestamp", current_timestamp()
+    )
 
-    # On écrit en format Parquet (Format standard, compressé et ultra-rapide pour la suite car Databricks est optimisé pour ça)
+    # On écrit en format Parquet (Format standard, compressé et ultra-rapide
+    # pour la suite car Databricks est optimisé pour ça)
     df.write.mode("overwrite").parquet(output_full_path)
 
     logger.info(f"Ingestion terminée avec succès dans : {output_full_path}")
@@ -49,8 +53,9 @@ def extract_and_load_bronze(spark, file_name):
     df.printSchema()
 
     # Affichage des 5 premières lignes pour vérifier que tout est ok
-    logger.info(f"Aperçu des 5 premières lignes :")
+    logger.info("Aperçu des 5 premières lignes :")
     df.show(5)
+
 
 if __name__ == "__main__":
     # chargement des datasets dans un tableau
@@ -73,5 +78,7 @@ if __name__ == "__main__":
             try:
                 spark.stop()
             except Exception:
-                logger.warning(f"Impossible d'arrêter proprement Spark pour {file_name} (JVM déjà arrêtée).")
+                logger.warning(
+                    f"Impossible d'arrêter proprement Spark pour {file_name} (JVM déjà arrêtée)."
+                )
             logger.info(f"Session Spark fermée pour {file_name}")
