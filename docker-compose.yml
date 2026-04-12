@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile # Assumes your devcontainer's Dockerfile is in .devcontainer/
     volumes:
       - .:/app # Mounts your project root into the container at /app
+      - ~/.gemini:/root/.gemini # Persist Gemini CLI authentication
     env_file: .secrets
     environment:
       # MySQL connection variables (must match mysql service below)

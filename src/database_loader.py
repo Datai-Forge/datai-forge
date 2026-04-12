@@ -95,6 +95,15 @@ SCHEMA_SQL = [
     CREATE TABLE IF NOT EXISTS fact_niveau_vie_pauvrete_200m (
         sk_geographie BIGINT NOT NULL,
         sk_temps INT NOT NULL,
+        nb_individus INT,
+        nb_menages INT,
+        somme_niveaux_de_vie_winsorises_des_individus DOUBLE,
+        nb_individus_18_24_ans INT,
+        nb_individus_25_39_ans INT,
+        nb_individus_40_54_ans INT,
+        nb_individus_55_64_ans INT,
+        nb_individus_65_79_ans INT,
+        nb_individus_80p_ans INT,
         gold_processing_timestamp DATETIME,
         PRIMARY KEY (sk_geographie, sk_temps),
         CONSTRAINT fk_nvp_geo

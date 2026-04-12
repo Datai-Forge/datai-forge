@@ -1,19 +1,18 @@
-import os
 import logging
-from pyspark.sql.functions import current_timestamp, expr, upper, initcap
-from pyspark.sql import functions as F
-from pyspark.sql.functions import when, col
+import os
 
-from src.config import SILVER_PATH
+from pyspark.sql import functions as F
+from pyspark.sql.functions import current_timestamp
+
 from src.common.spark_session_manager import get_spark_session
-from src.common.utils import clean_column_name
-from src.config import BRONZE_PATH
+from src.config import BRONZE_PATH, SILVER_PATH
 
 # Config du logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 NIVEAU_VIE_PAUVRETE_SILVER_PATH = os.path.join(SILVER_PATH, "niveau_vie_pauvrete")
+
 
 def transform_bronze_to_silver(spark, folder_name):
     # bronze_full_path = os.path.join(NIVEAU_VIE_PAUVRETE_BRONZE_PATH, folder_name)
@@ -25,7 +24,9 @@ def transform_bronze_to_silver(spark, folder_name):
 
     logger.info(f"Début de la transformation Silver pour : {folder_name}")
 
-    nvp_2021_bronze_path = os.path.join(BRONZE_PATH, "niveau_vie_pauvrete_200m", "2021_carreaux_200m_met")
+    nvp_2021_bronze_path = os.path.join(
+        BRONZE_PATH, "niveau_vie_pauvrete_200m", "2021_carreaux_200m_met"
+    )
     df_silver_2021 = spark.read.parquet(nvp_2021_bronze_path)
 
     # # Convert columns from 'Ind' to 'Men_pauv' to integer type.
@@ -61,18 +62,15 @@ def transform_bronze_to_silver(spark, folder_name):
     df_silver_2021 = df_silver_2021.withColumn("Men", F.col("Men").cast("float"))
 
     # split column lcog_geo into 5 zipcode columns (5 chars each) from df_bronze_2021
-    max_lcog_geo_chars = (
-        df_silver_2021
-            .select(F.max(F.length(F.col("lcog_geo").cast("string"))).alias("max_char_count"))
-            .collect()[0]["max_char_count"]
-    )
+    df_silver_2021.select(
+        F.max(F.length(F.col("lcog_geo").cast("string"))).alias("max_char_count")
+    ).collect()[0]["max_char_count"]
 
     chunk_size = 5
     num_chunks = 5  # toujours 5 colonnes attendues
 
     df_bronze_2021_split = df_silver_2021.withColumn(
-        "lcog_geo_clean",
-        F.regexp_replace(F.col("lcog_geo").cast("string"), r"\D", "")
+        "lcog_geo_clean", F.regexp_replace(F.col("lcog_geo").cast("string"), r"\D", "")
     )
 
     for i in range(num_chunks):
@@ -82,8 +80,8 @@ def transform_bronze_to_silver(spark, folder_name):
             f"lcog_geo_{i+1}",
             F.when(
                 F.length(F.col("lcog_geo_clean")) >= end_needed,
-                F.substring(F.col("lcog_geo_clean"), start_pos, chunk_size)
-            ).otherwise(F.lit("NA"))
+                F.substring(F.col("lcog_geo_clean"), start_pos, chunk_size),
+            ).otherwise(F.lit("NA")),
         )
 
     df_silver_2021 = df_bronze_2021_split.drop("lcog_geo_clean")
@@ -94,44 +92,46 @@ def transform_bronze_to_silver(spark, folder_name):
 
     # rename columns header
     new_names = {
-        "Idcar_200m":"Identifiant_carreaux_au_200m",
-        "I_est_200":"Identifiant_est_200m",
-        "Idcar_1km":"Id_carreaux_au_1km",
-        "I_est_1km":"Id_est_au_1km",
-        "Idcar_nat":"Id_Inspire_carreau_nature_dedie_au_carreau_200_m",
-        "Groupe":"Numéro_groupe_dedie_au_carreau",
-        "Ind":"Nb_individus",
-        "Men_1ind":"Nb_menages_a_un_seul_individu",
-        "Men_5ind":"Nb_menages_a_5_individus_ou_plus",
-        "Men_prop":"Nb_menages_propriétaires",
-        "Men_fmp":"Nb_menages_monoparentaux",
-        "Ind_snv":"Somme_niveaux_de_vie_winsorises_des_individus",
-        "Men_surf":"Somme_surface_logements_du_carreau",
-        "Men_coll":"Nb_menages_en_logements_collectifs",
-        "Men_mais":"Nb_menages_en_maison",
-        "Log_av45":"Nb_logements_construits_avant_1945",
-        "Log_45_70":"Nb_logements_construits_entre_de_1945-1970",
-        "Log_70_90":"Nb_logements_construits_de_1970-1990",
-        "Log_ap90":"Nb_logements_construits_apres_1990",
-        "Log_inc":"Nb_logements_date_construction_inconnue",
-        "Log_soc":"Nb_logements_sociaux",
-        "Ind_0_3":"Nb_individus_0-3_ans",
-        "Ind_4_5":"Nb_individus_4-5_ans",
-        "Ind_6_10":"Nb_individus_6-10_ans",
-        "Ind_11_17":"Nb_individus_11-17_ans",
-        "Ind_18_24":"Nb_individus_18-24_ans",
-        "Ind_25_39":"Nb_individus_de_25-39_ans",
-        "Ind_40_54":"Nb_individus_40-54_ans",
-        "Ind_55_64":"Nb_individus_55-64_ans",
-        "Ind_65_79":"Nb_individus_65-79_ans",
-        "Ind_80p":"Nb_individus_+80_ans",
-        "Ind_inc":"Nb_individus_age_inconnu",
-        "Men_pauv":"Nb_menages_pauvres",
-        "Men":"Nb_menages",
-        "lcog_geo_1":"Arrondissement"
+        "Idcar_200m": "Identifiant_carreaux_au_200m",
+        "I_est_200": "Identifiant_est_200m",
+        "Idcar_1km": "Id_carreaux_au_1km",
+        "I_est_1km": "Id_est_au_1km",
+        "Idcar_nat": "Id_Inspire_carreau_nature_dedie_au_carreau_200_m",
+        "Groupe": "Numéro_groupe_dedie_au_carreau",
+        "Ind": "Nb_individus",
+        "Men_1ind": "Nb_menages_a_un_seul_individu",
+        "Men_5ind": "Nb_menages_a_5_individus_ou_plus",
+        "Men_prop": "Nb_menages_propriétaires",
+        "Men_fmp": "Nb_menages_monoparentaux",
+        "Ind_snv": "Somme_niveaux_de_vie_winsorises_des_individus",
+        "Men_surf": "Somme_surface_logements_du_carreau",
+        "Men_coll": "Nb_menages_en_logements_collectifs",
+        "Men_mais": "Nb_menages_en_maison",
+        "Log_av45": "Nb_logements_construits_avant_1945",
+        "Log_45_70": "Nb_logements_construits_entre_de_1945-1970",
+        "Log_70_90": "Nb_logements_construits_de_1970-1990",
+        "Log_ap90": "Nb_logements_construits_apres_1990",
+        "Log_inc": "Nb_logements_date_construction_inconnue",
+        "Log_soc": "Nb_logements_sociaux",
+        "Ind_0_3": "Nb_individus_0-3_ans",
+        "Ind_4_5": "Nb_individus_4-5_ans",
+        "Ind_6_10": "Nb_individus_6-10_ans",
+        "Ind_11_17": "Nb_individus_11-17_ans",
+        "Ind_18_24": "Nb_individus_18-24_ans",
+        "Ind_25_39": "Nb_individus_de_25-39_ans",
+        "Ind_40_54": "Nb_individus_40-54_ans",
+        "Ind_55_64": "Nb_individus_55-64_ans",
+        "Ind_65_79": "Nb_individus_65-79_ans",
+        "Ind_80p": "Nb_individus_+80_ans",
+        "Ind_inc": "Nb_individus_age_inconnu",
+        "Men_pauv": "Nb_menages_pauvres",
+        "Men": "Nb_menages",
+        "lcog_geo_1": "Arrondissement",
     }
     # Use select with an alias for each column
-    df_silver_2021 = df_silver_2021.select([df_silver_2021[c].alias(new_names.get(c, c)) for c in df_silver_2021.columns])
+    df_silver_2021 = df_silver_2021.select(
+        [df_silver_2021[c].alias(new_names.get(c, c)) for c in df_silver_2021.columns]
+    )
 
     df_silver_2021.select(
         "Arrondissement", "lcog_geo_2", "lcog_geo_3", "lcog_geo_4", "lcog_geo_5"
@@ -165,6 +165,7 @@ def transform_bronze_to_silver(spark, folder_name):
 
     logger.info(f"Nb de lignes finales : {df_silver_2021.count()}")
     df_silver_2021.printSchema()
+
 
 if __name__ == "__main__":
     spark = get_spark_session(app_name="Silver_Presidentielle_Explicit_Unpivot")

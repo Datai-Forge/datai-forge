@@ -1,8 +1,8 @@
-import os
 import logging
+import os
 
 # Configuration minimaliste pour le diagnostic de la config
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("config")
 
 # Ici on centralise tous les chemins du projet.
@@ -32,7 +32,15 @@ RESOURCES_PATH = os.path.join(PROJECT_ROOT, "src", "common", "resources")
 MAPPING_POLITIQUE_PATH = os.path.join(RESOURCES_PATH, "mapping_politique.csv")
 
 # On s'assure que les dossiers existent à l'import de la config
-for path in [BRONZE_PATH, SILVER_PATH, GOLD_PATH, PRESIDENTIELLE_BRONZE_PATH, NIVEAU_VIE_PAUVRETE_200m_BRONZE_PATH, SECURITE_BRONZE_PATH, RESOURCES_PATH]:
+for path in [
+    BRONZE_PATH,
+    SILVER_PATH,
+    GOLD_PATH,
+    PRESIDENTIELLE_BRONZE_PATH,
+    NIVEAU_VIE_PAUVRETE_200m_BRONZE_PATH,
+    SECURITE_BRONZE_PATH,
+    RESOURCES_PATH,
+]:
     if not os.path.exists(path):
         os.makedirs(path, exist_ok=True)
         logger.info(f"Création du dossier de données : {path}")
